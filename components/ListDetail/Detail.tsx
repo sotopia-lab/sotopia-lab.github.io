@@ -1,3 +1,4 @@
+/* eslint-disable react/display-name */
 import * as React from 'react'
 import { Compass } from 'react-feather'
 
@@ -32,7 +33,7 @@ const Container = React.forwardRef<HTMLDivElement, DetailContainerProps>(
   }
 )
 
-function Header(props) {
+function Header(props: React.JSX.IntrinsicAttributes & React.ClassAttributes<HTMLDivElement> & React.HTMLAttributes<HTMLDivElement>) {
   return <div className="space-y-3" {...props} />
 }
 

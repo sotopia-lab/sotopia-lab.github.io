@@ -5,7 +5,7 @@ import { useEffect } from 'react'
 export function FathomProvider() {
   const router = useRouter()
   useEffect(() => {
-    Fathom.load(process.env.NEXT_PUBLIC_FATHOM_SITE_ID, {
+    Fathom.load(process.env.NEXT_PUBLIC_FATHOM_SITE_ID? process.env.NEXT_PUBLIC_FATHOM_SITE_ID: "", {
       includedDomains: ['brianlovin.com'],
       excludedDomains: ['vercel.app,localhost'],
       spa: 'auto',

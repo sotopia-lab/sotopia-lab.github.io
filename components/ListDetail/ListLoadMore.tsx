@@ -3,7 +3,7 @@ import ReactVisibilitySensor from 'react-visibility-sensor'
 
 import { LoadingSpinner } from '../LoadingSpinner'
 
-export function ListLoadMore({ setIsVisible }) {
+export function ListLoadMore({ setIsVisible }: any) {
   return (
     <ReactVisibilitySensor
       partialVisibility

@@ -1,4 +1,3 @@
-import { ApolloProvider } from '@apollo/client'
 import { NextPageContext } from 'next'
 import * as React from 'react'
 
@@ -28,7 +27,7 @@ export function Providers({ children, pageProps }: Props) {
 
   const [state, setState] = React.useState(initialState)
 
-  function setIsOpen(isOpen) {
+  function setIsOpen(isOpen: any) {
     return setState({ ...state, isOpen })
   }
 
