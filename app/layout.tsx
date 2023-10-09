@@ -42,7 +42,6 @@ export default function RootLayout({
       <body className={cn(clash.variable, space.variable)}>
         <Toaster />
         
-        {/* <div className="fixed h-screen w-full" /> */}
         <div
           className={`fixed top-0 w-full ${
             scrolled
