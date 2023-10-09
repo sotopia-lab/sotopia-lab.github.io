@@ -50,7 +50,7 @@ export default function RootLayout({
               : "bg-white/3"
           } z-30 transition-all`}
         >
-          <div className="w-full pl-3 sm:px-12 flex h-16 max-w-screen-xl items-center justify-between">
+          <div className="w-full pl-3 sm:px-12 flex h-16 items-center justify-between">
             <Link href="/" className="flex items-center font-display text-2xl ">
               <svg className="h-5 w-5"
                 viewBox="0 0 300 300"
