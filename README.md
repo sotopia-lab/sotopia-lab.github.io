@@ -1,6 +1,6 @@
-<a href="https://spirals.vercel.app">
-  <img alt="Spirals – Generate beautiful AI spiral art with one click." src="/app/opengraph-image.png">
-  <h1 align="center">Spirals</h1>
+<a href="https://sotopia.vercel.app">
+  <img alt="sotopia – Generate beautiful AI spiral art with one click." src="/app/opengraph-image.png">
+  <h1 align="center">sotopia</h1>
 </a>
 
 <p align="center">
@@ -11,8 +11,8 @@
   <a href="https://twitter.com/steventey">
     <img src="https://img.shields.io/twitter/follow/steventey?style=flat&label=steventey&logo=twitter&color=0bf&logoColor=fff" alt="Steven Tey Twitter follower count" />
   </a>
-  <a href="https://github.com/steven-tey/spirals">
-    <img src="https://img.shields.io/github/stars/steven-tey/spirals?label=steven-tey%2Fspirals" alt="Spirals repo star count" />
+  <a href="https://github.com/steven-tey/sotopia">
+    <img src="https://img.shields.io/github/stars/steven-tey/sotopia?label=steven-tey%2Fsotopia" alt="sotopia repo star count" />
   </a>
 </p>
 
@@ -26,9 +26,9 @@
 
 ## Introduction
 
-Spirals is an AI app for you to generate beautiful spiral art with one click. Powered by Vercel and Replicate.
+sotopia is an AI app for you to generate beautiful spiral art with one click. Powered by Vercel and Replicate.
 
-https://github.com/steven-tey/spirals/assets/28986134/9f0202d4-2a31-47a0-b43f-bdcd189743ef
+https://github.com/steven-tey/sotopia/assets/28986134/9f0202d4-2a31-47a0-b43f-bdcd189743ef
 
 ## Tech Stack
 
@@ -43,7 +43,7 @@ https://github.com/steven-tey/spirals/assets/28986134/9f0202d4-2a31-47a0-b43f-bd
 
 You can deploy this template to Vercel with the button below:
 
-[![Deploy with Vercel](https://vercel.com/button)](https://stey.me/spirals-deploy)
+[![Deploy with Vercel](https://vercel.com/button)](https://stey.me/sotopia-deploy)
 
 Note that you'll need to:
 

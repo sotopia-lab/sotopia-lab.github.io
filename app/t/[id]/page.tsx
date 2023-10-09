@@ -14,9 +14,9 @@ export async function generateMetadata({
     return;
   }
 
-  const title = `Spirals: ${data.prompt}`;
+  const title = `sotopia: ${data.prompt}`;
   const description = `A spiral generated from the prompt: ${data.prompt}`;
-  const image = data.image || "https://spirals.vercel.app/opengraph-image.png";
+  const image = data.image || "https://sotopia.vercel.app/opengraph-image.png";
 
   return {
     title,

@@ -13,12 +13,12 @@ const nextConfig = {
     return [
       {
         source: "/github",
-        destination: "https://github.com/steven-tey/spirals",
+        destination: "https://github.com/steven-tey/sotopia",
         permanent: false,
       },
       {
         source: "/deploy",
-        destination: "https://vercel.com/templates/next.js/spirals",
+        destination: "https://vercel.com/templates/next.js/sotopia",
         permanent: false,
       },
       {

@@ -25,10 +25,10 @@ const space = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  title: "Spirals",
+  title: "sotopia",
   description:
     "Generate beautiful AI spiral art with one click. Powered by Vercel and Replicate.",
-  metadataBase: new URL("https://spirals.vercel.app"),
+  metadataBase: new URL("https://sotopia.vercel.app"),
 };
 
 export default function RootLayout({
