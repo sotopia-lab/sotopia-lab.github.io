@@ -30,29 +30,29 @@ export default function Home() {
         </div>
         <Detail.ContentContainer className="mx-auto max-w-2xl lg:max-w-5xl">
         <SectionContent>
-            <h1 className="text-2xl col-span-12 w-full font-space text-teal-700 font-bold">Key features of <p className="font-display inline">Sotopia</p></h1>
+            <h1 className="text-2xl col-span-12 w-full font-space text-teal-700 font-bold">Key features of <span className="font-display inline">Sotopia</span></h1>
               <div className="col-span-12 lg:col-span-4">
                 <h2 className="text-xl font-space text-teal-700 font-bold">Human in the loop</h2>
                 <p className="prose mt-4 text-md  text-gray-500 font-space break-all">
-               <p className="font-display inline">Sotopia</p> is designed to natively support the interaction among humans and AI agents. With simple configuration, you can watch AI agent interacting, start chatting with AI agents, or even join a game with other human players. You can use the default frontend, or build your own frontend using the <p className="font-display inline">Sotopia</p> REST API.
+               <span className="font-display inline">Sotopia</span> is designed to natively support the interaction among humans and AI agents. With simple configuration, you can watch AI agent interacting, start chatting with AI agents, or even join a game with other human players. You can use the default frontend, or build your own frontend using the <span className="font-display inline">Sotopia</span> REST API.
                 </p>
               </div>
               <div className="col-span-12 lg:col-span-4">
                 <h2 className="text-xl font-space text-teal-700 font-bold">Imperfect information</h2>
                 <p className="prose mt-4 text-md  text-gray-500 font-space break-all">
-                Scenarios in <p className="font-display inline">Sotopia</p> typically include both public info for all characters and private info for each character. Character profiles are hidden or partially hidden from other characters based on their relationships. This feature makes <p className="font-display inline">Sotopia</p> a perfect testbed for AI agents to learn to reason about imperfect information.
+                Scenarios in <span className="font-display inline">Sotopia</span> typically include both public info for all characters and private info for each character. Character profiles are hidden or partially hidden from other characters based on their relationships. This feature makes <span className="font-display inline">Sotopia</span> a perfect testbed for AI agents to learn to reason about imperfect information.
                 </p>
               </div>
               <div className="col-span-12 lg:col-span-4">
                 <h2 className="text-xl font-space text-teal-700 font-bold">Open-Ended</h2>
                 <p className="prose mt-4 text-md  text-gray-500 font-space break-all">
-                You are not limited to the original set of tasks in <p className="font-display inline">Sotopia</p>. We have a tutorial teaching you how to create your own characters and scenarios and bring them to life in <p className="font-display inline">Sotopia</p>. The evaluation framework is also open-ended, you can create your own evaluation metrics, whether it&rsquo;s LLM-based or rule-based.
+                You are not limited to the original set of tasks in <span className="font-display inline">Sotopia</span>. We have a tutorial teaching you how to create your own characters and scenarios and bring them to life in <span className="font-display inline">Sotopia</span>. The evaluation framework is also open-ended, you can create your own evaluation metrics, whether it&rsquo;s LLM-based or rule-based.
                 </p>
               </div>
         </SectionContent>
 
         <SectionContent>
-        <h1 className="text-2xl col-span-12 font-space text-teal-700 font-bold"><p className="font-display inline">Sotopia</p> concepts</h1>
+        <h1 className="text-2xl col-span-12 font-space text-teal-700 font-bold"><span className="font-display inline">Sotopia</span> concepts</h1>
         <div className="col-span-12 flex flex-row-reverse lg:grid lg:col-span-4">
           <div className="w-2/3 lg:w-full">
           <Image
@@ -65,7 +65,7 @@ export default function Home() {
           <Image
             src={profiles} className="object-contain object-center max-h-48" alt="scenarios image" placeholder="blur" />
           </div>
-          <p className="w-1/3 lg:w-full  font-space  text-gray-500 font-lg py-4 break-all">Characters in <pre className="font-display inline">Sotopia</pre> have their name, gender, personalities, decision making styles, occupation, some public information and even their secrets.</p>
+          <p className="w-1/3 lg:w-full  font-space  text-gray-500 font-lg py-4 break-all">Characters in <span className="font-display inline">Sotopia</span> have their name, gender, personalities, decision making styles, occupation, some public information and even their secrets.</p>
         </div>
         <div className="col-span-12 flex flex-row-reverse lg:grid lg:col-span-4">
           <div className="w-2/3 lg:w-full">
