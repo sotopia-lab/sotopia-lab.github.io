@@ -9,6 +9,7 @@ import profiles from "../public/profiles.png";
 import { Detail } from '@/components/ListDetail/Detail'
 import { TitleBar } from '@/components/ListDetail/TitleBar'
 import React from "react";
+import Interactions from "./interactions";
 
 function SectionContent(props: React.JSX.IntrinsicAttributes & React.ClassAttributes<HTMLDivElement> & React.HTMLAttributes<HTMLDivElement>) {
   return <div className="snap-start w-full gap-8 grid grid-cols-12 py-16 px-6 sm:px-12" {...props} />
@@ -33,19 +34,20 @@ export default function Home() {
             <h1 className="text-2xl col-span-12 w-full font-space text-teal-700 font-bold">Key features of <p className="font-display inline">Sotopia</p></h1>
               <div className="col-span-12 lg:col-span-4">
                 <h2 className="text-xl font-space text-teal-700 font-bold">Human in the loop</h2>
-                <p className="prose mt-4 text-md  text-gray-500 font-space break-all">
-               <p className="font-display inline">Sotopia</p> is designed to natively support the interaction among humans and AI agents. With simple configuration, you can watch AI agent interacting, start chatting with AI agents, or even join a game with other human players. You can use the default frontend, or build your own frontend using the <p className="font-display inline">Sotopia</p> REST API.
+                <p className="prose mt-4 text-md  text-gray-500 font-space">
+                <p className="font-display inline">Sotopia</p> is designed to natively support the interaction among humans and AI agents. With simple configuration, you can watch AI agent interacting, start chatting with AI agents, or even join a game with other human players. You can use the default frontend, or build your own frontend using the
+                <p className="font-display inline"> Sotopia</p> REST API.
                 </p>
               </div>
               <div className="col-span-12 lg:col-span-4">
                 <h2 className="text-xl font-space text-teal-700 font-bold">Imperfect information</h2>
-                <p className="prose mt-4 text-md  text-gray-500 font-space break-all">
+                <p className="prose mt-4 text-md  text-gray-500 font-space">
                 Scenarios in <p className="font-display inline">Sotopia</p> typically include both public info for all characters and private info for each character. Character profiles are hidden or partially hidden from other characters based on their relationships. This feature makes <p className="font-display inline">Sotopia</p> a perfect testbed for AI agents to learn to reason about imperfect information.
                 </p>
               </div>
               <div className="col-span-12 lg:col-span-4">
                 <h2 className="text-xl font-space text-teal-700 font-bold">Open-Ended</h2>
-                <p className="prose mt-4 text-md  text-gray-500 font-space break-all">
+                <p className="prose mt-4 text-md  text-gray-500 font-space">
                 You are not limited to the original set of tasks in <p className="font-display inline">Sotopia</p>. We have a tutorial teaching you how to create your own characters and scenarios and bring them to life in <p className="font-display inline">Sotopia</p>. The evaluation framework is also open-ended, you can create your own evaluation metrics, whether it&rsquo;s LLM-based or rule-based.
                 </p>
               </div>
@@ -75,9 +77,9 @@ export default function Home() {
           <p className="w-1/3 lg:w-full font-space  text-gray-500 font-lg py-4 break-all">The relationships between characters are in different types and include background stories. This provides more concrete context for scenarios.</p>
         </div>
         </SectionContent>
-        <div className="snap-start h-screen w-full flex flex-col py-12 px-6 sm:px-12 space-y-8">
-        <h1 className="text-2xl w-full font-space text-teal-700 font-bold">Demostration</h1>
-        TODO add a video/gif demo here
+        <div className="snap-start h-screen w-full flex flex-col py-12 px-6 sm:px-12 space-y-8 overflow-auto">
+            <h1 className="text-2xl w-full font-space text-teal-700 font-bold">Example Interactions</h1>
+            <Interactions />
         </div>
         <div className="snap-start h-screen w-full flex flex-col py-12 px-6 sm:px-12 space-y-8">
         <h1 className="text-2xl w-full font-space text-teal-700 font-bold">Get started</h1>

@@ -39,6 +39,18 @@ https://github.com/steven-tey/sotopia/assets/28986134/9f0202d4-2a31-47a0-b43f-bd
 - [Vercel KV](https://vercel.com/storage/kv) for redis
 - [`promptmaker`](https://github.com/zeke/promptmaker) lib by @zeke for generating random prompts
 
+## Development
+First you need to install `bun` globally:
+```
+npm i -g bun
+```
+
+Then you can run the following commands to start the development server:
+```
+bun i
+bun run dev
+```
+
 ## Deploy Your Own
 
 You can deploy this template to Vercel with the button below:
