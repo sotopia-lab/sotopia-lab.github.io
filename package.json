@@ -36,6 +36,7 @@
     "replicate": "^0.18.0",
     "sonner": "^1.0.3",
     "tailwind-merge": "^1.14.0",
+    "tailwind-typewriter": "^1.0.1",
     "tailwindcss": "3.3.3",
     "typescript": "5.2.2",
     "vaul": "^0.6.5"

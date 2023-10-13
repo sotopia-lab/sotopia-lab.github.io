@@ -71,6 +71,13 @@ export default function RootLayout({
               >
                 <p>Paper</p>
               </a>
+              <a href="/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group hidden max-w-fit items-center justify-center space-x-2 rounded-full border border-black bg-transparent px-3 py-1.5 text-sm text-black transition-colors hover:bg-white hover:text-black sm:flex"
+              >
+                <p>Chat Now</p>
+              </a>
               <a
                 href="/"
                 target="_blank"
