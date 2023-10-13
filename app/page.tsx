@@ -51,7 +51,7 @@ export default function Home() {
                 </p>
               </div>
               <div className="col-span-12 lg:col-span-4">
-                <h2 className="text-xl font-space text-teal-700 font-bold">Open-Ended</h2>
+                <h2 className="text-xl font-space text-teal-700 font-bold">Open-ended</h2>
                 <p className="prose mt-4 text-md  text-gray-500 font-space">
                 You are not limited to the original set of tasks in <span className="font-display inline">Sotopia</span>. We have a tutorial teaching you how to create your own characters and scenarios and bring them to life in <span className="font-display inline">Sotopia</span>. The evaluation framework is also open-ended, you can create your own evaluation metrics, whether it&rsquo;s LLM-based or rule-based.
                 </p>
