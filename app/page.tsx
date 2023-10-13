@@ -77,7 +77,7 @@ export default function Home() {
         </div>
         </SectionContent>
         <div className="snap-start h-screen w-full flex flex-col py-12 px-6 sm:px-12 space-y-8 overflow-auto">
-            <h1 className="text-2xl w-full font-space text-teal-700 font-bold">Example Interactions</h1>
+            <h1 className="text-2xl w-full font-space text-teal-700 font-bold">Examples</h1>
             <Interactions />
         </div>
         <div className="snap-start h-screen w-full flex flex-col py-12 px-6 sm:px-12 space-y-8">

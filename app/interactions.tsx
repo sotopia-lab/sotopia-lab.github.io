@@ -71,7 +71,7 @@ const Interactions = () => {
                     <div className="flex items-center border-b border-gray-300 pb-6">
                         <div className="flex items-start justify-between w-full">
                             <div className="pl-3 w-full">
-                                <p className="text-xl font-medium leading-5 text-sky-900">Reveal Secrets 🔓</p>
+                                <p className="text-xl font-medium leading-5 text-sky-900">Reveal secrets 🔓</p>
                             </div>
                             <OutLinkLogo link={"https://sotopia-chatbot.vercel.app/render/01H8B7ACYZ9NJFH4TRW0KJ6J9X"} />
                         </div>
@@ -89,7 +89,7 @@ const Interactions = () => {
                     <div className="flex items-center border-b border-gray-300 pb-6">
                         <div className="flex items-start justify-between w-full">
                             <div className="pl-3 w-full">
-                                <p className="text-xl font-medium leading-5 text-sky-900">Craiglist Bargain 💸</p>
+                                <p className="text-xl font-medium leading-5 text-sky-900">Craiglist bargain 💸</p>
                             </div>
                             <OutLinkLogo link={"https://sotopia-chatbot.vercel.app/render/01H8GPMG4F8P1DJ4AHV0BXEVBE"} />
                         </div>
@@ -99,7 +99,46 @@ const Interactions = () => {
                         <Quoter quoter={"If I agree to your 550 for one phone, could you provide the second unit at a diminished cost of, say, 400? So, in total, it will be $950 for two units."} /> 
                         <div className="flex">
                             <div className="py-2 px-4 text-xs leading-3 text-indigo-700 rounded-full bg-indigo-100">#negotiation</div>
-                            <div className="py-2 px-4 ml-3 text-xs leading-3 text-indigo-700 rounded-full bg-indigo-100">#strategic conversation</div>
+                            <div className="py-2 px-4 ml-3 text-xs leading-3 text-indigo-700 rounded-full bg-indigo-100">#exchange</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div className="lg:flex items-start justify-start w-full mt-7">
+                <div className="lg:w-6/12 lg:mr-7 lg:mb-0 mb-7 bg-orange-50 p-6 shadow rounded">
+                    <div className="flex items-center border-b border-gray-300 pb-6">
+                        <div className="flex items-start justify-between w-full">
+                            <div className="pl-3 w-full">
+                                <p className="text-xl font-medium leading-5 text-sky-900">Express dislike 👿</p>
+                            </div>
+                            <OutLinkLogo link={"https://sotopia-chatbot.vercel.app/render/01H8GPP1CWC4VBA27HP40XWZMF"} />
+                        </div>
+                    </div>
+                    <div className="px-2">
+                        <p className="text-sm leading-5 py-4 text-gray-600">Conversation between two individuals who share a common dislike for a third person.</p>
+                        <Quoter quoter={"By introducing some errors in their code, they might start doubting their abilities and step down. It's a risk but it ensures we can continue our work smoothly, without their constant interruptions."} /> 
+                        <div className="flex">
+                            <div className="py-2 px-4 text-xs leading-3 text-indigo-700 rounded-full bg-indigo-100">#harm</div>
+                            <div className="py-2 px-4 ml-3 text-xs leading-3 text-indigo-700 rounded-full bg-indigo-100">#risk</div>
+                        </div>
+                    </div>
+                </div>
+                <div className="lg:w-6/12 lg:mr-7 lg:mb-0 mb-7 bg-sky-50 p-6 shadow rounded">
+                    <div className="flex items-center border-b border-gray-300 pb-6">
+                        <div className="flex items-start justify-between w-full">
+                            <div className="pl-3 w-full">
+                                <p className="text-xl font-medium leading-5 text-sky-900">Run company 🏗️</p>
+                            </div>
+                            <OutLinkLogo link={"https://sotopia-chatbot.vercel.app/render/01H94J1NAFAXN5J8871SA2R4SX"} />
+                        </div>
+                    </div>
+                    <div className="px-2">
+                        <p className="text-sm leading-5 py-4 text-gray-600">Conversation between two business partners reviewing their company&apos;s financial status </p>
+                        <Quoter quoter={"Having a backup plan is a sensible move. I propose that while we conduct the search for new suppliers, we continue to negotiate with our current supplier. We can try to get better rates or perhaps, if feasible, have them match the lower prices we find. This way, we're not putting all our eggs in one basket."} /> 
+                        <div className="flex">
+                            <div className="py-2 px-4 text-xs leading-3 text-indigo-700 rounded-full bg-indigo-100">#collaboration</div>
+                            <div className="py-2 px-4 text-xs leading-3 text-indigo-700 rounded-full bg-indigo-100">#negotiation</div>
                         </div>
                     </div>
                 </div>
@@ -107,13 +146,13 @@ const Interactions = () => {
             </div>
         
         </div>
-            <a href="/"
+        <a href="/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group hidden max-w-fit items-center justify-center space-x-2 rounded-full border border-black bg-transparent px-3 py-1.5 text-sm text-black transition-colors hover:bg-white hover:text-black sm:flex mt-10"
               >
                 <p>More</p>
-                </a>
+        </a>
                 
 
         </div>
