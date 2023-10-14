@@ -26,7 +26,7 @@ function Quoter(props: quoterProps) {
 
 const Interactions = () => {
     return (
-        <div className="flex flex-col justify-center, items-center"> 
+        <div className="flex flex-col justify-center, items-center overflow-auto"> 
         <div className="w-full">
             <div className="lg:flex items-start justify-start w-full">
                 <div className="lg:w-6/12 lg:mr-7 lg:mb-0 mb-7 bg-sky-50 p-6 shadow rounded">

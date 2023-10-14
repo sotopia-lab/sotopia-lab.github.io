@@ -68,17 +68,6 @@ const config: Config = {
       },
     },
   },
-  plugins: [
-    require('tailwind-typewriter')({
-      wordsets: {
-        opening: {
-            words: ['Sotopia lets you simulate and evaluate realistic social interactions in a few lines of code...'],
-            writeSpeed: 0.05,
-            repeat: 0,
-            eraseSpeed: 0
-        }
-    }
-    })
-  ],
+  plugins: [],
 };
 export default config;

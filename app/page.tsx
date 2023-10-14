@@ -10,6 +10,7 @@ import { Detail } from '@/components/ListDetail/Detail'
 import { TitleBar } from '@/components/ListDetail/TitleBar'
 import React from "react";
 import Interactions from "./interactions";
+import { TypeAnimation } from 'react-type-animation';
 
 function SectionContent(props: React.JSX.IntrinsicAttributes & React.ClassAttributes<HTMLDivElement> & React.HTMLAttributes<HTMLDivElement>) {
   return <div className="snap-start w-full gap-8 grid grid-cols-12 py-16 px-6 sm:px-12" {...props} />
@@ -32,7 +33,26 @@ export default function Home() {
         <Detail.ContentContainer className="mx-auto max-w-2xl lg:max-w-5xl">
         
         <SectionContent>
-        <h1 className="text-5xl col-span-12 w-full font-space text-teal-700/50 italic type-opening"></h1>
+        {/* <h1 className="text-5xl col-span-12 w-full font-space text-teal-700/50 italic dark:text-teal-300 dark:drop-shadow-[0_1px_15px_#ccfbf1]">Sotopia</h1> */}
+            <TypeAnimation className="text-5xl h-3 col-span-12 w-full font-space text-teal-700/50 italic dark:text-teal-300 dark:drop-shadow-[0_1px_15px_#ccfbf1]"
+              sequence={[
+                // Same substring at the start will only be typed once, initially
+                'Large language models like GPT-4 are excellent at solving tasks, but do they have social intelligence?',
+                1000,
+                'To answer that, Sotopia focus on social interactions among humans and AI agents, employing simulation.',
+                1000,
+                'To answer that, Sotopia focus on social interactions among humans and AI agents, conducting evaulation.',
+                1000,
+                'To answer that, Sotopia focus on social interactions among humans and AI agents, supporting analyzation.',
+                1000,
+                'Sotopia, born for better AI social intelligence.',
+                1000,
+              ]}
+              speed={60}
+              deletionSpeed={70}
+              style={{ fontSize: '2em' }}
+              repeat={2}
+            />
         </SectionContent>
         <SectionContent>
             <h1 className="text-2xl col-span-12 w-full font-space text-teal-700 font-bold">Key features of <span className="font-display inline">Sotopia</span></h1>
@@ -82,8 +102,28 @@ export default function Home() {
           <p className="w-1/3 lg:w-full font-space  text-gray-500 font-lg py-4">The relationships between characters are in different types and include background stories. This provides more concrete context for scenarios.</p>
         </div>
         </SectionContent>
-        <div className="snap-start h-screen w-full flex flex-col py-12 px-6 sm:px-12 space-y-8 overflow-auto">
-            <h1 className="text-2xl w-full font-space text-teal-700 font-bold">Examples</h1>
+
+        <SectionContent>
+          <h1 className="text-2xl col-span-12 font-space text-teal-700 font-bold">Social Simulation</h1>
+          <div className="lg:col-span-6 col-span-12">
+            <p className="font-space text-gray-500 font-lg mb-3"><span className="font-display inline">Sotopia</span> is all about social interactions.</p>
+            <p className="font-space text-gray-500 font-lg mb-3">In <span className="font-display inline">Sotopia</span> (as of now), we create 90 social scenarios spanning a range of cooperative, competitive, and mixed social goals along with 40 characters with individual personalities, occupations, secrets, background stories, and relationships with other characters, the cross product of which constructs a large task space.
+            </p>
+          
+            <p className="font-space text-gray-500 font-lg mb-3">Through sampling tasks from this space, we simulate the interaction episodes where agents role-play their respective characters and interact based on their private social goals.
+                In this simulation, we not only create and use LLM-based agents, but also involve human participants in role-playing to study the differences between the models&apos; and humans&apos; social intelligence. </p>
+              
+            <p className="font-space text-gray-500 font-lg mb-3">The simulation is designed to be flexible and extensible. You can create your own scenarios, characters, and even evaluation metrics to test your own AI models. </p>
+
+            <p className="font-space text-gray-500 font-lg mb-3">The video shows a demo of the simulation, where human participant plays as Noah to interact with AI agents. </p>
+        </div>
+          <video className="text-2xl lg:col-span-6 lg:col-start-7 col-span-12 drop-shadow-md" loop autoPlay muted>
+            <source src="/sotopia_demo.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </SectionContent>
+        <div className="snap-start h-screen w-full flex flex-col py-12 px-6 sm:px-12 space-y-8">
+            <h1 className="text-2xl w-full font-space text-teal-700 font-bold">Simulation Highlights</h1>
             <Interactions />
         </div>
         <div className="snap-start h-screen w-full flex flex-col py-12 px-6 sm:px-12 space-y-8">
