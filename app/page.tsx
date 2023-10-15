@@ -11,6 +11,7 @@ import { TitleBar } from '@/components/ListDetail/TitleBar'
 import React from "react";
 import Interactions from "./interactions";
 import { TypeAnimation } from 'react-type-animation';
+import { Evaluation } from "./evaluation";
 
 function SectionContent(props: React.JSX.IntrinsicAttributes & React.ClassAttributes<HTMLDivElement> & React.HTMLAttributes<HTMLDivElement>) {
   return <div className="snap-start w-full gap-8 grid grid-cols-12 py-16 px-6 sm:px-12" {...props} />
@@ -116,16 +117,33 @@ export default function Home() {
             <p className="font-space text-gray-500 font-lg mb-3">The simulation is designed to be flexible and extensible. You can create your own scenarios, characters, and even evaluation metrics to test your own AI models. </p>
 
             <p className="font-space text-gray-500 font-lg mb-3">The video shows a demo of the simulation, where human participant plays as Noah to interact with AI agents. </p>
-        </div>
+          </div>
           <video className="text-2xl lg:col-span-6 lg:col-start-7 col-span-12 drop-shadow-md" loop autoPlay muted>
             <source src="/sotopia_demo.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
         </SectionContent>
+
+        <SectionContent>
+          <h1 className="text-2xl col-span-12 font-space text-teal-700 font-bold">Social Evaluation</h1>
+          <div className="lg:col-span-6 col-span-12">
+            <p className="font-space text-gray-500 font-lg mb-3"><span className="font-display inline">Sotopia</span> supports evaluation of social interactions.</p>
+            <p className="font-space text-gray-500 font-lg mb-3">To evaluate <span className="bolded">multi-faceted</span> social interactions, we cannot only consider completing major social goals, as humans motives often balance multiple implicit goals, such as maintaining relationships, preserving finances, gaining information, keeping secrets, and following social rules. 
+            </p>
+
+            <p className="font-space text-gray-500 font-lg mb-3">Therefore, we propose <span className="font-display inline">Sotopia-Eval</span> to evaluate agents using multi-dimensional criteria inspired by previous research on sociology, psychology, and economics. We find GPT-4 could serve as a proxy to human&apos; judgments on <span className="font-display inline">Sotopia-Eval</span>, especially for the criteria of goal completion, maintaining finances, and preserving relationships. </p>
+              
+            <p className="font-space text-gray-500 font-lg mb-3">The figure shows an example of evaluation for the aforementioned social interaction.</p>
+          </div>
+          <Evaluation />
+        </SectionContent>
+
         <div className="snap-start h-screen w-full flex flex-col py-12 px-6 sm:px-12 space-y-8">
             <h1 className="text-2xl w-full font-space text-teal-700 font-bold">Simulation Highlights</h1>
             <Interactions />
         </div>
+
+       
         <div className="snap-start h-screen w-full flex flex-col py-12 px-6 sm:px-12 space-y-8">
         <h1 className="text-2xl w-full font-space text-teal-700 font-bold">Get started</h1>
         TODO add code snippets here: two lines of code to start a game. And links to the tutorial.

@@ -4,6 +4,7 @@ interface OutLinkLogoProps {
 
 interface quoterProps {
     quoter: string;
+    model?: string;
 }
 
 function OutLinkLogo(props: OutLinkLogoProps) {
@@ -18,13 +19,14 @@ function OutLinkLogo(props: OutLinkLogoProps) {
 
 function Quoter(props: quoterProps) {
     return (
-        <div className="flex justify-between mb-5 ...">
+        <div className="flex flex-col justify-between mb-5 ...">
             <p className="text-slate-500 italic text-2xl">&ldquo;{props.quoter}&rdquo;</p>
+            <p className="text-slate-500 italic text-2xl">—{props.model}</p>
         </div>
     );
 }
 
-const Interactions = () => {
+export const Interactions = () => {
     return (
         <div className="flex flex-col justify-center, items-center overflow-auto"> 
         <div className="w-full">
@@ -40,7 +42,7 @@ const Interactions = () => {
                     </div>
                     <div className="px-2">
                         <p className="text-sm leading-5 py-4 text-gray-600">Two friends are meeting at a coffee shop, where one of them is having trouble keeping up with their bills.</p>
-                        <Quoter quoter={"Maybe we could look over your budget together, or I could lend you some money until things get better. What do you think?"} /> 
+                        <Quoter quoter={"Maybe we could look over your budget together, or I could lend you some money until things get better. What do you think?"} model={"GPT-4"} /> 
                         <div className="flex">
                             <div className="py-2 px-4 text-xs leading-3 text-indigo-700 rounded-full bg-indigo-100">#collaboration</div>
                             <div className="py-2 px-4 ml-3 text-xs leading-3 text-indigo-700 rounded-full bg-indigo-100">#non-verbal communication</div>
@@ -58,7 +60,7 @@ const Interactions = () => {
                     </div>
                     <div className="px-2">
                         <p className="text-sm leading-5 py-4 text-gray-600">Two friends are hanging out at home and deciding what music to listen to</p>
-                        <Quoter quoter={"[action] leans back on the couch, closing his eyes to fully appreciate the classical music"} /> 
+                            <Quoter quoter={"[action] leans back on the couch, closing his eyes to fully appreciate the classical music"} model={"GPT-4"} /> 
                         <div className="flex">
                             <div className="py-2 px-4 text-xs leading-3 text-indigo-700 rounded-full bg-indigo-100">#persuation</div>
                             <div className="py-2 px-4 ml-3 text-xs leading-3 text-indigo-700 rounded-full bg-indigo-100">#non-verbal communication</div>
@@ -78,7 +80,7 @@ const Interactions = () => {
                     </div>
                     <div className="px-2">
                         <p className="text-sm leading-5 py-4 text-gray-600">Two inmates are given the chance to chat briefly before one of them is led to the execution chamber for their last meal..</p>
-                        <Quoter quoter={"My brother committed a crime, and I covered it up for him. I know it was wrong, but I wanted to protect him."} /> 
+                        <Quoter quoter={"My brother committed a crime, and I covered it up for him. I know it was wrong, but I wanted to protect him."} model={"Llama2"} /> 
                         <div className="flex">
                             <div className="py-2 px-4 text-xs leading-3 text-indigo-700 rounded-full bg-indigo-100">#secret</div>
                             <div className="py-2 px-4 ml-3 text-xs leading-3 text-indigo-700 rounded-full bg-indigo-100">#risk</div>
@@ -96,7 +98,7 @@ const Interactions = () => {
                     </div>
                     <div className="px-2">
                         <p className="text-sm leading-5 py-4 text-gray-600">One person is selling a brand new 64GB Samsung Galaxy S8 in Midnight Black for $650, while another person is in the market to purchase it. </p>
-                        <Quoter quoter={"If I agree to your 550 for one phone, could you provide the second unit at a diminished cost of, say, 400? So, in total, it will be $950 for two units."} /> 
+                            <Quoter quoter={"If I agree to your 550 for one phone, could you provide the second unit at a diminished cost of, say, 400? So, in total, it will be $950 for two units."} model={"GPT-4"} /> 
                         <div className="flex">
                             <div className="py-2 px-4 text-xs leading-3 text-indigo-700 rounded-full bg-indigo-100">#negotiation</div>
                             <div className="py-2 px-4 ml-3 text-xs leading-3 text-indigo-700 rounded-full bg-indigo-100">#exchange</div>
@@ -117,7 +119,7 @@ const Interactions = () => {
                     </div>
                     <div className="px-2">
                         <p className="text-sm leading-5 py-4 text-gray-600">Conversation between two individuals who share a common dislike for a third person.</p>
-                        <Quoter quoter={"By introducing some errors in their code, they might start doubting their abilities and step down. It's a risk but it ensures we can continue our work smoothly, without their constant interruptions."} /> 
+                            <Quoter quoter={"By introducing some errors in their code, they might start doubting their abilities and step down. It's a risk but it ensures we can continue our work smoothly, without their constant interruptions."} model={"GPT-4"} /> 
                         <div className="flex">
                             <div className="py-2 px-4 text-xs leading-3 text-indigo-700 rounded-full bg-indigo-100">#harm</div>
                             <div className="py-2 px-4 ml-3 text-xs leading-3 text-indigo-700 rounded-full bg-indigo-100">#risk</div>
@@ -135,7 +137,7 @@ const Interactions = () => {
                     </div>
                     <div className="px-2">
                         <p className="text-sm leading-5 py-4 text-gray-600">Conversation between two business partners reviewing their company&apos;s financial status </p>
-                        <Quoter quoter={"Having a backup plan is a sensible move. I propose that while we conduct the search for new suppliers, we continue to negotiate with our current supplier. We can try to get better rates or perhaps, if feasible, have them match the lower prices we find. This way, we're not putting all our eggs in one basket."} /> 
+                        <Quoter quoter={"Having a backup plan is a sensible move. I propose that while we conduct the search for new suppliers, we continue to negotiate with our current supplier. We can try to get better rates or perhaps, if feasible, have them match the lower prices we find. This way, we're not putting all our eggs in one basket."} model={"GPT-4"} /> 
                         <div className="flex">
                             <div className="py-2 px-4 text-xs leading-3 text-indigo-700 rounded-full bg-indigo-100">#collaboration</div>
                             <div className="py-2 px-4 text-xs leading-3 text-indigo-700 rounded-full bg-indigo-100">#negotiation</div>
