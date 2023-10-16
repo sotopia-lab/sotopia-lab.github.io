@@ -42,7 +42,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body className={cn(clash.variable, space.variable)}>
-        <ThemeProvider  forcedTheme="light">
+        <ThemeProvider forcedTheme="light">
         <Toaster />
         
         <div

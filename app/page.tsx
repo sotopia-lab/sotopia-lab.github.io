@@ -27,7 +27,7 @@ export default function Home() {
   const titleRef = React.useRef(null)
   return (
     <Detail.Container data-cy="home-intro" ref={scrollContainerRef}>
-        <div className="relative h-screen w-full snap-proximity snap-y overflow-y-scroll bg-local bg-gradient-to-b from-[#dbe2d7] via-[#e0e3e0] to-purple-50">
+        <div className="relative h-screen w-full snap-proximity snap-y overflow-y-scroll bg-white">
           <div className="relative snap-start w-full overflow-hidden justify-center">
             <Image className="block md:hidden"
               src = {bg_small}
@@ -37,7 +37,7 @@ export default function Home() {
               sizes="100vw"
               fill
               style={{
-                objectFit: 'scale-down',
+                objectFit: 'cover',
                 position:'absolute',
               }}
             />
@@ -49,7 +49,7 @@ export default function Home() {
               sizes="100vw"
               fill
               style={{
-                objectFit: 'scale-down',
+                objectFit: 'cover',
                 position:'absolute',
               }}
             />
@@ -61,7 +61,7 @@ export default function Home() {
               sizes="100vw"
               fill
               style={{
-                objectFit: 'scale-down',
+                objectFit: 'cover',
                 position:'absolute',
               }}
             />
