@@ -75,25 +75,30 @@ export default function Home() {
           </div>
         <Detail.ContentContainer className="mx-auto max-w-2xl lg:max-w-5xl">
         <SectionContent>
-        {/* <h1 className="text-5xl col-span-12 w-full font-space text-teal-700/50 italic dark:text-teal-300 dark:drop-shadow-[0_1px_15px_#ccfbf1]">Sotopia</h1> */}
-            <TypeAnimation className="text-5xl h-3 col-span-12 w-full font-space text-teal-700/50 italic dark:text-teal-700 dark:drop-shadow-[0_1px_15px_#ccfbf1]"
+            {/* <h1 className="text-2xl col-span-12 w-full font-space text-teal-700/50 italic dark:text-teal-500 dark:drop-shadow-[0_1px_35px_#ccfbf1]">Large language models like GPT-4 are excellent at solving tasks, but do they have social intelligence?
+            To answer that, Sotopia focus on social interactions among humans and AI agents with simulation, evaulation and analyzation.
+            Sotopia, born for better AI social intelligence.</h1> */}
+            <TypeAnimation className="h-24 col-span-12 w-full font-space text-teal-700/50 italic dark:text-teal-700 dark:drop-shadow-[0_1px_15px_#ccfbf1]"
+              preRenderFirstString={true}
               sequence={[
                 // Same substring at the start will only be typed once, initially
                 'Large language models like GPT-4 are excellent at solving tasks, but do they have social intelligence?',
+                2000,
+                'Large language models like GPT-4 are excellent at solving tasks, but do they have social intelligence?\nTo answer that, Sotopia focus on social interactions among humans and AI agents, employing simulation.',
                 1000,
-                'To answer that, Sotopia focus on social interactions among humans and AI agents, employing simulation.',
+                'Large language models like GPT-4 are excellent at solving tasks, but do they have social intelligence?\nTo answer that, Sotopia focus on social interactions among humans and AI agents, conducting evaulation.',
                 1000,
-                'To answer that, Sotopia focus on social interactions among humans and AI agents, conducting evaulation.',
+                'Large language models like GPT-4 are excellent at solving tasks, but do they have social intelligence?\nTo answer that, Sotopia focus on social interactions among humans and AI agents, supporting analyzation.',
                 1000,
-                'To answer that, Sotopia focus on social interactions among humans and AI agents, supporting analyzation.',
+                'Large language models like GPT-4 are excellent at solving tasks, but do they have social intelligence?\nTo answer that, Sotopia focus on social interactions among humans and AI agents, supporting analyzation.\nSotopia',
                 1000,
-                'Sotopia, born for better AI social intelligence.',
+                'Large language models like GPT-4 are excellent at solving tasks, but do they have social intelligence?\nTo answer that, Sotopia focus on social interactions among humans and AI agents, supporting analyzation.\nSotopia, born for better AI social intelligence.',
                 1000,
               ]}
               speed={60}
               deletionSpeed={70}
-              style={{ fontSize: '2em' }}
-              repeat={Infinity}
+              style={{whiteSpace: 'pre-line', fontSize: '1.5em' }}
+              repeat={0}
             />
         </SectionContent>
         <SectionContent>
