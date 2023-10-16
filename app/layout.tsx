@@ -42,7 +42,12 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body className={cn(clash.variable, space.variable)}>
-        <ThemeProvider forcedTheme="light">
+      <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
         <Toaster />
         
         <div
@@ -53,8 +58,8 @@ export default function RootLayout({
           } z-30 transition-all`}
         >
           <div className="w-full pl-3 sm:px-12 flex h-16 items-center justify-between">
-            <Link href="/" className="flex items-center font-display text-2xl ">
-              <svg className="h-5 w-5"
+            <Link href="/" className="flex items-center font-display text-4xl">
+              <svg className="h-10 w-10"
                 viewBox="0 0 300 300"
                 fill="currentColor"
                 xmlns="http://www.w3.org/2000/svg"
@@ -70,14 +75,14 @@ export default function RootLayout({
               <a href="/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group hidden max-w-fit items-center justify-center space-x-2 rounded-full border border-black bg-transparent px-3 py-1.5 text-sm text-black transition-colors hover:bg-white hover:text-black sm:flex"
+                className="group hidden max-w-fit items-center justify-center space-x-2 rounded-full border border-black bg-black px-3 py-1.5 text-sm text-white transition-colors hover:bg-white hover:text-black sm:flex"
               >
                 <p>Paper</p>
               </a>
               <a href="/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group hidden max-w-fit items-center justify-center space-x-2 rounded-full border border-black bg-transparent px-3 py-1.5 text-sm text-black transition-colors hover:bg-white hover:text-black sm:flex"
+                className="group hidden max-w-fit items-center justify-center space-x-2 rounded-full border border-black bg-black px-3 py-1.5 text-sm text-white transition-colors hover:bg-white hover:text-black sm:flex"
               >
                 <p>Chat Now</p>
               </a>
@@ -104,6 +109,7 @@ export default function RootLayout({
               >
                 <Github />
               </a>
+              <ModeToggle />
             </div>
           </div>
         </div>
