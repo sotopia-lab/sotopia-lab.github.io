@@ -16,6 +16,7 @@ import { Evaluation } from "./evaluation";
 import bg_small from "../public/bg_small.png";
 import bg_large from "../public/bg_large.png";
 import bg_xl from "../public/bg_xl.png";
+import { ModeToggle } from "@/components/ui/model-toggle";
 
 function SectionContent(props: React.JSX.IntrinsicAttributes & React.ClassAttributes<HTMLDivElement> & React.HTMLAttributes<HTMLDivElement>) {
   return <div className="snap-start w-full gap-8 grid grid-cols-12 py-16 px-6 sm:px-12" {...props} />
@@ -26,7 +27,7 @@ export default function Home() {
   const titleRef = React.useRef(null)
   return (
     <Detail.Container data-cy="home-intro" ref={scrollContainerRef}>
-        <div className="h-screen w-full snap-proximity snap-y overflow-y-scroll">
+        <div className="relative h-screen w-full snap-proximity snap-y overflow-y-scroll bg-local bg-gradient-to-b from-[#dbe2d7] via-[#e0e3e0] to-purple-50">
           <div className="relative snap-start w-full overflow-hidden justify-center">
             <Image className="block md:hidden"
               src = {bg_small}
@@ -36,7 +37,7 @@ export default function Home() {
               sizes="100vw"
               fill
               style={{
-                objectFit: 'cover',
+                objectFit: 'scale-down',
                 position:'absolute',
               }}
             />
@@ -48,7 +49,7 @@ export default function Home() {
               sizes="100vw"
               fill
               style={{
-                objectFit: 'cover',
+                objectFit: 'scale-down',
                 position:'absolute',
               }}
             />
@@ -60,7 +61,7 @@ export default function Home() {
               sizes="100vw"
               fill
               style={{
-                objectFit: 'cover',
+                objectFit: 'scale-down',
                 position:'absolute',
               }}
             />
@@ -75,7 +76,7 @@ export default function Home() {
         
         <SectionContent>
         {/* <h1 className="text-5xl col-span-12 w-full font-space text-teal-700/50 italic dark:text-teal-300 dark:drop-shadow-[0_1px_15px_#ccfbf1]">Sotopia</h1> */}
-            <TypeAnimation className="text-5xl h-3 col-span-12 w-full font-space text-teal-700/50 italic dark:text-teal-300 dark:drop-shadow-[0_1px_15px_#ccfbf1]"
+            <TypeAnimation className="text-5xl h-3 col-span-12 w-full font-space text-teal-700/50 italic dark:text-teal-700 dark:drop-shadow-[0_1px_15px_#ccfbf1]"
               sequence={[
                 // Same substring at the start will only be typed once, initially
                 'Large language models like GPT-4 are excellent at solving tasks, but do they have social intelligence?',

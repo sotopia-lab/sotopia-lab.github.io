@@ -8,6 +8,8 @@ import { cn } from "@/lib/utils";
 import { Github, BuyMeACoffee } from "@/components/icons";
 import { Analytics } from "@vercel/analytics/react";
 import { Toaster } from "sonner";
+import { ThemeProvider } from "@/components/theme-provider"
+import { ModeToggle } from "@/components/ui/model-toggle";
 
 const clash = localFont({
   src: "../styles/ClashDisplay-Semibold.otf",
@@ -40,6 +42,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body className={cn(clash.variable, space.variable)}>
+        <ThemeProvider  forcedTheme="light">
         <Toaster />
         
         <div
@@ -104,9 +107,10 @@ export default function RootLayout({
             </div>
           </div>
         </div>
+        
         <main className="flex w-full flex-col items-center justify-center">
           {children}
-        </main>
+        </main> 
         {/* <div className="absolute w-full py-5 text-center">
           <div className="flex items-center justify-center space-x-4 mt-2">
           <p className="text-gray-500">
@@ -119,6 +123,7 @@ export default function RootLayout({
             </p>
           </div>
         </div> */}
+        </ThemeProvider>
         <Analytics />
       </body>
     </html>
