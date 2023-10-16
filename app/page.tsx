@@ -13,6 +13,10 @@ import Interactions from "./interactions";
 import { TypeAnimation } from 'react-type-animation';
 import { Evaluation } from "./evaluation";
 
+import bg_small from "../public/bg_small.png";
+import bg_large from "../public/bg_large.png";
+import bg_xl from "../public/bg_xl.png";
+
 function SectionContent(props: React.JSX.IntrinsicAttributes & React.ClassAttributes<HTMLDivElement> & React.HTMLAttributes<HTMLDivElement>) {
   return <div className="snap-start w-full gap-8 grid grid-cols-12 py-16 px-6 sm:px-12" {...props} />
 }
@@ -23,14 +27,50 @@ export default function Home() {
   return (
     <Detail.Container data-cy="home-intro" ref={scrollContainerRef}>
         <div className="h-screen w-full snap-mandatory snap-y overflow-y-scroll">
-          <div className="snap-start w-full px-6 sm:px-12 overflow-hidden flex flex-col bg-[url('../public/bg_small.png')] md:bg-[url('../public/bg_large.png')] lg:bg-[url('../public/bg_xl.png')] bg-cover bg-center bg-no-repeat justify-center">
-          <div className="text-lg flex flex-row items-start sm:text-xl text-white -mx-6 px-3 sm:px-6 py-16 mb-lh">
-            <div className="relative w-full sm:w-[34rem] px-6 py-6 mt-32 md:mt-48 backdrop-blur-sm bg-black/30 font-space">
-              <p>A platform for realistic social simulations,</p>
-              <p>& an incubator for social intelligence.</p>
+          <div className="relative snap-start w-full overflow-hidden justify-center">
+            <Image className="block md:hidden"
+              src = {bg_small}
+              alt = "background image"
+              quality={100}
+              placeholder="blur"
+              sizes="100vw"
+              fill
+              style={{
+                objectFit: 'cover',
+                position:'absolute',
+              }}
+            />
+            <Image className="hidden md:block 2xl:hidden "
+              src = {bg_large}
+              alt = "background image"
+              quality={100}
+              placeholder="blur"
+              sizes="100vw"
+              fill
+              style={{
+                objectFit: 'cover',
+                position:'absolute',
+              }}
+            />
+            <Image className="hidden 2xl:block "
+              src = {bg_xl}
+              alt = "background image"
+              quality={100}
+              placeholder="blur"
+              sizes="100vw"
+              fill
+              style={{
+                objectFit: 'cover',
+                position:'absolute',
+              }}
+            />
+            <div className="text-lg flex flex-row items-start sm:text-xl text-white -mx-6 px-9 sm:px-18 py-16 mb-lh">
+              <div className="relative w-full sm:w-[34rem] px-6 py-6 mt-32 md:mt-48 backdrop-blur-sm bg-black/30 font-space">
+                <p>A platform for realistic social simulations,</p>
+                <p>& an incubator for social intelligence.</p>
+              </div>
             </div>
           </div>
-        </div>
         <Detail.ContentContainer className="mx-auto max-w-2xl lg:max-w-5xl">
         
         <SectionContent>
@@ -52,7 +92,7 @@ export default function Home() {
               speed={60}
               deletionSpeed={70}
               style={{ fontSize: '2em' }}
-              repeat={2}
+              repeat={Infinity}
             />
         </SectionContent>
         <SectionContent>
