@@ -26,7 +26,7 @@ export default function Home() {
   const titleRef = React.useRef(null)
   return (
     <Detail.Container data-cy="home-intro" ref={scrollContainerRef}>
-        <div className="h-screen w-full snap-mandatory snap-y overflow-y-scroll">
+        <div className="h-screen w-full snap-proximity snap-y overflow-y-scroll">
           <div className="relative snap-start w-full overflow-hidden justify-center">
             <Image className="block md:hidden"
               src = {bg_small}
