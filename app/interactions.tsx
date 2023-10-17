@@ -70,7 +70,7 @@ export const Interactions = () => {
                             <Quoter quoter={"[action] leans back on the couch, closing his eyes to fully appreciate the classical music"} model={"GPT-4"} /> 
                             <div className="flex">
                             <div className="py-2 px-4 text-md leading-3 italic">Theme:</div>
-                            <div className="py-2 px-4 text-xs leading-3 text-indigo-700 rounded-full bg-indigo-100">persuation</div>
+                            <div className="py-2 px-4 text-xs leading-3 text-indigo-700 rounded-full bg-indigo-100">persuasion</div>
                             <div className="py-2 px-4 ml-3 text-xs leading-3 text-indigo-700 rounded-full bg-indigo-100">non-verbal</div>
                         </div>
                     </div>
