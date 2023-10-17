@@ -24,6 +24,10 @@ function SectionContent(props: React.JSX.IntrinsicAttributes & React.ClassAttrib
   return <div className="snap-start w-full gap-8 grid grid-cols-12 py-16 px-6 sm:px-12" {...props} />
 }
 
+function SectionTitle(props: React.JSX.IntrinsicAttributes & React.ClassAttributes<HTMLDivElement> & React.HTMLAttributes<HTMLDivElement>) {
+  return <h1 className="text-2xl col-span-12 font-space text-teal-700  dark:text-teal-400 font-bold dark:font-light dark:drop-shadow-[0_1px_15px_#ccfbf1]" {...props} />
+}
+
 // Xuhui Zhou, Hao Zhu, Leena Mathur, Ruohong Zhang, Haofei Yu, Zhengyang Qi, Louis-Philippe Morency, Yonatan Bisk, Daniel Fried, Graham Neubig, Maarten Sap
 
 const team_members = [
@@ -163,7 +167,7 @@ export default function Home() {
             />
         </SectionContent>
         <SectionContent>
-            <h1 className="text-2xl col-span-12 w-full font-space text-teal-700 dark:text-teal-400 font-bold">Key features of <span className="font-display inline">Sotopia</span></h1>
+            <SectionTitle>Key features of <span className="font-display inline">Sotopia</span></SectionTitle>
               <div className="col-span-12 lg:col-span-4">
                 <h2 className="text-xl font-space text-teal-700 dark:text-teal-400 font-bold">Enables human-AI interaction</h2>
                 <p className="prose mt-4 text-md  text-gray-500 dark:text-gray-200 font-space">
@@ -187,7 +191,7 @@ export default function Home() {
         </SectionContent>
 
         <SectionContent>
-        <h1 className="text-2xl col-span-12 font-space text-teal-700 dark:text-teal-400 font-bold"><span className="font-display inline">Sotopia</span> concepts</h1>
+        <SectionTitle><span className="font-display inline">Sotopia</span> concepts</SectionTitle>
         <div className="col-span-12 flex flex-row-reverse lg:grid lg:col-span-4">
           <div className="w-2/3 lg:w-full">
           <Image
@@ -212,7 +216,7 @@ export default function Home() {
         </SectionContent>
 
         <SectionContent>
-          <h1 className="text-2xl col-span-12 font-space text-teal-700 dark:text-teal-400 font-bold">Social Simulation</h1>
+          <SectionTitle>Social Simulation</SectionTitle>
           <div className="lg:col-span-6 col-span-12">
             <p className="font-space text-gray-500 dark:text-gray-200 font-lg mb-5"><span className="font-display inline">Sotopia</span>&apos;s main goal is to simulate social interactions.</p>
             <p className="font-space text-gray-500 dark:text-gray-200 font-lg mb-5">In <span className="font-display inline">Sotopia</span> (as of now), we create 90 social scenarios spanning a range of cooperative, competitive, and mixed social goals along with 40 characters with individual personalities, occupations, secrets, background stories, and relationships with other characters, the cross product of which constructs a large task space.
@@ -234,7 +238,7 @@ export default function Home() {
         </SectionContent>
 
         <SectionContent>
-          <h1 className="text-2xl col-span-12 font-space text-teal-700 dark:text-teal-400 font-bold">Social Evaluation</h1>
+          <SectionTitle>Social Evaluation</SectionTitle>
           <div className="lg:col-span-6 col-span-12">
             <p className="font-space text-gray-500 dark:text-gray-200 font-lg mb-3"><span className="font-display inline">Sotopia</span> supports evaluation of social interactions.</p>
             <p className="font-space text-gray-500 dark:text-gray-200 font-lg mb-3">To comprehensively evaluate multi-faceted social interactions, it&apos;s essential to acknowledge that human motivations inherently encompass a diverse set of implicit goals. These goals include maintaining relationships, managing finances, acquiring information, safeguarding secrets, and adhering to social norms. Simply reducing this complexity to a single score or a &quot;winning rate&quot; falls short in capturing the richness of these interactions. 
@@ -247,20 +251,23 @@ export default function Home() {
         </SectionContent>
 
         <div className="snap-start h-screen w-full flex flex-col py-12 px-6 sm:px-12 space-y-8">
-            <h1 className="text-2xl w-full font-space text-teal-700 dark:text-teal-400 font-bold">Simulation Highlights</h1>
+            <SectionTitle>Simulation Highlights</SectionTitle>
             <h1 className="text-lg w-full font-space text-grey-500 dark:text-grey-200 italic">Below shows the highlights of the example simulation. Click the external link to view the full episode and corresponding evaluation.</h1>
             <Interactions />
         </div>
 
        
-        <div className="snap-start h-screen w-full flex flex-col py-12 px-6 sm:px-12 space-y-8">
-        <h1 className="text-2xl w-full font-space text-teal-700 dark:text-teal-400 font-bold">Get started</h1>
-        TODO add code snippets here: two lines of code to start a game. And links to the tutorial.
-        </div>
-        <div className="snap-start h-screen w-full flex flex-col py-12 px-6 sm:px-12 space-y-8">
-        <h1 className="text-2xl w-full font-space text-teal-700 dark:text-teal-400 font-bold">Team</h1>
-        TODO add team members here. 
-        </div>
+        <SectionContent>
+            <SectionTitle>Meet the team</SectionTitle>
+            {
+              team_members.map((member, index) => (
+                <Avatar className="col-span-3 lg:col-span-2" key={index}>
+                  <AvatarImage className="h-full w-full" src={member.avatar} alt={member.name} />
+                  <AvatarFallback>{member.initials}</AvatarFallback>
+                </Avatar>
+              ))
+            }
+          </SectionContent>
         </Detail.ContentContainer>
 
         </div>
