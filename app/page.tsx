@@ -8,7 +8,7 @@ import profiles from "../public/profiles.png";
 
 import { Detail } from '@/components/ListDetail/Detail'
 import { TitleBar } from '@/components/ListDetail/TitleBar'
-import React from "react";
+import React, { useEffect } from "react";
 import Interactions from "./interactions";
 import { TypeAnimation } from 'react-type-animation';
 import { Evaluation } from "./evaluation";
@@ -19,6 +19,8 @@ import bg_xl from "../public/bg_xl.png";
 import { ModeToggle } from "@/components/ui/model-toggle";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { cn } from "@/lib/utils";
+import Link from "next/link";
 
 function SectionContent(props: React.JSX.IntrinsicAttributes & React.ClassAttributes<HTMLDivElement> & React.HTMLAttributes<HTMLDivElement>) {
   return <div className="snap-start w-full gap-8 grid grid-cols-12 py-16 px-6 sm:px-12" {...props} />
@@ -34,63 +36,97 @@ const team_members = [
   {
     name: "Xuhui Zhou",
     avatar: "/team/xuhui.jpg",
-    initials: "XZ"
+    initials: "XZ",
+    gradient: "from-red-200 via-blue-300 to-fuchsia-300", // random gradient
+    role: "Co-Lead",
+    url: "https://xuhuiz.com"
   },
   {
     name: "Hao Zhu",
     avatar: "/team/hao.png",
-    initials: "HZ"
+    initials: "HZ",
+    gradient: "from-lime-200 via-rose-300 to-amber-300", // random gradient
+    role: "Co-Lead",
+    url: "https://zhuhao.me"
   },
   {
     name: "Leena Mathur",
     avatar: "/team/leena.jpg",
-    initials: "LM"
+    initials: "LM",
+    gradient: "from-cyan-200 via-purple-300 to-orange-300", // random gradient
+    role: "Annotations",
+    url: "https://l-mathur.github.io"
   },
   {
     name: "Ruohong Zhang",
     avatar: "/team/ruohong.jpg",
-    initials: "RZ"
+    initials: "RZ",
+    gradient: "from-pink-200 via-yellow-300 to-emerald-300", // random gradient
+    role: "Model training",
+    url: "https://scholar.google.com/citations?user=RiDZxz8AAAAJ&hl=en"
   },
   {
     name: "Haofei Yu",
     avatar: "/team/haofei.jpg",
-    initials: "HY"
+    initials: "HY",
+    gradient: "from-teal-200 via-red-300 to-indigo-300", // random gradient
+    role: "Model inference",
+    url: "https://haofeiyu.me"
   },
   {
     name: "Zhengyang Qi",
     avatar: "/team/zhengyang.jpg",
-    initials: "ZQ"
+    initials: "ZQ",
+    gradient: "from-rose-200 via-amber-300 to-lime-300", // random gradient
+    role: "Model inference",
+    url: "https://zhengyangqi.com"
   },
   {
-    name: "Louis-Philippe Morency",
+    name: "L.-P. Morency",
     avatar: "/team/louis.jpg",
-    initials: "LM"
+    initials: "LM",
+    gradient: "from-purple-200 via-orange-300 to-cyan-300", // random gradient
+    role: "Advisor",
+    url: "https://www.cs.cmu.edu/~morency/"
   },
   {
     name: "Yonatan Bisk",
     avatar: "/team/yonatan.jpg",
-    initials: "YB"
+    initials: "YB",
+    gradient: "from-emerald-200 via-indigo-300 to-pink-300", // random gradient
+    role: "Advisor",
+    url: "https://yonatanbisk.com"
   },
   {
     name: "Daniel Fried",
     avatar: "/team/daniel.jpg",
-    initials: "DF"
+    initials: "DF",
+    gradient: "from-yellow-200 via-teal-300 to-red-300", // random gradient
+    role: "Advisor",
+    url: "https://dpfried.github.io"
   },
   {
     name: "Graham Neubig",
     avatar: "/team/graham.jpg",
-    initials: "GN"
+    initials: "GN",
+    gradient: "from-amber-200 via-lime-300 to-rose-300", // random gradient
+    role: "Advisor",
+    url: "http://phontron.com"
   },
   {
     name: "Maarten Sap",
     avatar: "/team/maarten.jpg",
-    initials: "MS"
+    initials: "MS",
+    gradient: "from-indigo-200 via-pink-300 to-emerald-300", // random gradient
+    role: "Advisor",
+    url: "https://maartensap.com"
   }
 ]
 
 export default function Home() {
   const scrollContainerRef = React.useRef(null)
   const titleRef = React.useRef(null)
+  const [team_members_state, change_team_members_state] = React.useState(team_members)
   return (
     <Detail.Container data-cy="home-intro" ref={scrollContainerRef}>
         <div className="relative h-screen w-full snap-proximity snap-y overflow-y-scroll">
@@ -254,22 +290,25 @@ export default function Home() {
             <SectionTitle>Simulation Highlights</SectionTitle>
             <h1 className="text-lg w-full font-space text-grey-500 dark:text-grey-200 italic">Below shows the highlights of the example simulation. Click the external link to view the full episode and corresponding evaluation.</h1>
             <Interactions />
-        </div>
+            </div>
 
-       
-        <SectionContent>
-            <SectionTitle>Meet the team</SectionTitle>
-            {
-              team_members.map((member, index) => (
-                <Avatar className="col-span-3 lg:col-span-2" key={index}>
-                  <AvatarImage className="h-full w-full" src={member.avatar} alt={member.name} />
-                  <AvatarFallback>{member.initials}</AvatarFallback>
-                </Avatar>
-              ))
-            }
-          </SectionContent>
-        </Detail.ContentContainer>
-
+            <SectionContent>
+              <SectionTitle>Meet the team</SectionTitle>
+              {team_members_state.map((member, index) => (
+                <Link href={member.url} scroll={false} key={index} className="col-span-3 lg:col-span-2 text-center font-space">
+                  <div className="absoluate">
+                    <Avatar className={cn("w-full dark:border-transparent dark:border-2", "dark:bg-gradient-to-br", member.gradient)}>
+                      <AvatarImage src={member.avatar} alt={member.name} />
+                      <AvatarFallback>{member.initials}</AvatarFallback>
+                    </Avatar>
+                  </div>
+                  <span className="font-light">{member.name} </span>
+                  <br />
+                  <span className="italic"> {member.role} </span>
+                </Link>
+              ))}
+            </SectionContent>
+          </Detail.ContentContainer>
         </div>
   </Detail.Container>
   );
