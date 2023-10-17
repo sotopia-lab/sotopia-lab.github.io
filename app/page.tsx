@@ -307,14 +307,17 @@ export default function Home() {
               {team_members_state.map((member, index) => (
                 <Link href={member.url} scroll={false} key={index} className="col-span-3 lg:col-span-2 text-center font-space">
                   <div className="absoluate">
-                    <Avatar className={cn("w-full dark:border-transparent dark:border-2", "dark:bg-gradient-to-br", member.gradient)}>
+                    <Avatar className={cn("w-full hover:shadow-lg hover:-translate-y-[1px] hover:shadow-gray-500 dark:shadow-gray-200 dark:border-transparent dark:border-2", "dark:bg-gradient-to-br", member.gradient)}>
                       <AvatarImage src={member.avatar} alt={member.name} />
                       <AvatarFallback>{member.initials}</AvatarFallback>
                     </Avatar>
                   </div>
+                  
+                  <div className="w-full mt-4">
                   <span className="font-light">{member.name} </span>
                   <br />
                   <span className="italic"> {member.role} </span>
+                  </div>
                 </Link>
               ))}
             </SectionContent>
