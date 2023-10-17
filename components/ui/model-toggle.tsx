@@ -5,13 +5,20 @@ import { MoonIcon, SunIcon } from "@radix-ui/react-icons"
 import { useTheme } from "next-themes"
  
 import { Button } from "@/components/ui/button"
+import { useEffect } from "react"
 
  
-export function ModeToggle() {
+export function ModeToggle({ className }: { className?: string }) {
   const { setTheme, theme } = useTheme();
   const [_, startTransition] = React.useTransition();    
+  useEffect(() => {
+    // Set the default theme to 'dark' when the component mounts
+    setTheme('dark');
+  }, []);
+
   return (
     <Button
+      className={className}
       variant="ghost"
       size="icon"
       onClick={() => {

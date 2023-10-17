@@ -21,6 +21,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
+import LTI from "@/components/icons/lti";
 
 function SectionContent(props: React.JSX.IntrinsicAttributes & React.ClassAttributes<HTMLDivElement> & React.HTMLAttributes<HTMLDivElement>) {
   return <div className="snap-start w-full gap-8 grid grid-cols-12 py-16 px-6 sm:px-12" {...props} />
@@ -54,7 +55,7 @@ const team_members = [
     avatar: "/team/leena.jpg",
     initials: "LM",
     gradient: "from-cyan-200 via-purple-300 to-orange-300", // random gradient
-    role: "Annotations",
+    role: "Evaluation",
     url: "https://l-mathur.github.io"
   },
   {
@@ -82,7 +83,7 @@ const team_members = [
     url: "https://zhengyangqi.com"
   },
   {
-    name: "L.-P. Morency",
+    name: "Louis-Philippe Morency",
     avatar: "/team/louis.jpg",
     initials: "LM",
     gradient: "from-purple-200 via-orange-300 to-cyan-300", // random gradient
@@ -186,10 +187,11 @@ export default function Home() {
           </div>
         <Detail.ContentContainer className="mx-auto max-w-2xl lg:max-w-5xl">
         <SectionContent>
-            {/* <h1 className="text-2xl col-span-12 w-full font-space text-teal-700 dark:text-teal-400/50 italic dark:text-teal-500 dark:drop-shadow-[0_1px_35px_#ccfbf1]">Large language models like GPT-4 are excellent at solving tasks, but do they have social intelligence?
-            To answer that, Sotopia focus on social interactions among humans and AI agents with simulation, evaulation and analyzation.
-            Sotopia, born for better AI social intelligence.</h1> */}
-            <TypeAnimation className="lg:h-24 h-60 col-span-12 w-full font-space text-teal-700/50 italic dark:text-teal-400 dark:drop-shadow-[0_1px_15px_#ccfbf1]"
+            <p className="text-2xl col-span-12 w-full font-space text-teal-700/75 italic dark:text-teal-500 dark:drop-shadow-[0_1px_35px_#ccfbf1] whitespace-pre-wrap">Large language models like GPT-4 are excellent at solving tasks, but how good are their social skills?</p>
+            
+            <p className="text-2xl col-span-12 w-full font-space text-teal-700/75 italic dark:text-teal-500 dark:drop-shadow-[0_1px_35px_#ccfbf1] whitespace-pre-wrap">To enable answering this question, we create <span className="font-display inline">Sotopia</span>, an environment that simulates and evaluates open-ended social interactions between AI and human agents.</p>
+         
+            {/* <TypeAnimation className="lg:h-24 h-60 col-span-12 w-full font-space text-teal-700/50 italic dark:text-teal-400 dark:drop-shadow-[0_1px_15px_#ccfbf1]"
               preRenderFirstString={true}
               sequence={[
                 // Same substring at the start will only be typed once, initially
@@ -210,7 +212,7 @@ export default function Home() {
               deletionSpeed={70}
               style={{whiteSpace: 'pre-line', fontSize: '1.5em' }}
               repeat={0}
-            />
+            /> */}
         </SectionContent>
         <SectionContent>
             <SectionTitle>Key features of <span className="font-display inline">Sotopia</span></SectionTitle>
@@ -221,7 +223,7 @@ export default function Home() {
                 </p>
               </div>
               <div className="col-span-12 lg:col-span-4">
-                <h2 className="text-xl font-space text-teal-700 dark:text-teal-400 font-bold">Focus goal-driven behavior</h2>
+                <h2 className="text-xl font-space text-teal-700 dark:text-teal-400 font-bold">Centers goal-driven behavior</h2>
                 <p className="prose mt-4 text-md  text-gray-500 dark:text-gray-200 font-space">
                 Scenarios in <span className="font-display inline">Sotopia</span> typically include both social goals and hidden character information for each interaction.
                 Agents in <span className="font-display inline">Sotopia</span> are driven by their own goals and background.
@@ -229,7 +231,7 @@ export default function Home() {
                 </p>
               </div>
               <div className="col-span-12 lg:col-span-4">
-                <h2 className="text-xl font-space text-teal-700 dark:text-teal-400 font-bold">Supports open-endedness</h2>
+                <h2 className="text-xl font-space text-teal-700 dark:text-teal-400 font-bold">Supports customization</h2>
                 <p className="prose mt-4 text-md  text-gray-500 dark:text-gray-200 font-space">
                 You are not limited to the original set of tasks in <span className="font-display inline">Sotopia</span>. We have a tutorial teaching you how to create your own characters and scenarios and bring them to life in <span className="font-display inline">Sotopia</span>. The evaluation framework is also open-ended, you can create your own evaluation metrics, whether it&rsquo;s LLM-based or rule-based.
                 </p>
@@ -320,6 +322,10 @@ export default function Home() {
                   </div>
                 </Link>
               ))}
+
+            <p className="text-4xl col-span-12 lg:col-span-6 lg:col-start-2">Language Technologies Institute
+              @ Carnegie Mellon University</p>
+              <LTI className="col-span-12 lg:col-span-4 text-center font-space" />
             </SectionContent>
           </Detail.ContentContainer>
         </div>
