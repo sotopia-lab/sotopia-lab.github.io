@@ -9,7 +9,7 @@ import profiles from "../public/profiles.png";
 import { Detail } from '@/components/ListDetail/Detail'
 import { TitleBar } from '@/components/ListDetail/TitleBar'
 import React, { useEffect } from "react";
-import Interactions from "./interactions";
+import Interactions, { OutLinkLogo } from "./interactions";
 import { TypeAnimation } from 'react-type-animation';
 import { Evaluation } from "./evaluation";
 
@@ -300,7 +300,7 @@ export default function Home() {
 
         <div className="snap-start h-screen w-full flex flex-col py-12 px-6 sm:px-12 space-y-8">
             <SectionTitle>Simulation Highlights</SectionTitle>
-            <h1 className="text-lg w-full font-space text-grey-500 dark:text-grey-200 italic">Below shows the highlights of the example simulation. Click the external link to view the full episode and corresponding evaluation.</h1>
+            <h1 className="text-lg w-full font-space text-grey-500 dark:text-grey-200 italic">Below are some highlights of the <span className="font-display inline">Sotopia</span> interactions. Click the <OutLinkLogo link={"https://sotopia-chatbot.vercel.app/render/01H94EFEP55SP18FQ65PZP4BRN"}/> to view the full episode and corresponding evaluation.</h1>
             <Interactions />
             </div>
 
