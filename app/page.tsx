@@ -18,10 +18,71 @@ import bg_large from "../public/bg_large.png";
 import bg_xl from "../public/bg_xl.png";
 import { ModeToggle } from "@/components/ui/model-toggle";
 import { ThemeProvider } from "@/components/theme-provider";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 function SectionContent(props: React.JSX.IntrinsicAttributes & React.ClassAttributes<HTMLDivElement> & React.HTMLAttributes<HTMLDivElement>) {
   return <div className="snap-start w-full gap-8 grid grid-cols-12 py-16 px-6 sm:px-12" {...props} />
 }
+
+// Xuhui Zhou, Hao Zhu, Leena Mathur, Ruohong Zhang, Haofei Yu, Zhengyang Qi, Louis-Philippe Morency, Yonatan Bisk, Daniel Fried, Graham Neubig, Maarten Sap
+
+const team_members = [
+  {
+    name: "Xuhui Zhou",
+    avatar: "/team/xuhui.jpg",
+    initials: "XZ"
+  },
+  {
+    name: "Hao Zhu",
+    avatar: "/team/hao.png",
+    initials: "HZ"
+  },
+  {
+    name: "Leena Mathur",
+    avatar: "/team/leena.jpg",
+    initials: "LM"
+  },
+  {
+    name: "Ruohong Zhang",
+    avatar: "/team/ruohong.jpg",
+    initials: "RZ"
+  },
+  {
+    name: "Haofei Yu",
+    avatar: "/team/haofei.jpg",
+    initials: "HY"
+  },
+  {
+    name: "Zhengyang Qi",
+    avatar: "/team/zhengyang.jpg",
+    initials: "ZQ"
+  },
+  {
+    name: "Louis-Philippe Morency",
+    avatar: "/team/louis.jpg",
+    initials: "LM"
+  },
+  {
+    name: "Yonatan Bisk",
+    avatar: "/team/yonatan.jpg",
+    initials: "YB"
+  },
+  {
+    name: "Daniel Fried",
+    avatar: "/team/daniel.jpg",
+    initials: "DF"
+  },
+  {
+    name: "Graham Neubig",
+    avatar: "/team/graham.jpg",
+    initials: "GN"
+  },
+  {
+    name: "Maarten Sap",
+    avatar: "/team/maarten.jpg",
+    initials: "MS"
+  }
+]
 
 export default function Home() {
   const scrollContainerRef = React.useRef(null)
@@ -185,13 +246,19 @@ export default function Home() {
           <Evaluation />
         </SectionContent>
 
+<<<<<<< HEAD
         <div className="snap-start h-screen w-full flex flex-col py-12 px-6 sm:px-12 space-y-8">
             <h1 className="text-2xl w-full font-space text-teal-700 dark:text-teal-400 font-bold">Simulation Highlights</h1>
             <h1 className="text-lg w-full font-space text-grey-500 dark:text-grey-200 italic">Below shows the highlights of the example simulation. Click the external link to view the full episode and corresponding evaluation.</h1>
+=======
+        <div className="snap-start w-full flex flex-col py-12 px-6 sm:px-12 space-y-8">
+            <h1 className="text-2xl w-full font-space text-teal-700 font-bold">Simulation Highlights</h1>
+>>>>>>> 40b14950062312006886ce16ab9894fb3dab81c2
             <Interactions />
         </div>
 
        
+<<<<<<< HEAD
         <div className="snap-start h-screen w-full flex flex-col py-12 px-6 sm:px-12 space-y-8">
         <h1 className="text-2xl w-full font-space text-teal-700 dark:text-teal-400 font-bold">Get started</h1>
         TODO add code snippets here: two lines of code to start a game. And links to the tutorial.
@@ -201,8 +268,26 @@ export default function Home() {
         TODO add team members here. 
         </div>
         </Detail.ContentContainer>
+=======
+        {/* <div className="snap-start h-screen w-full flex flex-col py-12 px-6 sm:px-12 space-y-8">
+        <h1 className="text-2xl w-full font-space text-teal-700 font-bold">Get started</h1>
+        TODO add code snippets here: two lines of code to start a game. And links to the tutorial.
+        </div> */}
+          <SectionContent>
+            <h1 className="text-2xl col-span-12 font-space text-teal-700 font-bold">Meet our team</h1>
+            {
+              team_members.map((member, index) => (
+                <Avatar className="col-span-3 lg:col-span-2" key={index}>
+                  <AvatarImage className="h-full w-full" src={member.avatar} alt={member.name} />
+                  <AvatarFallback>{member.initials}</AvatarFallback>
+                </Avatar>
+              ))
+            }
+          </SectionContent>
+          </Detail.ContentContainer>
+>>>>>>> 40b14950062312006886ce16ab9894fb3dab81c2
 
-      </div>
+        </div>
   </Detail.Container>
   );
 }
