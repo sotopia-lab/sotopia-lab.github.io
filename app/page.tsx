@@ -127,6 +127,16 @@ export default function Home() {
   const scrollContainerRef = React.useRef(null)
   const titleRef = React.useRef(null)
   const [team_members_state, change_team_members_state] = React.useState(team_members)
+  useEffect(() => {
+    // generate random gradient for each team member
+    change_team_members_state(team_members.map((member) => {
+      return {
+        ...member,
+        gradient: team_members[Math.floor(Math.random() * team_members.length)].gradient
+      }
+    }));
+    return () => {};
+  }, [])
   return (
     <Detail.Container data-cy="home-intro" ref={scrollContainerRef}>
         <div className="relative h-screen w-full snap-proximity snap-y overflow-y-scroll">
