@@ -29,7 +29,7 @@ export async function generateMetadata({
       card: "summary_large_image",
       title,
       description,
-      creator: "@steventey",
+      creator: "@Hao_Zhu_",
     },
   };
 }

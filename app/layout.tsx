@@ -8,6 +8,8 @@ import { cn } from "@/lib/utils";
 import { Github, BuyMeACoffee } from "@/components/icons";
 import { Analytics } from "@vercel/analytics/react";
 import { Toaster } from "sonner";
+import { ThemeProvider } from "@/components/theme-provider"
+import { ModeToggle } from "@/components/ui/model-toggle";
 
 const clash = localFont({
   src: "../styles/ClashDisplay-Semibold.otf",
@@ -40,9 +42,14 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body className={cn(clash.variable, space.variable)}>
+      <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
         <Toaster />
         
-        {/* <div className="fixed h-screen w-full" /> */}
         <div
           className={`fixed top-0 w-full ${
             scrolled
@@ -51,8 +58,8 @@ export default function RootLayout({
           } z-30 transition-all`}
         >
           <div className="w-full pl-3 sm:px-12 flex h-16 items-center justify-between">
-            <Link href="/" className="flex items-center font-display text-2xl ">
-              <svg className="h-5 w-5"
+            <Link href="/" className="flex items-center font-display text-4xl">
+              <svg className="h-10 w-10 dark:text-sky-300 dark:drop-shadow-[0_3px_10px_#bae6fd]"
                 viewBox="0 0 300 300"
                 fill="currentColor"
                 xmlns="http://www.w3.org/2000/svg"
@@ -62,15 +69,22 @@ export default function RootLayout({
                 <path d="M50,0l100,0c0,55.23-44.77,100-100,100"/>
                 <path d="M250,300l-100,0c0-55.23,44.77-100,100-100"/>
               </svg>
-              <p>Sotopia</p>
+              <p className="dark:text-sky-400 dark:drop-shadow-[0_3px_10px_#bae6fd]">Sotopia</p>
             </Link>
             <div className="flex items-center space-x-4 sm:px-6">
               <a href="/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group hidden max-w-fit items-center justify-center space-x-2 rounded-full border border-black bg-transparent px-3 py-1.5 text-sm text-black transition-colors hover:bg-white hover:text-black sm:flex"
+                className="group hidden max-w-fit items-center justify-center space-x-2 rounded-full border border-black bg-black px-3 py-1.5 text-sm text-white transition-colors hover:bg-white hover:text-black sm:flex"
               >
                 <p>Paper</p>
+              </a>
+              <a href="/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group hidden max-w-fit items-center justify-center space-x-2 rounded-full border border-black bg-black px-3 py-1.5 text-sm text-white transition-colors hover:bg-white hover:text-black sm:flex"
+              >
+                <p>Chat Now</p>
               </a>
               <a
                 href="/"
@@ -93,14 +107,16 @@ export default function RootLayout({
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <Github />
+                  <Github className="dark:text-sky-500 dark:drop-shadow-[0_3px_10px_#bae6fd]" />
               </a>
+              <ModeToggle className="dark:text-sky-500 dark:drop-shadow-[0_3px_10px_#bae6fd]" />
             </div>
           </div>
         </div>
+        
         <main className="flex w-full flex-col items-center justify-center">
           {children}
-        </main>
+        </main> 
         {/* <div className="absolute w-full py-5 text-center">
           <div className="flex items-center justify-center space-x-4 mt-2">
           <p className="text-gray-500">
@@ -113,6 +129,7 @@ export default function RootLayout({
             </p>
           </div>
         </div> */}
+        </ThemeProvider>
         <Analytics />
       </body>
     </html>
