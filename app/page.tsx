@@ -16,12 +16,14 @@ import { Evaluation } from "./evaluation";
 import bg_small from "../public/bg_small.png";
 import bg_large from "../public/bg_large.png";
 import bg_xl from "../public/bg_xl.png";
+import sotopiaTown from '../public/island_only.svg'
 import { ModeToggle } from "@/components/ui/model-toggle";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 import LTI from "@/components/icons/lti";
+import CMU from "@/components/icons/cmu";
 
 function SectionContent(props: React.JSX.IntrinsicAttributes & React.ClassAttributes<HTMLDivElement> & React.HTMLAttributes<HTMLDivElement>) {
   return <div className="snap-start w-full gap-8 grid grid-cols-12 py-16 px-6 sm:px-12" {...props} />
@@ -141,8 +143,8 @@ export default function Home() {
   return (
     <Detail.Container data-cy="home-intro" ref={scrollContainerRef}>
         <div className="relative h-screen w-full snap-proximity snap-y overflow-y-scroll">
-          <div className="relative snap-start w-full overflow-hidden justify-center">
-            <Image className="block md:hidden"
+          <div className="relative snap-start w-full overflow-hidden justify-center dark:bg-gradient-to-br dark:from-sky-900 bg-gradient-to-br from-yellow-50 to-emerald-200">
+            <Image className="block md:hidden dark:hidden"
               src = {bg_small}
               alt = "background image"
               quality={100}
@@ -154,7 +156,7 @@ export default function Home() {
                 position:'absolute',
               }}
             />
-            <Image className="hidden md:block 2xl:hidden "
+            <Image className="hidden md:block 2xl:hidden dark:hidden"
               src = {bg_large}
               alt = "background image"
               quality={100}
@@ -166,7 +168,7 @@ export default function Home() {
                 position:'absolute',
               }}
             />
-            <Image className="hidden 2xl:block "
+            <Image className="hidden 2xl:block dark:hidden"
               src = {bg_xl}
               alt = "background image"
               quality={100}
@@ -178,6 +180,13 @@ export default function Home() {
                 position:'absolute',
               }}
             />
+            <Image className="hidden dark:block drop-shadow-[30px_30px_150px_#bfdbfe]" src={sotopiaTown} alt="Sotopia Town" style={{
+                objectFit: 'cover',
+                position:'absolute',
+                left: '50%',
+                top: '40%',
+                transform: 'translate(-50%, -50%) scale(120%)',
+            }}/>
             <div className="text-lg flex flex-row items-start sm:text-xl text-white -mx-6 px-9 sm:px-18 py-16 mb-lh">
               <div className="relative w-full sm:w-[34rem] px-6 py-6 mt-32 md:mt-48 backdrop-blur-sm bg-black/30 font-space">
                 <p>A platform for realistic social simulations,</p>
@@ -323,9 +332,11 @@ export default function Home() {
                 </Link>
               ))}
 
-            <p className="text-4xl col-span-12 lg:col-span-6 lg:col-start-2">Language Technologies Institute
-              @ Carnegie Mellon University</p>
-              <LTI className="col-span-12 lg:col-span-4 text-center font-space" />
+            {/* <p className="text-4xl col-span-12 lg:col-span-7 lg:col-start-1 font-sans">Language Technologies Institute
+            @ Carnegie Mellon University</p> */}
+            <CMU className="col-span-12 lg:col-span-5 text-center font-space bg-black p-3" />
+            <LTI className="col-span-12 lg:col-span-6 lg:col-start-6 text-center font-space" />
+            <p className="text-xl col-span-12 justify-center">We greatly thank <a href="https://openai.com/" className="underline decoration-dotted">OpenAI</a> and <a href="https://openai.com/" className="underline decoration-dotted">Together AI</a> for their support of model credits.</p> 
             </SectionContent>
           </Detail.ContentContainer>
         </div>

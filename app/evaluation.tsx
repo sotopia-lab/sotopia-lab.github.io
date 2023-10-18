@@ -8,7 +8,7 @@ export const Evaluation = () => {
                 <p className="text-center font-sans text-sm italic">Role-played character: Noah Davis</p>
             </div>
             {rewardDiagram()}
-            <figcaption className="mt-3 text-sm text-gray-500 dark:text-slate-50 italic">The figure shows an example of evaluation for the aforementioned social interaction.</figcaption>
+            <figcaption className="mt-3 text-sm text-gray-500 dark:text-slate-50 italic">The figure shows an example of evaluation for the social interaction.</figcaption>
           </figure>
  
     );
