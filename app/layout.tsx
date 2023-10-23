@@ -72,7 +72,7 @@ export default function RootLayout({
               <p className="dark:text-sky-400 dark:drop-shadow-[0_3px_10px_#bae6fd]">Sotopia</p>
             </Link>
             <div className="flex items-center space-x-4 sm:px-6">
-              <a href="/"
+              <a href="http://arxiv.org/abs/2310.11667"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group hidden max-w-fit items-center justify-center space-x-2 rounded-full border border-black bg-black px-3 py-1.5 text-sm text-white transition-colors hover:bg-white hover:text-black sm:flex"
