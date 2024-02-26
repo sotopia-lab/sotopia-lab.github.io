@@ -84,6 +84,15 @@ export default function Index() {
         Recent advances in large language models (LLM) have enabled richer social simulations, allowing for the study of various social phenomena with LLM-based agents. However, most work has used an omniscient perspective on these simulations (e.g., single LLM to generate all interlocutors), which is fundamentally at odds with the non-omniscient, information asymmetric interactions that humans have. To examine these differences, we develop an evaluation framework to simulate social interactions with LLMs in various settings (omniscient, non-omniscient). Our experiments show that interlocutors simulated omnisciently are much more successful at accomplishing social goals compared to non-omniscient agents, despite the latter being the more realistic setting. Furthermore, we demonstrate that learning from omniscient simulations improves the apparent naturalness of interactions but scarcely enhances goal achievement in cooperative scenarios. Our findings indicate that addressing information asymmetry remains a fundamental challenge for LLM-based agents.
         </p>        
       </section> 
+
+      <section className="md:grid md:grid-cols-8 items-left md:justify-between mt-20">       
+        <h1 className="text-2xl md:text-3xl md:col-start-2 md:col-end-7 tracking-tighter leading-tight pb-16 font-grotesk">
+        Motivation               
+        </h1>
+        <p className="md:col-start-2 md:col-end-7 text-md md:text-lg antialiased">
+        ...
+        </p>        
+      </section>  
             
       <section className="md:grid md:grid-cols-8 items-left md:justify-between mt-20">       
         <h1 className="text-2xl md:text-3xl md:col-start-2 md:col-end-7 tracking-tighter leading-tight pb-16 font-grotesk">
@@ -93,7 +102,6 @@ export default function Index() {
         ...
         </p>        
       </section> 
-
             
       <section className="md:grid md:grid-cols-8 items-left md:justify-between my-20">       
         <h1 className="text-2xl md:text-3xl md:col-start-2 md:col-end-7 tracking-tighter leading-tight pb-16 font-grotesk">
