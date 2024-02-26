@@ -1,15 +1,18 @@
 import "@/styles/globals.css";
 import type { Metadata } from "next";
 import localFont from "next/font/local";
-import { Inter, Space_Grotesk} from "next/font/google";
+import { Inter, Space_Grotesk, Open_Sans} from "next/font/google";
+import { GeistSans } from 'geist/font/sans';
 import Image from "next/image";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
-import { Github, BuyMeACoffee } from "@/components/icons";
+import { DownArrowIcon } from "@/components/Icon";
+import { Github, BuyMeACoffee} from "@/components/icons";
 import { Analytics } from "@vercel/analytics/react";
 import { Toaster } from "sonner";
 import { ThemeProvider } from "@/components/theme-provider"
 import { ModeToggle } from "@/components/ui/model-toggle";
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger, DropdownMenuPortal } from "@/components/ui/dropdown-menu";
 
 const clash = localFont({
   src: "../styles/ClashDisplay-Semibold.otf",
@@ -22,9 +25,15 @@ const inter = Inter({
 });
 
 const space = Space_Grotesk({
+  variable: "--font-grotesk",
+  subsets: ["latin"]
+});
+
+const sourceSans = Open_Sans({
   variable: "--font-space",
   subsets: ["latin"]
 });
+
 
 export const metadata: Metadata = {
   title: "Sotopia",
@@ -72,13 +81,33 @@ export default function RootLayout({
               <p className="dark:text-sky-400 dark:drop-shadow-[0_3px_10px_#bae6fd]">Sotopia</p>
             </Link>
             <div className="flex items-center space-x-4 sm:px-6">
-              <a href="http://arxiv.org/abs/2310.11667"
+              {/* <a href="http://arxiv.org/abs/2310.11667"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group hidden max-w-fit items-center justify-center space-x-2 rounded-full border border-black bg-black px-3 py-1.5 text-sm text-white transition-colors hover:bg-white hover:text-black sm:flex"
               >
-                <p>Paper</p>
-              </a>
+                <p>Research</p>
+              </a> */}
+                
+              <DropdownMenu>
+                <DropdownMenuTrigger>
+                  <button className="group hidden max-w-fit items-center justify-center space-x-2 rounded-full border border-black bg-black px-3 py-1.5 text-sm text-white transition-colors hover:bg-white hover:text-black sm:flex">Research <DownArrowIcon/></button>
+                </DropdownMenuTrigger>
+                <DropdownMenuPortal>
+                  <DropdownMenuContent className="bg-black text-white">
+                  <a href="https://www.sotopia.world/" className="hover:bg-white hover:text-black">
+                      <DropdownMenuItem className="DropdownMenuItem hover:bg-white hover:text-black">Sotopia</DropdownMenuItem>
+                  </a>
+                  <a href="https://www.sotopia.world/" className="hover:bg-white hover:text-black">
+                      <DropdownMenuItem className="DropdownMenuItem hover:bg-white hover:text-black">Sotopia-pi</DropdownMenuItem>
+                  </a>
+                  <a href="https://www.sotopia.world/" className="hover:bg-white hover:text-black">
+                      <DropdownMenuItem className="DropdownMenuItem hover:bg-white hover:text-black">Agents Vs Script</DropdownMenuItem>
+                  </a>
+                  </DropdownMenuContent>
+                </DropdownMenuPortal>
+              </DropdownMenu>
+                
               <a href="/"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -86,22 +115,21 @@ export default function RootLayout({
               >
                 <p>Chat Now</p>
               </a>
-              <a
-                href="/"
+              <a href="/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group hidden max-w-fit items-center justify-center space-x-2 rounded-full border border-black bg-black px-3 py-1.5 text-sm text-white transition-colors hover:bg-white hover:text-black sm:flex"
               >
-                <p>Documentation</p>
+                <p>Benchmark</p>
               </a>
               <a
-                href="/"
-                target="_blank"
+                href="/about"
                 rel="noopener noreferrer"
-                className="group sm:hidden max-w-fit items-center justify-center space-x-2 rounded-full border border-black bg-black px-3 py-1.5 text-sm text-white transition-colors hover:bg-white hover:text-black"
+                className="group hidden max-w-fit items-center justify-center space-x-2 rounded-full border border-black bg-black px-3 py-1.5 text-sm text-white transition-colors hover:bg-white hover:text-black sm:flex"
               >
-                <p>Doc</p>
+                <p>About Us</p>
               </a>
+             
               <a
                 href="https://github.com/sotopia-lab/sotopia"
                 target="_blank"

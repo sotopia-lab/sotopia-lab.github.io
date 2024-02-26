@@ -13,7 +13,7 @@ export function ModeToggle({ className }: { className?: string }) {
   const [_, startTransition] = React.useTransition();    
   useEffect(() => {
     // Set the default theme to 'dark' when the component mounts
-    setTheme('dark');
+    setTheme('light');
   }, []);
 
   return (
