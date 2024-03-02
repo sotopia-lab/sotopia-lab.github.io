@@ -186,7 +186,7 @@ export default function Page() {
             }}/>
             <div className="text-2xl flex flex-row items-start sm:text-xl text-white -mx-6 px-9 sm:px-18 py-16 mb-lh">
               <div className="relative w-full sm:w-[34rem] px-6 py-6 mt-32 md:mt-48 backdrop-blur-sm bg-black/30 font-space">
-                <p>A platform for realistic social simulations,</p>
+                <p>A research platform for realistic social simulations,</p>
                 <p>& an incubator for social intelligence.</p>
               </div>
             </div>

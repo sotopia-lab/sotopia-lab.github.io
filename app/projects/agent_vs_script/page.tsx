@@ -1,6 +1,26 @@
-import { GitHubIcon } from "@/components/Icon";
+import Image from "next/image";
 import CoverImage from "../components";
+import AgentvsStoryteller_intro from '@/public/projects/agent_vs_storyteller/agent_vs_storyteller_intro.png'
 import agentvsstory from '@/public/projects/agent_vs_storyteller.jpg'
+import goal_results from '@/public/projects/agent_vs_storyteller/goal_results.png'
+
+function scriptMode() {
+  return (
+    <span className="italic font-grotesk">Script mode</span>
+  )
+}
+
+function agentMode() {
+  return (
+    <span className="italic font-grotesk">Agents mode</span>
+  )
+}
+
+function mindreaders() {
+  return (
+    <span className="italic font-grotesk">Mind readers</span>
+  )
+}
 
 export default function Index() {
   return (
@@ -76,8 +96,8 @@ export default function Index() {
       </div>
       
       <div className="container mx-auto px-5">
-      <section className="md:grid md:grid-cols-8 items-left md:justify-between mt-20">       
-        <h1 className="text-2xl md:text-3xl md:col-start-2 md:col-end-7 tracking-tighter leading-tight pb-16 font-grotesk">
+      <section className="md:grid md:grid-cols-8 items-left md:justify-between my-10">       
+        <h1 className="text-2xl md:text-3xl md:col-start-2 md:col-end-7 tracking-tighter leading-tight pb-6 font-grotesk">
             Abstract              
         </h1>
         <p className="md:col-start-2 md:col-end-7 text-md md:text-lg antialiased">
@@ -85,30 +105,84 @@ export default function Index() {
         </p>        
       </section> 
 
-      <section className="md:grid md:grid-cols-8 items-left md:justify-between mt-20">       
-        <h1 className="text-2xl md:text-3xl md:col-start-2 md:col-end-7 tracking-tighter leading-tight pb-16 font-grotesk">
+      <section className="md:grid md:grid-cols-8 items-left md:justify-between my-10">       
+        <h1 className="text-2xl md:text-3xl md:col-start-2 md:col-end-7 tracking-tighter leading-tight pb-6 font-grotesk">
         Motivation               
         </h1>
+        <figure className="md:col-start-2 md:col-end-7 my-8">
+        <Image
+          src={AgentvsStoryteller_intro}
+          quality={100}
+          className="md:col-start-2 md:col-end-7"
+          alt="a picture of green colors"
+                />
+          <figcaption className="z-10 mt-4 text-sm italic text-gray-600">
+                  Figure 1: An illustration between {scriptMode()} simulation and {agentMode()} simulation. In the {agentMode()} simulation, two agents, each equipped with an LLM, negotiate and strategically seek information to reach a mutual agreement. Conversely, in {scriptMode()} simulation, a single omniscient LLM orchestrates the entire interaction based on full access to the agents&lsquo; goals. While initially appearing efficient, this interaction lacks essential human communication properties.
+  </figcaption>
+        </figure>
         <p className="md:col-start-2 md:col-end-7 text-md md:text-lg antialiased">
-        ...
+        People navigate everyday social interactions easily despite not having access to other&lsquo;s mental states (i.e., <span className="italic">information asymmetry</span>).
+          As illustrated in Figure 1, the communication between two agents that are bargaining over a price requires complex interactions for them to understand the interlocutor&lsquo;s motive.
+          With modern-day LLMs, simulating such interactions has gotten better.
+          From building a town of AI-powered characters to simulating social media platforms, and training better chatbot systems, LLMs seem to be capable to realistically simulate human social interactions.</p>
+          <p className="md:col-start-2 md:col-end-7 text-md md:text-lg antialiased">
+However, despite their impressive abilities, one key shortcoming has prevented realistic social simulation: a wide range of prior research has leveraged the <span className="italic">omniscient perspective</span> to model and simulate social interactions.
+By generating all sides of interaction at once or making agent goals transparent to all participants, these simulations diverge from the non-omniscient human interactions that rely on social inference to achieve goals in real-world scenarios. Studying these omniscient simulations could potentially lead to biased or wrong conclusions.
         </p>        
       </section>  
             
-      <section className="md:grid md:grid-cols-8 items-left md:justify-between mt-20">       
-        <h1 className="text-2xl md:text-3xl md:col-start-2 md:col-end-7 tracking-tighter leading-tight pb-16 font-grotesk">
+      <section className="md:grid md:grid-cols-8 items-left md:justify-between my-10">       
+        <h1 className="text-2xl md:text-3xl md:col-start-2 md:col-end-7 tracking-tighter leading-tight pb-6 font-grotesk">
         Simulating Society for Analysis               
         </h1>
         <p className="md:col-start-2 md:col-end-7 text-md md:text-lg antialiased">
-        ...
-        </p>        
+        To investigate the effect of this incongruity, we create a unified simulation framework by building on Sotopia.
+        We set up two modes for simulating human interaction in LLMs: {scriptMode()} and {agentMode()}.
+        As shown in Figure 1, in the {scriptMode()}, one omniscient LLM has access to all the information and generates the entire dialogue from a third-person perspective. In the {agentMode()}, two LLMs assume distinct roles and engage in interaction to accomplish the task despite the presence of information asymmetry.
+        </p>
+
+        <figure className="md:col-start-2 md:col-end-7 my-8">
+        <Image
+          src={goal_results}
+          quality={100}
+          className="md:col-start-2 md:col-end-7"
+          alt="a picture of green colors"
+                />
+          <figcaption className="z-10 mt-4 text-sm italic text-gray-600">
+                  Figure 2: Average goal completion score of models across different modes in various settings. Overall contains all the scenarios, and the other two contains representative scenarios from the cooperative and competitive scenarios. We perform pairwise t-test, and * denotes the score is statistical significantly different from the other two modes in this setting.
+                  To study the effects of information asymmetry, we add one ablation setting where information asymmetry is removed from the {agentMode()} simulation by giving each agent access to other characters&lsquo; information (e.g., social goals). This is referred to as the {mindreaders()}. 
+                </figcaption>
+        </figure>
+      
+        <p className="md:col-start-2 md:col-end-7 text-md md:text-lg antialiased">
+        As shown in Figure 2, there are drastic disparities in each of these modes in terms of achieving social goals and naturalness. The {scriptMode()} significantly overestimates the ability of LLM-agents to achieve social goals, while LLM-based agents struggle to act in situations with information asymmetry. 
+Additionally, the {agentMode()} generates interactions that sound significantly less natural, further highlighting the disparities in these simulation modes.
+        </p>
+        
+              
       </section> 
             
-      <section className="md:grid md:grid-cols-8 items-left md:justify-between my-20">       
-        <h1 className="text-2xl md:text-3xl md:col-start-2 md:col-end-7 tracking-tighter leading-tight pb-16 font-grotesk">
+      <section className="md:grid md:grid-cols-8 items-left md:justify-between my-10">       
+        <h1 className="text-2xl md:text-3xl md:col-start-2 md:col-end-7 tracking-tighter leading-tight pb-6 font-grotesk">
         Simulating Interactions for Training               
         </h1>
         <p className="md:col-start-2 md:col-end-7 text-md md:text-lg antialiased">
-        ...
+          We then ask the question of whether LLM agents can be learned from {scriptMode()} simulations. We finetune GPT-3.5 on a large dataset of interactions generated omnisciently.
+          We find that through finetuning, {agentMode()} models become more natural yet barely improve in cooperative scenarios with information asymmetry.
+          Further analysis shows that {scriptMode()} simulations contain information leakage in cooperative scenarios and tend to produce overly agreeable interlocutors in competitive settings.
+        </p>        
+      </section> 
+
+            
+      <section className="md:grid md:grid-cols-8 items-left md:justify-between my-10">       
+        <h1 className="text-2xl md:text-3xl md:col-start-2 md:col-end-7 tracking-tighter leading-tight pb-6 font-grotesk">
+        Conclusion               
+        </h1>
+        <p className="md:col-start-2 md:col-end-7 text-md md:text-lg antialiased">
+          Our findings suggest that the success of LLMs in simulating social interactions with {scriptMode()} can be misleading.
+          While simulations generated from the third-person perspective of {scriptMode()} score highly in terms of goal completion rate and dialogue fluidity, the conversation strategies used by these LMs over-rely on the benefit of having direct access to the internal states of both parties. 
+          These artifacts hinder {scriptMode()} ability to simulate human-like interaction, and likely lead to an overestimation of the social capabilities of LLMs.
+          Based on our findings, we provide recommendations for reporting LLM-based agent work, encouraging more careful considerations and transparency in using LLMs to simulate social interactions from both data and learning perspectives.
         </p>        
       </section> 
       </div>

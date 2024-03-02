@@ -29,7 +29,7 @@ import LTI from "@/components/icons/lti";
 import CMU from "@/components/icons/cmu";
 
 function SectionContent(props: React.JSX.IntrinsicAttributes & React.ClassAttributes<HTMLDivElement> & React.HTMLAttributes<HTMLDivElement>) {
-  return <div className="snap-start w-full gap-8 grid grid-cols-12 font-inter py-16 px-6 sm:px-12" {...props} />
+  return <div className="snap-start w-full gap-8 grid grid-cols-12 font-inter py-10 px-6 sm:px-12" {...props} />
 }
 
 function SectionTitle(props: React.JSX.IntrinsicAttributes & React.ClassAttributes<HTMLDivElement> & React.HTMLAttributes<HTMLDivElement>) {
@@ -145,7 +145,7 @@ export default function Home() {
   }, [])
   return (
     <Detail.Container data-cy="home-intro" ref={scrollContainerRef}>
-        <div className="relative h-screen w-full snap-proximity snap-y overflow-y-scroll">
+        <div className="">
           <div className="relative snap-start w-full overflow-hidden justify-center dark:bg-gradient-to-br dark:from-sky-900 bg-gradient-to-br from-yellow-50 to-emerald-200">
             <Image className="block md:hidden dark:hidden"
               src = {bg_small}
@@ -192,7 +192,7 @@ export default function Home() {
             }}/>
             <div className="text-2xl flex flex-row items-start sm:text-xl text-white -mx-6 px-9 sm:px-18 py-16 mb-lh">
               <div className="relative w-full sm:w-[34rem] px-6 py-6 mt-32 md:mt-48 backdrop-blur-sm bg-black/30 font-space">
-                <p>A platform for realistic social simulations,</p>
+                <p>A research platform for realistic social simulations,</p>
                 <p>& an incubator for social intelligence.</p>
               </div>
             </div>
@@ -200,7 +200,55 @@ export default function Home() {
         <Detail.ContentContainer className="mx-auto max-w-2xl lg:max-w-5xl">
 
         <SectionContent>
-            <SectionTitle>Lastest Projects</SectionTitle>
+              <div className="col-span-12 lg:col-span-4">
+                <h2 className="text-xl font-space black dark:white font-bold">Enables human-AI interaction</h2>
+                <p className="prose mt-4 text-md  text-gray-500 dark:text-gray-200 font-space">
+               <span className="font-display inline">Sotopia</span> is designed to natively support the interaction among humans and AI agents. With simple configuration, you can watch AI agent interacting, start chatting with AI agents, or even join a game with other human players. You can use the default frontend, or build your own frontend using the <span className="font-display inline">Sotopia</span> REST API.
+                </p>
+              </div>
+              <div className="col-span-12 lg:col-span-4">
+                <h2 className="text-xl font-space black dark:white font-bold">Centers goal-driven behavior</h2>
+                <p className="prose mt-4 text-md  text-gray-500 dark:text-gray-200 font-space">
+                Scenarios in <span className="font-display inline">Sotopia</span> typically include both social goals and hidden character information for each interaction.
+                Agents in <span className="font-display inline">Sotopia</span> are driven by their own goals and background.
+                This feature makes <span className="font-display inline">Sotopia</span> a perfect testbed for AI agents to learn to reason in a rich social context.
+                </p>
+              </div>
+              <div className="col-span-12 lg:col-span-4">
+                <h2 className="text-xl font-space black dark:white font-bold">Supports customization</h2>
+                <p className="prose mt-4 text-md  text-gray-500 dark:text-gray-200 font-space">
+                You are not limited to the original set of tasks in <span className="font-display inline">Sotopia</span>. We have a tutorial teaching you how to create your own characters and scenarios and bring them to life in <span className="font-display inline">Sotopia</span>. The evaluation framework is also open-ended, you can create your own evaluation metrics, whether it&rsquo;s LLM-based or rule-based.
+                </p>
+              </div>
+        </SectionContent>
+
+        <SectionContent>
+        <SectionTitle>Key Concepts</SectionTitle>
+        <div className="col-span-12 flex flex-row-reverse lg:grid lg:col-span-4">
+          <div className="w-2/3 lg:w-full mt-4">
+          <Image
+            src={scenarios} className="object-contain object-center max-h-48" alt="scenarios image" placeholder="blur" />
+          </div>
+          <p className="w-1/3 lg:w-full  font-space  text-gray-500 dark:text-gray-200 font-lg py-4">Each scenario includes a context background, and private social goals of each agent. Scenarios cover a wide range of social interaction types.</p>
+        </div>
+        <div className="col-span-12 flex flex-row-reverse lg:grid lg:col-span-4">
+          <div className="w-2/3 lg:w-full">
+          <Image
+            src={profiles} className="object-contain object-center max-h-48" alt="scenarios image" placeholder="blur" />
+          </div>
+          <p className="w-1/3 lg:w-full  font-space  text-gray-500 dark:text-gray-200 font-lg py-4">Characters in <span className="font-display inline">Sotopia</span> have their name, gender, personalities, decision making styles, occupation, some public information and even their secrets.</p>
+        </div>
+        <div className="col-span-12 flex flex-row-reverse lg:grid lg:col-span-4">
+          <div className="w-2/3 lg:w-full">
+            <Image
+              src={characters} className="object-contain object-center max-h-48" alt="scenarios image" placeholder="blur" />
+          </div>
+          <p className="w-1/3 lg:w-full font-space  text-gray-500 dark:text-gray-200 font-lg py-4">The relationships between characters are in different types and include background stories. This provides more concrete context for scenarios.</p>
+        </div>
+        </SectionContent>
+
+        <SectionContent>
+            <SectionTitle>Lastest Research</SectionTitle>
               <div className="col-span-12 lg:col-span-4">
               <a href="/projects/agent_vs_script">
                 <Image
@@ -248,54 +296,6 @@ export default function Home() {
               </div>
         </SectionContent>
 
-        <SectionContent>
-            <SectionTitle>Key features of <span className="font-display inline">Sotopia</span></SectionTitle>
-              <div className="col-span-12 lg:col-span-4">
-                <h2 className="text-xl font-space black dark:white font-bold">Enables human-AI interaction</h2>
-                <p className="prose mt-4 text-md  text-gray-500 dark:text-gray-200 font-space">
-               <span className="font-display inline">Sotopia</span> is designed to natively support the interaction among humans and AI agents. With simple configuration, you can watch AI agent interacting, start chatting with AI agents, or even join a game with other human players. You can use the default frontend, or build your own frontend using the <span className="font-display inline">Sotopia</span> REST API.
-                </p>
-              </div>
-              <div className="col-span-12 lg:col-span-4">
-                <h2 className="text-xl font-space black dark:white font-bold">Centers goal-driven behavior</h2>
-                <p className="prose mt-4 text-md  text-gray-500 dark:text-gray-200 font-space">
-                Scenarios in <span className="font-display inline">Sotopia</span> typically include both social goals and hidden character information for each interaction.
-                Agents in <span className="font-display inline">Sotopia</span> are driven by their own goals and background.
-                This feature makes <span className="font-display inline">Sotopia</span> a perfect testbed for AI agents to learn to reason in a rich social context.
-                </p>
-              </div>
-              <div className="col-span-12 lg:col-span-4">
-                <h2 className="text-xl font-space black dark:white font-bold">Supports customization</h2>
-                <p className="prose mt-4 text-md  text-gray-500 dark:text-gray-200 font-space">
-                You are not limited to the original set of tasks in <span className="font-display inline">Sotopia</span>. We have a tutorial teaching you how to create your own characters and scenarios and bring them to life in <span className="font-display inline">Sotopia</span>. The evaluation framework is also open-ended, you can create your own evaluation metrics, whether it&rsquo;s LLM-based or rule-based.
-                </p>
-              </div>
-        </SectionContent>
-
-        <SectionContent>
-        <SectionTitle><span className="font-display inline">Sotopia</span> concepts</SectionTitle>
-        <div className="col-span-12 flex flex-row-reverse lg:grid lg:col-span-4">
-          <div className="w-2/3 lg:w-full">
-          <Image
-            src={scenarios} className="object-contain object-center max-h-48" alt="scenarios image" placeholder="blur" />
-          </div>
-          <p className="w-1/3 lg:w-full  font-space  text-gray-500 dark:text-gray-200 font-lg py-4">Each scenario includes a context background, and private social goals of each agent. Scenarios cover a wide range of social interaction types.</p>
-        </div>
-        <div className="col-span-12 flex flex-row-reverse lg:grid lg:col-span-4">
-          <div className="w-2/3 lg:w-full">
-          <Image
-            src={profiles} className="object-contain object-center max-h-48" alt="scenarios image" placeholder="blur" />
-          </div>
-          <p className="w-1/3 lg:w-full  font-space  text-gray-500 dark:text-gray-200 font-lg py-4">Characters in <span className="font-display inline">Sotopia</span> have their name, gender, personalities, decision making styles, occupation, some public information and even their secrets.</p>
-        </div>
-        <div className="col-span-12 flex flex-row-reverse lg:grid lg:col-span-4">
-          <div className="w-2/3 lg:w-full">
-            <Image
-              src={characters} className="object-contain object-center max-h-48" alt="scenarios image" placeholder="blur" />
-          </div>
-          <p className="w-1/3 lg:w-full font-space  text-gray-500 dark:text-gray-200 font-lg py-4">The relationships between characters are in different types and include background stories. This provides more concrete context for scenarios.</p>
-        </div>
-        </SectionContent>
         </Detail.ContentContainer>
         </div>
   </Detail.Container>

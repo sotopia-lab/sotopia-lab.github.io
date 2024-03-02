@@ -376,7 +376,7 @@ export function DownArrowIcon() {
       strokeWidth="1.5"
       viewBox="0 0 24 24"
       width="24"
-      style={{ color: 'var(--geist-foreground)', width: '24px', height: '24px' }}
+      style={{ color: 'var(--geist-foreground)', width: '16px', height: '16px' }}
     >
       <path d="M12 5v14" />
       <path d="M19 12l-7 7-7-7" />
