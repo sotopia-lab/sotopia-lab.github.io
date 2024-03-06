@@ -27,6 +27,7 @@ import { cn } from "@/lib/utils";
 import Link from "next/link";
 import LTI from "@/components/icons/lti";
 import CMU from "@/components/icons/cmu";
+import ImageWithTextOverlay from "@/components/ui/image-text-overlay";
 
 function SectionContent(props: React.JSX.IntrinsicAttributes & React.ClassAttributes<HTMLDivElement> & React.HTMLAttributes<HTMLDivElement>) {
   return <div className="snap-start w-full gap-8 grid grid-cols-12 font-inter py-10 px-6 sm:px-12" {...props} />
@@ -146,7 +147,7 @@ export default function Home() {
   return (
     <Detail.Container data-cy="home-intro" ref={scrollContainerRef}>
         <div className="">
-          <div className="relative snap-start w-full overflow-hidden justify-center dark:bg-gradient-to-br dark:from-sky-900 bg-gradient-to-br from-yellow-50 to-emerald-200">
+          <div className="relative snap-start w-full overflow-hidden justify-center dark:bg-gradient-to-br dark:from-sky-900 bg-gradient-to-br from-yellow-50 to-emerald-200 h-[45vh]">
             <Image className="block md:hidden dark:hidden"
               src = {bg_small}
               alt = "background image"
@@ -190,7 +191,7 @@ export default function Home() {
                 top: '40%',
                 transform: 'translate(-50%, -50%) scale(120%)',
             }}/>
-            <div className="text-2xl flex flex-row items-start sm:text-xl text-white -mx-6 px-9 sm:px-18 py-16 mb-lh">
+            <div className="text-2xl flex flex-row items-start sm:text-xl text-white -mx-6 px-9 sm:px-18 py-8 mb-lh">
               <div className="relative w-full sm:w-[34rem] px-6 py-6 mt-32 md:mt-48 backdrop-blur-sm bg-black/30 font-space">
                 <p>A research platform for realistic social simulations,</p>
                 <p>& an incubator for social intelligence.</p>
@@ -200,30 +201,61 @@ export default function Home() {
         <Detail.ContentContainer className="mx-auto max-w-2xl lg:max-w-5xl">
 
         <SectionContent>
-              <div className="col-span-12 lg:col-span-4">
-                <h2 className="text-xl font-space black dark:white font-bold">Enables human-AI interaction</h2>
-                <p className="prose mt-4 text-md  text-gray-500 dark:text-gray-200 font-space">
-               <span className="font-display inline">Sotopia</span> is designed to natively support the interaction among humans and AI agents. With simple configuration, you can watch AI agent interacting, start chatting with AI agents, or even join a game with other human players. You can use the default frontend, or build your own frontend using the <span className="font-display inline">Sotopia</span> REST API.
+              <Link href="#first_section" className="col-span-12 lg:col-span-4 bg-green-100 p-5 hover:bg-green-200 dark:bg-green-800">
+                <h2 className="text-4xl font-space black dark:white font-bold">AI Social Intelligence</h2>
+                <p className="prose mt-4 text-lg text-slate-800 dark:text-gray-200 font-space">
+                We are passionate about building more socially aware, adept, and responsible AI systems that contribute to the common good of human society.
                 </p>
-              </div>
-              <div className="col-span-12 lg:col-span-4">
-                <h2 className="text-xl font-space black dark:white font-bold">Centers goal-driven behavior</h2>
-                <p className="prose mt-4 text-md  text-gray-500 dark:text-gray-200 font-space">
-                Scenarios in <span className="font-display inline">Sotopia</span> typically include both social goals and hidden character information for each interaction.
-                Agents in <span className="font-display inline">Sotopia</span> are driven by their own goals and background.
-                This feature makes <span className="font-display inline">Sotopia</span> a perfect testbed for AI agents to learn to reason in a rich social context.
+              </Link>
+              <Link href="#second_section" className="col-span-12 lg:col-span-4 bg-amber-100 p-5 hover:bg-amber-200 dark:bg-amber-800">
+                <h2 className="text-4xl font-space black dark:white font-bold">Sotopia Concepts</h2>
+                <p className="prose mt-4 text-lg text-slate-800 dark:text-gray-200 font-space">
+                <span className="font-display inline">Sotopia</span> centers around essential concepts in human social interacions, such as social scenarios, character profiles, and relationships between characters.
                 </p>
-              </div>
-              <div className="col-span-12 lg:col-span-4">
-                <h2 className="text-xl font-space black dark:white font-bold">Supports customization</h2>
-                <p className="prose mt-4 text-md  text-gray-500 dark:text-gray-200 font-space">
-                You are not limited to the original set of tasks in <span className="font-display inline">Sotopia</span>. We have a tutorial teaching you how to create your own characters and scenarios and bring them to life in <span className="font-display inline">Sotopia</span>. The evaluation framework is also open-ended, you can create your own evaluation metrics, whether it&rsquo;s LLM-based or rule-based.
+              </Link>
+              <Link href="#third_section" className="col-span-12 lg:col-span-4 bg-cyan-100 p-5 hover:bg-cyan-200 dark:bg-cyan-800">
+                <h2 className="text-4xl font-space black dark:white font-bold">Latest Research</h2>
+                <p className="prose mt-4 text-lg text-slate-800 dark:text-gray-200 font-space">
+                <span className="font-display inline">Sotopia</span> has faciliated a line of research projects, check out our latest publications and projects.
                 </p>
-              </div>
+              </Link>
         </SectionContent>
 
-        <SectionContent>
+        <SectionContent id="first_section">
+        <SectionTitle>Social Intelligence for AI</SectionTitle>
+            <p className="col-span-12 prose mt-4 text-lg text-slate-800 dark:text-gray-200 font-space">
+            {/* AI systems today have impressive but narrow capabilities. It seems that we'll keep whittling away at their constraints, and in the extreme case they will reach human performance on virtually every intellectual task. It's hard to fathom how much human-level AI could benefit society, and it's equally hard to imagine how much it could damage society if built or used incorrectly. */}
+              AI systems today have impressive capabilities, but they are often socially unaware, sometimes even present biased or harmful behaviors. We believe that aligning AI systems with human values and society requires situating AI in a rich social environment, confronting them with complex objectives and social norms, and evaluating their performance in a variety of social contexts. <span className="font-display inline">Sotopia</span> is the first step towards this vision. Here&lsquo;s why you might want to use <span className="font-display inline">Sotopia</span>:
+            </p>
+            <div className="col-span-12 lg:col-span-4">
+              <h2 className="text-xl font-space black dark:white font-bold">Enables human-AI interaction</h2>
+              <p className="prose mt-4 text-md  text-gray-500 dark:text-gray-200 font-space">
+              <span className="font-display inline">Sotopia</span> is designed to natively support the interaction among humans and AI agents. With simple configuration, you can watch AI agent interacting, start chatting with AI agents, or even join a game with other human players. You can use the default frontend, or build your own frontend using the <span className="font-display inline">Sotopia</span> REST API.
+              </p>
+            </div>
+            <div className="col-span-12 lg:col-span-4">
+              <h2 className="text-xl font-space black dark:white font-bold">Centers goal-driven behavior</h2>
+              <p className="prose mt-4 text-md  text-gray-500 dark:text-gray-200 font-space">
+              Scenarios in <span className="font-display inline">Sotopia</span> typically include both social goals and hidden character information for each interaction.
+              Agents in <span className="font-display inline">Sotopia</span> are driven by their own goals and background.
+              This feature makes <span className="font-display inline">Sotopia</span> a perfect testbed for AI agents to learn to reason in a rich social context.
+              </p>
+            </div>
+            <div className="col-span-12 lg:col-span-4">
+              <h2 className="text-xl font-space black dark:white font-bold">Supports customization</h2>
+              <p className="prose mt-4 text-md  text-gray-500 dark:text-gray-200 font-space">
+              You are not limited to the original set of tasks in <span className="font-display inline">Sotopia</span>. We have a tutorial teaching you how to create your own characters and scenarios and bring them to life in <span className="font-display inline">Sotopia</span>. The evaluation framework is also open-ended, you can create your own evaluation metrics, whether it&rsquo;s LLM-based or rule-based.
+              </p>
+            </div>
+        </SectionContent>
+
+        <SectionContent id='second_section'>
         <SectionTitle>Key Concepts</SectionTitle>
+        <p className="col-span-12 prose mt-4 text-lg text-slate-800 dark:text-gray-200 font-space">
+              <span className="font-display inline">Sotopia</span> is a growing platform for social intelligence research. It includes a variety of social scenarios, character profiles, and relationships between characters.
+              We will constantsly roll out new features and content to enrich the <span className="font-display inline">Sotopia</span> platform.
+              Here are some key concepts in <span className="font-display inline">Sotopia</span>:
+        </p>
         <div className="col-span-12 flex flex-row-reverse lg:grid lg:col-span-4">
           <div className="w-2/3 lg:w-full mt-4">
           <Image
@@ -247,29 +279,26 @@ export default function Home() {
         </div>
         </SectionContent>
 
-        <SectionContent>
-            <SectionTitle>Lastest Research</SectionTitle>
-              <div className="col-span-12 lg:col-span-4">
-              <a href="/projects/agent_vs_script">
-                <Image
-                src={agentvsstory}
-                  quality={100}
-                  alt="a picture of green colors"
-                />
-                <p className="prose mt-4 text-lg  text-black dark:text-gray-200 font-space italic hover:underline">
-                Is this the real life? Is this just fantasy? The Misleading Success of Simulating Social Interactions With LLMs 
-                </p>
-                {/* <p className="prose mt-4 text-sm  text-gray-500 dark:text-gray-200 font-space">
-                  TL;DR: We introduce a new benchmark for social intelligence, where AI agents are evaluated on their ability to understand and generate stories.
-                </p> */}
-              </a>
+        <SectionContent id='third_section'>
+          <SectionTitle>Lastest Research</SectionTitle>
+            <div className="col-span-12 lg:col-span-4">
+            <Link href="/projects/agent_vs_script">
+              <ImageWithTextOverlay
+              src={agentvsstory}
+              alt="a picture of green colors"
+              text="TL;DR: Omniscenient social simulation with LLMs is different from realistic human social interactions."
+              />
+              <p className="prose mt-4 text-lg  text-black dark:text-gray-200 font-space italic hover:underline">
+              Is this the real life? Is this just fantasy? The Misleading Success of Simulating Social Interactions With LLMs 
+              </p>
+              </Link>
               </div>
               <div className="col-span-12 lg:col-span-4">
-              <a href="/projects/sotopia-pi">
-                <Image
+              <Link href="/projects/sotopia-pi">
+                <ImageWithTextOverlay
                 src={sotopiaPi}
-                  quality={100}
-                  alt="a picture of green colors"
+                alt="a picture of green colors"
+                text="TL;DR: XXXX"
                 />
                 <p className="prose mt-4 text-lg  text-black dark:text-gray-200 font-space italic hover:underline">
                 SOTOPIA-π: Interactive Learning of Socially Intelligent Language Agents
@@ -277,14 +306,14 @@ export default function Home() {
                 {/* <p className="prose mt-4 text-sm  text-gray-500 dark:text-gray-200 font-space">
                   TL;DR: We introduce a new benchmark for social intelligence, where AI agents are evaluated on their ability to understand and generate stories.
                 </p> */}
-              </a>
+              </Link>
               </div>
               <div className="col-span-12 lg:col-span-4">
-              <a href="https://www.sotopia.world/">
-                <Image
+              <Link href="https://www.sotopia.world/">
+              <ImageWithTextOverlay
                 src={sotopia}
-                  quality={100}
-                  alt="a picture of green colors"
+                alt="road to purple"
+                text="TL;DR: A interation-based framework for evaluating social intelligence in language agents."
                 />
                 <p className="prose mt-4 text-lg  text-black dark:text-gray-200 font-space italic hover:underline">
                 SOTOPIA: Interactive Evaluation for Social Intelligence in Language Agents
@@ -292,7 +321,7 @@ export default function Home() {
                 {/* <p className="prose mt-4 text-sm  text-gray-500 dark:text-gray-200 font-space">
                   TL;DR: We introduce a new benchmark for social intelligence, where AI agents are evaluated on their ability to understand and generate stories.
                 </p> */}
-              </a>
+              </Link>
               </div>
         </SectionContent>
 

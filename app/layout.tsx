@@ -82,34 +82,27 @@ export default function RootLayout({
                 <p className="dark:text-sky-400 dark:drop-shadow-[0_3px_10px_#bae6fd]">Sotopia</p>
               </Link>
               <div className="flex items-center space-x-4 sm:px-6">
-                {/* <a href="http://arxiv.org/abs/2310.11667"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group hidden max-w-fit items-center justify-center space-x-2 rounded-full border border-black bg-black px-3 py-1.5 text-sm text-white transition-colors hover:bg-white hover:text-black sm:flex"
-                >
-                  <p>Research</p>
-                </a> */}
+              <DropdownMenu>
+                <DropdownMenuTrigger>
+                  <button className="group hidden max-w-fit items-center justify-center space-x-2 rounded-full border border-black bg-black px-3 py-1.5 text-sm text-white transition-colors hover:bg-white hover:text-black sm:flex">Research <DownArrowIcon/></button>
+                </DropdownMenuTrigger>
+                <DropdownMenuPortal>
+                  <DropdownMenuContent className="bg-black text-white">
+                  <a href="https://www.sotopia.world/" className="hover:bg-white hover:text-black">
+                      <DropdownMenuItem className="DropdownMenuItem hover:bg-white hover:text-black">Sotopia</DropdownMenuItem>
+                  </a>
+                  <a href="https://www.sotopia.world/" className="hover:bg-white hover:text-black">
+                      <DropdownMenuItem className="DropdownMenuItem hover:bg-white hover:text-black">Sotopia-pi</DropdownMenuItem>
+                  </a>
+                  <Link href="/projects/agent_vs_script/" className="hover:bg-white hover:text-black">
+                      <DropdownMenuItem className="DropdownMenuItem hover:bg-white hover:text-black">Agents Vs Script</DropdownMenuItem>
+                  </Link>
+                  </DropdownMenuContent>
+                </DropdownMenuPortal>
+              </DropdownMenu>
+
                   
-                <DropdownMenu>
-                  <DropdownMenuTrigger>
-                    <button className="group hidden max-w-fit items-center justify-center space-x-2 rounded-full border border-black bg-black px-3 py-1.5 text-sm text-white transition-colors hover:bg-white hover:text-black sm:flex">Research <DownArrowIcon/></button>
-                  </DropdownMenuTrigger>
-                  <DropdownMenuPortal>
-                    <DropdownMenuContent className="bg-black text-white">
-                    <a href="https://www.sotopia.world/" className="hover:bg-white hover:text-black">
-                        <DropdownMenuItem className="DropdownMenuItem hover:bg-white hover:text-black">Sotopia</DropdownMenuItem>
-                    </a>
-                    <a href="https://www.sotopia.world/" className="hover:bg-white hover:text-black">
-                        <DropdownMenuItem className="DropdownMenuItem hover:bg-white hover:text-black">Sotopia-pi</DropdownMenuItem>
-                    </a>
-                    <Link href="/projects/agent_vs_script/" className="hover:bg-white hover:text-black">
-                        <DropdownMenuItem className="DropdownMenuItem hover:bg-white hover:text-black">Agents Vs Script</DropdownMenuItem>
-                    </Link>
-                    </DropdownMenuContent>
-                  </DropdownMenuPortal>
-                </DropdownMenu>
-                  
-                <a href="/"
+                {/* <a href="/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group hidden max-w-fit items-center justify-center space-x-2 rounded-full border border-black bg-black px-3 py-1.5 text-sm text-white transition-colors hover:bg-white hover:text-black sm:flex"
@@ -122,14 +115,14 @@ export default function RootLayout({
                   className="group hidden max-w-fit items-center justify-center space-x-2 rounded-full border border-black bg-black px-3 py-1.5 text-sm text-white transition-colors hover:bg-white hover:text-black sm:flex"
                 >
                   <p>Benchmark</p>
-                </a>
-                <a
+                </a> */}
+                <Link
                   href="/about"
                   rel="noopener noreferrer"
                   className="group hidden max-w-fit items-center justify-center space-x-2 rounded-full border border-black bg-black px-3 py-1.5 text-sm text-white transition-colors hover:bg-white hover:text-black sm:flex"
                 >
                   <p>About Us</p>
-                </a>
+                </Link>
               
                 <a
                   href="https://github.com/sotopia-lab/sotopia"
