@@ -32,7 +32,7 @@ function SectionTitle(props: React.JSX.IntrinsicAttributes & React.ClassAttribut
 
 // Xuhui Zhou, Hao Zhu, Leena Mathur, Ruohong Zhang, Haofei Yu, Zhengyang Qi, Louis-Philippe Morency, Yonatan Bisk, Daniel Fried, Graham Neubig, Maarten Sap
 
-const team_members = [
+const core_team_members = [
   {
     name: "Xuhui Zhou",
     avatar: "/team/xuhui.jpg",
@@ -49,6 +49,34 @@ const team_members = [
     role: "Co-Lead",
     url: "https://zhuhao.me"
   },
+  {
+    name: "Yonatan Bisk",
+    avatar: "/team/yonatan.jpg",
+    initials: "YB",
+    gradient: "from-emerald-200 via-indigo-300 to-pink-300", // random gradient
+    role: "Advisor",
+    url: "https://yonatanbisk.com"
+  },
+  
+  {
+    name: "Graham Neubig",
+    avatar: "/team/graham.jpg",
+    initials: "GN",
+    gradient: "from-amber-200 via-lime-300 to-rose-300", // random gradient
+    role: "Advisor",
+    url: "http://phontron.com"
+  },
+  {
+    name: "Maarten Sap",
+    avatar: "/team/maarten.jpg",
+    initials: "MS",
+    gradient: "from-indigo-200 via-pink-300 to-emerald-300", // random gradient
+    role: "Advisor",
+    url: "https://maartensap.com"
+  }
+]
+
+const collaborators = [
   {
     name: "Leena Mathur",
     avatar: "/team/leena.jpg",
@@ -90,14 +118,6 @@ const team_members = [
     url: "https://www.cs.cmu.edu/~morency/"
   },
   {
-    name: "Yonatan Bisk",
-    avatar: "/team/yonatan.jpg",
-    initials: "YB",
-    gradient: "from-emerald-200 via-indigo-300 to-pink-300", // random gradient
-    role: "Advisor",
-    url: "https://yonatanbisk.com"
-  },
-  {
     name: "Daniel Fried",
     avatar: "/team/daniel.jpg",
     initials: "DF",
@@ -105,36 +125,31 @@ const team_members = [
     role: "Advisor",
     url: "https://dpfried.github.io"
   },
-  {
-    name: "Graham Neubig",
-    avatar: "/team/graham.jpg",
-    initials: "GN",
-    gradient: "from-amber-200 via-lime-300 to-rose-300", // random gradient
-    role: "Advisor",
-    url: "http://phontron.com"
-  },
-  {
-    name: "Maarten Sap",
-    avatar: "/team/maarten.jpg",
-    initials: "MS",
-    gradient: "from-indigo-200 via-pink-300 to-emerald-300", // random gradient
-    role: "Advisor",
-    url: "https://maartensap.com"
-  }
 ]
+
 
 export default function Page() {
   const scrollContainerRef = React.useRef(null)
   const titleRef = React.useRef(null)
-  const [team_members_state, change_team_members_state] = React.useState(team_members)
+  const [team_core_members_state, change_core_team_members_state] = React.useState
+(core_team_members)
+  const [team_collaborators_state, change_collaborators_state] = React.useState(collaborators)
   useEffect(() => {
     // generate random gradient for each team member
-    change_team_members_state(team_members.map((member) => {
+    change_core_team_members_state(core_team_members.map((member) => {
       return {
         ...member,
-        gradient: team_members[Math.floor(Math.random() * team_members.length)].gradient
+        gradient: core_team_members[Math.floor(Math.random() * core_team_members.length)].gradient
       }
     }));
+
+    change_collaborators_state(collaborators.map((member) => {
+      return {
+        ...member,
+        gradient: collaborators[Math.floor(Math.random() * collaborators.length)].gradient
+      }
+    }));
+
     return () => {};
   }, [])
   return (
@@ -193,7 +208,8 @@ export default function Page() {
           </div>
         <Detail.ContentContainer className="mx-auto max-w-2xl lg:max-w-5xl">
             <SectionContent>
-              {team_members_state.map((member, index) => (
+            <SectionTitle>Core Team</SectionTitle>
+              {team_core_members_state.map((member, index) => (
                 <Link href={member.url} scroll={false} key={index} className="col-span-3 lg:col-span-2 text-center font-space">
                   <div className="absoluate">
                     <Avatar className={cn("w-full hover:shadow-lg hover:-translate-y-[1px] hover:shadow-gray-500 dark:shadow-gray-200 dark:border-transparent dark:border-2", "dark:bg-gradient-to-br", member.gradient)}>
@@ -209,11 +225,37 @@ export default function Page() {
                   </div>
                 </Link>
               ))}
+          </SectionContent>
 
+          <SectionContent>
+            <SectionTitle>Collaborators</SectionTitle>
+            {team_collaborators_state.map((member, index) => (
+                <Link href={member.url} scroll={false} key={index} className="col-span-3 lg:col-span-2 text-center font-space">
+                  <div className="absoluate">
+                    <Avatar className={cn("w-full hover:shadow-lg hover:-translate-y-[1px] hover:shadow-gray-500 dark:shadow-gray-200 dark:border-transparent dark:border-2", "dark:bg-gradient-to-br", member.gradient)}>
+                      <AvatarImage src={member.avatar} alt={member.name} />
+                      <AvatarFallback>{member.initials}</AvatarFallback>
+                    </Avatar>
+                  </div>
+                  
+                  <div className="w-full mt-4">
+                  <span className="font-light">{member.name} </span>
+                  <br />
+                  <span className="italic"> {member.role} </span>
+                  </div>
+                </Link>
+              ))}
+          </SectionContent>
+
+          <SectionContent>
+            <SectionTitle>Organizations</SectionTitle>
             {/* <p className="text-4xl col-span-12 lg:col-span-7 lg:col-start-1 font-sans">Language Technologies Institute
             @ Carnegie Mellon University</p> */}
-            <CMU className="col-span-12 lg:col-span-5 text-center font-space bg-black p-3" />
-            <LTI className="col-span-12 lg:col-span-6 lg:col-start-6 text-center font-space" />
+            {/* <LTI className="col-span-12 lg:col-span-6 lg:col-start-6 text-center font-space" /> */}
+            <Image src="/organizations/cmu_lti.png" alt="Carnegie Mellon University" width={300} height={300} className="col-span-12 lg:col-span-6 font-space" />
+            <Image src="/organizations/ai2.jpg" alt="AI2" width={300} height={300} className="col-span-12 lg:col-span-6 font-space" />
+            <Image src="/organizations/MIT-Logo.png" alt="MIT" width={300} height={100} className="col-span-12 lg:col-span-6 font-space" />
+
             <p className="text-xl col-span-12 justify-center">We greatly thank <a href="https://openai.com/" className="underline decoration-dotted">OpenAI</a> and <a href="https://openai.com/" className="underline decoration-dotted">Together AI</a> for their support of model credits. Please reach out if you want to contribute to this line of research in any format.</p> 
             </SectionContent>
           </Detail.ContentContainer>
