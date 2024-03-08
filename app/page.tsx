@@ -286,7 +286,7 @@ export default function Home() {
               <ImageWithTextOverlay
               src={agentvsstory}
               alt="a picture of green colors"
-              text="TL;DR: Omniscenient social simulation with LLMs is different from realistic human social interactions."
+              text="Omniscenient social simulation with LLMs differs from realistic human social interactions."
               />
               <p className="prose mt-4 text-lg  text-black dark:text-gray-200 font-space italic hover:underline">
               Is this the real life? Is this just fantasy? The Misleading Success of Simulating Social Interactions With LLMs 
@@ -298,7 +298,7 @@ export default function Home() {
                 <ImageWithTextOverlay
                 src={sotopiaPi}
                 alt="a picture of green colors"
-                text="TL;DR: XXXX"
+                text="Check out our newest training method aiming for more socially intelligent and aligned agents." 
                 />
                 <p className="prose mt-4 text-lg  text-black dark:text-gray-200 font-space italic hover:underline">
                 SOTOPIA-π: Interactive Learning of Socially Intelligent Language Agents
@@ -313,7 +313,7 @@ export default function Home() {
               <ImageWithTextOverlay
                 src={sotopia}
                 alt="road to purple"
-                text="TL;DR: A interation-based framework for evaluating social intelligence in language agents."
+                text="We test how well GPT-4 and other LLM agents role-play characters in social interactions."
                 />
                 <p className="prose mt-4 text-lg  text-black dark:text-gray-200 font-space italic hover:underline">
                 SOTOPIA: Interactive Evaluation for Social Intelligence in Language Agents
