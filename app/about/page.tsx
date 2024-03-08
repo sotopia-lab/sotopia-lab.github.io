@@ -82,7 +82,7 @@ const collaborators = [
     avatar: "/team/leena.jpg",
     initials: "LM",
     gradient: "from-cyan-200 via-purple-300 to-orange-300", // random gradient
-    role: "Evaluation",
+    role: "",
     url: "https://l-mathur.github.io"
   },
   {
@@ -90,7 +90,7 @@ const collaborators = [
     avatar: "/team/ruohong.jpg",
     initials: "RZ",
     gradient: "from-pink-200 via-yellow-300 to-emerald-300", // random gradient
-    role: "Model training",
+    role: "",
     url: "https://scholar.google.com/citations?user=RiDZxz8AAAAJ&hl=en"
   },
   {
@@ -98,7 +98,7 @@ const collaborators = [
     avatar: "/team/haofei.jpg",
     initials: "HY",
     gradient: "from-teal-200 via-red-300 to-indigo-300", // random gradient
-    role: "Model inference",
+    role: "",
     url: "https://haofeiyu.me"
   },
   {
@@ -106,8 +106,24 @@ const collaborators = [
     avatar: "/team/zhengyang.jpg",
     initials: "ZQ",
     gradient: "from-rose-200 via-amber-300 to-lime-300", // random gradient
-    role: "Model inference",
+    role: "",
     url: "https://zhengyangqi.com"
+  },
+  {
+    name: "Hyunwoo Kim",
+    avatar: "/team/hyunwoo.jpg",
+    initials: "HK",
+    gradient: "from-fuchsia-200 via-blue-300 to-red-300", // random gradient
+    role: "",
+    url: "https://hyunw.kim/"
+  },
+  {
+    name: "Tiwalayo Eisape",
+    avatar: "/team/tiwa.jpg",
+    initials: "TE",
+    gradient: "from-fuchsia-200 via-blue-300 to-red-300", // random gradient
+    role: "",
+    url: "https://github.com/eisape"
   },
   {
     name: "Louis-Philippe Morency",
