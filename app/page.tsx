@@ -301,7 +301,7 @@ export default function Home() {
                 text="Check out our newest training method aiming for more socially intelligent and aligned agents." 
                 />
                 <p className="prose mt-4 text-lg  text-black dark:text-gray-200 font-space italic hover:underline">
-                SOTOPIA-π: Interactive Learning of Socially Intelligent Language Agents
+                <span className="font-display inline">Sotopia-π</span>: Interactive Learning of Socially Intelligent Language Agents
                 </p>
                 {/* <p className="prose mt-4 text-sm  text-gray-500 dark:text-gray-200 font-space">
                   TL;DR: We introduce a new benchmark for social intelligence, where AI agents are evaluated on their ability to understand and generate stories.
@@ -316,11 +316,8 @@ export default function Home() {
                 text="We test how well GPT-4 and other LLM agents role-play characters in social interactions."
                 />
                 <p className="prose mt-4 text-lg  text-black dark:text-gray-200 font-space italic hover:underline">
-                SOTOPIA: Interactive Evaluation for Social Intelligence in Language Agents
-                </p>
-                {/* <p className="prose mt-4 text-sm  text-gray-500 dark:text-gray-200 font-space">
-                  TL;DR: We introduce a new benchmark for social intelligence, where AI agents are evaluated on their ability to understand and generate stories.
-                </p> */}
+                <span className="font-display inline">Sotopia</span>: Interactive Evaluation for Social Intelligence in Language Agents
+                </p>          
               </Link>
               </div>
         </SectionContent>
