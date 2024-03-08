@@ -1,43 +1,31 @@
 <a href="https://sotopia.vercel.app">
-  <img alt="sotopia – Generate beautiful AI spiral art with one click." src="/app/opengraph-image.png">
+  <img alt="sotopia – " src="/app/opengraph-image.png">
   <h1 align="center">sotopia</h1>
 </a>
 
 <p align="center">
-  Generate beautiful AI spiral art with one click. Powered by Vercel and Replicate.
+  A research platform for realistic social simulations and an incubator for social intelligence.
 </p>
 
-<p align="center">
-  <a href="https://twitter.com/steventey">
-    <img src="https://img.shields.io/twitter/follow/steventey?style=flat&label=steventey&logo=twitter&color=0bf&logoColor=fff" alt="Steven Tey Twitter follower count" />
-  </a>
-  <a href="https://github.com/steven-tey/sotopia">
-    <img src="https://img.shields.io/github/stars/steven-tey/sotopia?label=steven-tey%2Fsotopia" alt="sotopia repo star count" />
-  </a>
-</p>
-
-<p align="center">
-  <a href="#introduction"><strong>Introduction</strong></a> ·
-  <a href="#tech-stack"><strong>Tech Stack</strong></a> ·
-  <a href="#deploy-your-own"><strong>Deploy Your Own</strong></a> ·
-  <a href="#author"><strong>Author</strong></a>
-</p>
-<br/>
 
 ## Introduction
 
-sotopia is an AI app for you to generate beautiful spiral art with one click. Powered by Vercel and Replicate.
+This is the website repo for [sotopia](https://sotopia.vercel.app), a research platform for realistic social simulations and an incubator for social intelligence.
 
-https://github.com/steven-tey/sotopia/assets/28986134/9f0202d4-2a31-47a0-b43f-bdcd189743ef
+If you find Sotopia useful, please cite:
 
-## Tech Stack
+```bibtex
+@inproceedings{zhou2024sotopia,
+  title = {SOTOPIA: Interactive Evaluation for Social Intelligence in Language Agents},
+  author = {Zhou, Xuhui and Zhu, Hao and Mathur, Leena and Zhang, Ruohong and Qi, Zhengyang and Yu, Haofei and Morency, Louis-Philippe and Bisk, Yonatan and Fried, Daniel and Neubig, Graham and Sap, Maarten},
+  booktitle = {ICLR},
+  year = {2024},
+  url = {https://openreview.net/forum?id=mM7VurbA4r},
+}
+```
 
-- Next.js [App Router](https://nextjs.org/docs/app)
-- Next.js [Server Actions](https://nextjs.org/docs/app/api-reference/functions/server-actions)
-- [Bun](https://bun.sh/) for compilation
-- [Vercel Blob](https://vercel.com/storage/blob) for image storage
-- [Vercel KV](https://vercel.com/storage/kv) for redis
-- [`promptmaker`](https://github.com/zeke/promptmaker) lib by @zeke for generating random prompts
+
+
 
 ## Development
 First you need to install `bun` globally:
@@ -51,18 +39,12 @@ bun i
 bun run dev
 ```
 
-## Deploy Your Own
+## Deployment
+You can deploy this template to [Vercel](https://vercel.com) with one click.
 
-You can deploy this template to Vercel with the button below:
+## License
+This work is licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License](https://github.com/santisoler/cc-licenses/blob/main/LICENSE).
 
-[![Deploy with Vercel](https://vercel.com/button)](https://stey.me/sotopia-deploy)
+## Acknowledgements
+We would like to thank [Spirals](https://github.com/steven-tey/spirals), [OpenAI](https://openai.com/), [LMSYS Org](https://lmsys.org/), [Vercel](https://vercel.com) for their significant influence on designing this website.
 
-Note that you'll need to:
-
-- Set up a [Replicate](https://replicate.com) account to get the `REPLICATE_API_TOKEN` env var.
-- Set up [Vercel KV](https://vercel.com/docs/storage/vercel-kv/quickstart) to get the
-- Set up [Vercel Blob](https://vercel.com/docs/storage/vercel-blob/quickstart)
-
-## Author
-
-- Steven Tey ([@steventey](https://twitter.com/steventey))
