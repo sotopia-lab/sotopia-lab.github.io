@@ -78,7 +78,7 @@ function Title() {
 function Abstract() {
   return (
     <p className="antialiased mb-4 text-2xl lg:text-3xl leading-relaxed">
-    Introducing a method for training language agents that can navigat real 
+    Introducing a method for training language agents that can navigate real 
     life social scenarios while role-playing realisitic characters.
     Our method improves Mistral-7B to achieve GPT-4 level performance.
     We also find that social intelligence training improves
@@ -195,6 +195,8 @@ export default function Index() {
         </SectionText> 
 
         <Image src={model_perf} className="col-span-12 w-full my-4 lg:w-2/3 lg:my-0 mx-auto" alt="Performance" />
+
+        <SectionText>On MMLU tasks, our best model achieves performance comparable to the base model. Besides improving the social abilities of LLM agents, sotopia-π also maintains the QA ability of the LLMs.</SectionText>
         
         <SectionTitle>
           Social intelligence influences social alignment
