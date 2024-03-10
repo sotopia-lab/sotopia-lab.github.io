@@ -57,7 +57,7 @@ function Title() {
     <div className="mb-2 text-md lg:text-lg">
       <div><Link className="underline" href="https://ruiyiw.github.io/">Ruiyi Wang</Link>*</div>
       <div><Link className="underline" href="https://haofeiyu.me/">Haofei Yu</Link>*</div>
-      <div><Link className="underline" href="https://www.linkedin.com/in/sharon-zhang-48690504/">Wenxin Zhang</Link>*</div>
+      <div><Link className="underline" href="https://sites.google.com/wellesley.edu/sharonwxzhang/home">Wenxin Zhang</Link>*</div>
       <div><Link className="underline" href="https://www.linkedin.com/in/zhengyang-jason-qi/">Zhengyang Qi</Link>*</div>
       <div><Link className="underline" href="https://maarensap.com/">Maarten Sap</Link></div>
       <div><Link className="underline" href="https://www.phontron.com/">Graham Neubig</Link></div>
