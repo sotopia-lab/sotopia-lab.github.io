@@ -82,7 +82,7 @@ function Abstract() {
     life social scenarios while role-playing realisitic characters.
     Our method improves Mistral-7B to achieve GPT-4 level performance.
     We also find that social intelligence training improves
-    the safety of social agents and doesn't compromise the general QA
+    the safety of social agents and doesn&apos;t compromise the general QA
     performance of the model.
     </p>
   );
@@ -167,7 +167,7 @@ export default function Index() {
           We filter data based on GPT-4 ratings and finetune on the positive examples. {' '}
           We find that choosing the top 20% of the examples from on each task yields {' '}
           the best performance. Based on the filtered positive training data, we update our {' '}
-          agent's policy with supervised fine-tuning. This is a simple and effective method {' '}
+          agent&apos;s policy with supervised fine-tuning. This is a simple and effective method {' '}
           that works really well as we will show later.
         </SectionText>
         <Image src={model_step_3} className="col-span-12 w-2/3 my-4 lg:w-1/3 lg:my-0 mx-auto" alt="Step 3" />
