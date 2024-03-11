@@ -91,8 +91,8 @@ export default function RootLayout({
                   <a href="https://www.sotopia.world/" className="hover:bg-white hover:text-black">
                       <DropdownMenuItem className="DropdownMenuItem hover:bg-white hover:text-black">Sotopia</DropdownMenuItem>
                   </a>
-                  <a href="https://www.sotopia.world/" className="hover:bg-white hover:text-black">
-                      <DropdownMenuItem className="DropdownMenuItem hover:bg-white hover:text-black">Sotopia-pi</DropdownMenuItem>
+                  <a href="/projects/sotopia-pi" className="hover:bg-white hover:text-black">
+                      <DropdownMenuItem className="DropdownMenuItem hover:bg-white hover:text-black">Sotopia-π</DropdownMenuItem>
                   </a>
                   <Link href="/projects/agent_vs_script/" className="hover:bg-white hover:text-black">
                       <DropdownMenuItem className="DropdownMenuItem hover:bg-white hover:text-black">Agents Vs Script</DropdownMenuItem>

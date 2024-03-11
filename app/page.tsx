@@ -298,10 +298,10 @@ export default function Home() {
                 <ImageWithTextOverlay
                 src={sotopiaPi}
                 alt="a picture of green colors"
-                text="SOTOPIA-π: Interactive Learning of Socially Intelligent Language Agents"
+                text="Check out our newest training method aiming for more socially intelligent and aligned agents." 
                 />
                 <p className="prose mt-4 text-lg  text-black dark:text-gray-200 font-space italic hover:underline">
-                TL;DR: XXXX
+                <span className="font-display inline">Sotopia-π</span>: Interactive Learning of Socially Intelligent Language Agents
                 </p>
                 {/* <p className="prose mt-4 text-sm  text-gray-500 dark:text-gray-200 font-space">
                   TL;DR: We introduce a new benchmark for social intelligence, where AI agents are evaluated on their ability to understand and generate stories.
