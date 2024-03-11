@@ -9,9 +9,9 @@ import profiles from "../public/profiles.png";
 import { Detail } from '@/components/ListDetail/Detail'
 import { TitleBar } from '@/components/ListDetail/TitleBar'
 import React, { useEffect } from "react";
-import Interactions, { OutLinkLogo } from "./interactions";
+import Interactions, { OutLinkLogo } from "./projects/sotopia/interactions";
 import { TypeAnimation } from 'react-type-animation';
-import { Evaluation } from "./evaluation";
+import { Evaluation } from "./projects/sotopia/evaluation";
 
 import bg_small from "../public/bg_small.png";
 import bg_large from "../public/bg_large.png";
@@ -307,7 +307,7 @@ export default function Home() {
               </Link>
               </div>
               <div className="col-span-12 lg:col-span-4">
-              <Link href="https://www.sotopia.world/">
+              <Link href="/projects/sotopia">
               <ImageWithTextOverlay
                   src={sotopia}
                   alt="road to purple"

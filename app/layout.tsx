@@ -88,7 +88,7 @@ export default function RootLayout({
                 </DropdownMenuTrigger>
                 <DropdownMenuPortal>
                   <DropdownMenuContent className="bg-black text-white">
-                  <a href="https://www.sotopia.world/" className="hover:bg-white hover:text-black">
+                  <a href="/projects/sotopia" className="hover:bg-white hover:text-black">
                       <DropdownMenuItem className="DropdownMenuItem hover:bg-white hover:text-black">Sotopia</DropdownMenuItem>
                   </a>
                   <Link href="/projects/sotopia-pi" className="hover:bg-white hover:text-black">
