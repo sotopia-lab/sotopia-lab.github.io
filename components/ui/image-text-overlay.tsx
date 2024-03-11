@@ -1,13 +1,14 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 import Image, { StaticImageData } from 'next/image';
+import { title } from 'process';
 
 interface ImageWithTextOverlayProps {
   src: StaticImageData;
   alt: string;
-  text: string;
+  title: ReactNode;
 }
 
-const ImageWithTextOverlay: React.FC<ImageWithTextOverlayProps> = ({ src, alt, text }) => {
+const ImageWithTextOverlay: React.FC<ImageWithTextOverlayProps> = ({ src, alt, title }) => {
   return (
     <div style={{ position: "relative" }}>
       <Image
@@ -15,7 +16,7 @@ const ImageWithTextOverlay: React.FC<ImageWithTextOverlayProps> = ({ src, alt, t
         quality={100}
         alt={alt}
       />
-      <p
+      <div
         className="prose mt-4 text-lg text-black font-space"
         style={{
           position: "absolute",
@@ -25,8 +26,8 @@ const ImageWithTextOverlay: React.FC<ImageWithTextOverlayProps> = ({ src, alt, t
           padding: "10px", // Adjust padding as needed
         }}
       >
-        {text}
-      </p>
+         {title}
+    </div>
     </div>
   );
 }
