@@ -13,6 +13,7 @@ const config: Config = {
         display: ["var(--font-clash)"],
         default: ["var(--font-inter)", "system-ui", "sans-serif"],
         space: ["var(--font-space)", "sans-serif"],
+        grotesk: ["var(--font-grotesk)", "sans-serif"],
       },
       animation: {
         // Modal
