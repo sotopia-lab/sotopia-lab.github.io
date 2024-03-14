@@ -30,7 +30,16 @@ function SectionTitle(props: React.JSX.IntrinsicAttributes & React.ClassAttribut
   return <h1 className="text-4xl col-span-12 font-grotesk black dark:white dark:font-light dark:drop-shadow-[0_1px_15px_#ccfbf1]" {...props} />
 }
 
-// Xuhui Zhou, Hao Zhu, Leena Mathur, Ruohong Zhang, Haofei Yu, Zhengyang Qi, Louis-Philippe Morency, Yonatan Bisk, Daniel Fried, Graham Neubig, Maarten Sap
+// return a shuffled array
+function shuffleArray(array: any[]) {
+  let currentIndex = array.length,  randomIndex;
+  while (currentIndex != 0) {
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex--;
+    [array[currentIndex], array[randomIndex]] = [array[randomIndex], array[currentIndex]];
+  }
+  return array;
+}
 
 const core_team_members = [
   {
@@ -82,7 +91,7 @@ const collaborators = [
     avatar: "/team/leena.jpg",
     initials: "LM",
     gradient: "from-cyan-200 via-purple-300 to-orange-300", // random gradient
-    role: "",
+    role: "SOTOPIA",
     url: "https://l-mathur.github.io"
   },
   {
@@ -90,7 +99,7 @@ const collaborators = [
     avatar: "/team/ruohong.jpg",
     initials: "RZ",
     gradient: "from-pink-200 via-yellow-300 to-emerald-300", // random gradient
-    role: "",
+    role: "SOTOPIA",
     url: "https://scholar.google.com/citations?user=RiDZxz8AAAAJ&hl=en"
   },
   {
@@ -98,7 +107,7 @@ const collaborators = [
     avatar: "/team/haofei.jpg",
     initials: "HY",
     gradient: "from-teal-200 via-red-300 to-indigo-300", // random gradient
-    role: "",
+    role: "SOTOPIA Sotopia-π",
     url: "https://haofeiyu.me"
   },
   {
@@ -106,7 +115,7 @@ const collaborators = [
     avatar: "/team/zhengyang.jpg",
     initials: "ZQ",
     gradient: "from-rose-200 via-amber-300 to-lime-300", // random gradient
-    role: "",
+    role: "SOTOPIA Sotopia-π",
     url: "https://zhengyangqi.com"
   },
   {
@@ -114,7 +123,7 @@ const collaborators = [
     avatar: "/team/hyunwoo.jpg",
     initials: "HK",
     gradient: "from-fuchsia-200 via-blue-300 to-red-300", // random gradient
-    role: "",
+    role: "Agent vs Script",
     url: "https://hyunw.kim/"
   },
   {
@@ -122,7 +131,7 @@ const collaborators = [
     avatar: "/team/tiwa.jpg",
     initials: "TE",
     gradient: "from-fuchsia-200 via-blue-300 to-red-300", // random gradient
-    role: "",
+    role: "Agent vs Script",
     url: "https://github.com/eisape"
   },
   {
@@ -130,7 +139,7 @@ const collaborators = [
     avatar: "/team/louis.jpg",
     initials: "LM",
     gradient: "from-purple-200 via-orange-300 to-cyan-300", // random gradient
-    role: "Advisor",
+    role: "SOTOPIA",
     url: "https://www.cs.cmu.edu/~morency/"
   },
   {
@@ -138,9 +147,25 @@ const collaborators = [
     avatar: "/team/daniel.jpg",
     initials: "DF",
     gradient: "from-yellow-200 via-teal-300 to-red-300", // random gradient
-    role: "Advisor",
+    role: "SOTOPIA",
     url: "https://dpfried.github.io"
   },
+  {
+    name: "Ruiyi Wang",
+    avatar: "/team/ruiyi.png",
+    initials: "RW",
+    gradient: "from-rose-200 via-amber-300 to-lime-300", // random gradient
+    role: "Sotopia-π",
+    url: "https://ruiyiw.github.io/"
+  },
+  {
+    name: "Wenxin Zhang",
+    avatar: "/team/wenxin.jpeg",
+    initials: "WZ",
+    gradient: "from-rose-200 via-amber-300 to-lime-300", // random gradient
+    role: "Sotopia-π",
+    url: "https://sites.google.com/wellesley.edu/sharonwxzhang/home"
+  }
 ]
 
 
@@ -152,19 +177,19 @@ export default function Page() {
   const [team_collaborators_state, change_collaborators_state] = React.useState(collaborators)
   useEffect(() => {
     // generate random gradient for each team member
-    change_core_team_members_state(core_team_members.map((member) => {
+    change_core_team_members_state(shuffleArray(core_team_members.map((member) => {
       return {
         ...member,
         gradient: core_team_members[Math.floor(Math.random() * core_team_members.length)].gradient
       }
-    }));
+    })));
 
-    change_collaborators_state(collaborators.map((member) => {
+    change_collaborators_state(shuffleArray(collaborators.map((member) => {
       return {
         ...member,
         gradient: collaborators[Math.floor(Math.random() * collaborators.length)].gradient
       }
-    }));
+    })));
 
     return () => {};
   }, [])
