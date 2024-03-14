@@ -112,8 +112,8 @@ export default function Index() {
 
        
       <SectionContent>
-      <div className="col-span-12 text-center">Check out our paper, {' '}
-      <Link href="https://github.com/sotopia-lab/sotopia">code</Link>, {' '}
+      <div className="col-span-12 text-center">Check out our <Link href="https://arxiv.org/abs/2403.08715">paper</link>, {' '}
+      <Link href="https://github.com/sotopia-lab/sotopia-pi">code</Link>, {' '}
       <Link href="https://huggingface.co/cmu-lti/sotopia-pi-mistral-7b-BC_SR">model</Link>, {' '}
       <Link href="https://huggingface.co/datasets/cmu-lti/sotopia-pi">data</Link>, {' '}
       and interactive demo!</div>
