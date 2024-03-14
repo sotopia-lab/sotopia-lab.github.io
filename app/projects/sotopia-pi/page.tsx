@@ -112,10 +112,10 @@ export default function Index() {
 
        
       <SectionContent>
-      <div className="col-span-12 text-center">Check out our paper, {' '}
-      <Link href="https://github.com/sotopia-lab/sotopia">code</Link>, {' '}
-      <Link href="https://huggingface.co/cmu-lti/sotopia-pi-mistral-7b-BC_SR">model</Link>, {' '}
-      <Link href="https://huggingface.co/datasets/cmu-lti/sotopia-pi">data</Link>, {' '}
+      <div className="col-span-12 text-center">Check out our <Link href="https://arxiv.org/abs/2403.08715"><span style="text-decoration: underline; font-weight: bold;">paper</span></Link>, {' '}
+      <Link href="https://github.com/sotopia-lab/sotopia-pi"><span style="text-decoration: underline; font-weight: bold;">code</span></Link>, {' '}
+      <Link href="https://huggingface.co/cmu-lti/sotopia-pi-mistral-7b-BC_SR"><span style="text-decoration: underline; font-weight: bold;">model</span></Link>, {' '}
+      <Link href="https://huggingface.co/datasets/cmu-lti/sotopia-pi"><span style="text-decoration: underline; font-weight: bold;">data</span></Link>, {' '}
       and interactive demo!</div>
       <div className="col-span-12"><Abstract></Abstract></div>
       <hr className="col-span-12" />
