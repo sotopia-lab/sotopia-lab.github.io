@@ -112,10 +112,10 @@ export default function Index() {
 
        
       <SectionContent>
-      <div className="col-span-12 text-center">Check out our paper, {' '}
-      <Link href="https://github.com/sotopia-lab/sotopia">code</Link>, {' '}
-      <Link href="https://huggingface.co/cmu-lti/sotopia-pi-mistral-7b-BC_SR">model</Link>, {' '}
-      <Link href="https://huggingface.co/datasets/cmu-lti/sotopia-pi">data</Link>, {' '}
+      <div className="col-span-12 text-center">Check out our <Link href="https://arxiv.org/abs/2403.08715"><span className="underline font-bold">paper</span></Link>, {' '}
+      <Link href="https://github.com/sotopia-lab/sotopia-pi"><span className="underline font-bold">code</span></Link>, {' '}
+      <Link href="https://huggingface.co/cmu-lti/sotopia-pi-mistral-7b-BC_SR"><span className="underline font-bold">model</span></Link>, {' '}
+      <Link href="https://huggingface.co/datasets/cmu-lti/sotopia-pi"><span className="underline font-bold">data</span></Link>, {' '}
       and interactive demo!</div>
       <div className="col-span-12"><Abstract></Abstract></div>
       <hr className="col-span-12" />
@@ -210,6 +210,24 @@ export default function Index() {
         <SectionText>
         As shown in these examples, the model trained with BC and SR is safer, more persuasive, and less toxic. {' '}
         </SectionText>
+      </SectionContent>
+
+      <SectionContent>
+        <SectionTitle>
+          Citation
+        </SectionTitle>
+            <code className="col-span-12 block whitespace-pre overflow-x-scroll bg-slate-100 bg-clip-border p-3"> 
+            {'@misc{wang2024sotopiapi,\n'}
+          {'  title={SOTOPIA-$\\pi$: Interactive Learning of Socially Intelligent Language Agents},\n'}
+          {'  author={Ruiyi Wang and Haofei Yu and Wenxin Zhang and Zhengyang Qi and Maarten Sap and Graham Neubig and Yonatan Bisk and Hao Zhu},\n'}
+          {'  year={2024},\n'}
+          {'  eprint={2403.08715},\n'}
+          {'  archivePrefix={arXiv},\n'}
+          {'  primaryClass={cs.CL}\n'}
+          {'}\n'}
+              </code>
+        
+
       </SectionContent>
       
       </Detail.ContentContainer>
