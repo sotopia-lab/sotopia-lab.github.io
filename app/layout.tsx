@@ -117,6 +117,13 @@ export default function RootLayout({
                   <p>Benchmark</p>
                 </a> */}
                 <Link
+                  href="https://huggingface.co/collections/cmu-lti/sotopia-65f312c1bd04a8c4a9225e5b"
+                  rel="noopener noreferrer"
+                  className="group hidden max-w-fit items-center justify-center space-x-2 rounded-full border border-black bg-black px-3 py-1.5 text-sm text-white transition-colors hover:bg-white hover:text-black sm:flex"
+                >
+                  <p>Resources</p>
+                </Link>
+                <Link
                   href="/about"
                   rel="noopener noreferrer"
                   className="group hidden max-w-fit items-center justify-center space-x-2 rounded-full border border-black bg-black px-3 py-1.5 text-sm text-white transition-colors hover:bg-white hover:text-black sm:flex"
