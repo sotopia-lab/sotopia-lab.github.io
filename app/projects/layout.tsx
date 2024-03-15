@@ -1,12 +1,18 @@
 'use client'
-import { SectionContent } from "../page";
-import { SectionTitle } from "../page";
 import Link from "next/link";
 import ImageWithTextOverlay from "@/components/ui/image-text-overlay";
 import agentvsstory from '@/public/projects/agent_vs_storyteller.jpg'
 import sotopiaPi from '@/public/projects/sotopia_pi.jpg'
 import sotopia from '@/public/projects/sotopia.jpg'
 import { Detail } from '@/components/ListDetail/Detail'
+
+function SectionContent(props: React.JSX.IntrinsicAttributes & React.ClassAttributes<HTMLDivElement> & React.HTMLAttributes<HTMLDivElement>) {
+    return <div className="snap-start w-full gap-8 grid grid-cols-12 font-inter py-10 px-6 sm:px-12" {...props} />
+  }
+  
+  function SectionTitle(props: React.JSX.IntrinsicAttributes & React.ClassAttributes<HTMLDivElement> & React.HTMLAttributes<HTMLDivElement>) {
+    return <h1 className="text-4xl col-span-12 font-grotesk black dark:white dark:font-light dark:drop-shadow-[0_1px_15px_#ccfbf1]" {...props} />
+  }
 
 export default function Layout({ children }: { children: React.ReactNode }) {
     return (
