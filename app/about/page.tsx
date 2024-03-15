@@ -123,7 +123,7 @@ const collaborators = [
     avatar: "/team/hyunwoo.jpg",
     initials: "HK",
     gradient: "from-fuchsia-200 via-blue-300 to-red-300", // random gradient
-    role: "Agent vs Script",
+    role: "Agents vs Script",
     url: "https://hyunw.kim/"
   },
   {
@@ -131,7 +131,7 @@ const collaborators = [
     avatar: "/team/tiwa.jpg",
     initials: "TE",
     gradient: "from-fuchsia-200 via-blue-300 to-red-300", // random gradient
-    role: "Agent vs Script",
+    role: "Agents vs Script",
     url: "https://github.com/eisape"
   },
   {

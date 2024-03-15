@@ -29,11 +29,11 @@ import LTI from "@/components/icons/lti";
 import CMU from "@/components/icons/cmu";
 import ImageWithTextOverlay from "@/components/ui/image-text-overlay";
 
-function SectionContent(props: React.JSX.IntrinsicAttributes & React.ClassAttributes<HTMLDivElement> & React.HTMLAttributes<HTMLDivElement>) {
+export function SectionContent(props: React.JSX.IntrinsicAttributes & React.ClassAttributes<HTMLDivElement> & React.HTMLAttributes<HTMLDivElement>) {
   return <div className="snap-start w-full gap-8 grid grid-cols-12 font-inter py-10 px-6 sm:px-12" {...props} />
 }
 
-function SectionTitle(props: React.JSX.IntrinsicAttributes & React.ClassAttributes<HTMLDivElement> & React.HTMLAttributes<HTMLDivElement>) {
+export function SectionTitle(props: React.JSX.IntrinsicAttributes & React.ClassAttributes<HTMLDivElement> & React.HTMLAttributes<HTMLDivElement>) {
   return <h1 className="text-4xl col-span-12 font-grotesk black dark:white dark:font-light dark:drop-shadow-[0_1px_15px_#ccfbf1]" {...props} />
 }
 

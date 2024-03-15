@@ -312,6 +312,22 @@ export default function Home() {
             <h1 className="text-lg w-full font-space text-grey-500 dark:text-grey-200 italic">Below are some highlights of the <span className="font-display inline">Sotopia</span> interactions. Click the <OutLinkLogo link={"https://sotopia-chatbot.vercel.app/render/01H94EFEP55SP18FQ65PZP4BRN"}/> to view the full episode and corresponding evaluation.</h1>
             <Interactions />
             </div>
+            <SectionContent>
+        <SectionTitle>
+          Citation
+        </SectionTitle>
+            <code className="col-span-12 block whitespace-pre overflow-x-scroll bg-slate-100 bg-clip-border p-3"> 
+            {'@inproceedings{zhou2024sotopia,\n'}
+      {'  title={{SOTOPIA}: Interactive Evaluation for Social Intelligence in Language Agents},\n'}
+      {'  author={Xuhui Zhou and Hao Zhu and Leena Mathur and Ruohong Zhang and Haofei Yu and Zhengyang Qi and Louis-Philippe Morency and Yonatan Bisk and Daniel Fried and Graham Neubig and Maarten Sap},\n'}
+      {'  booktitle={The Twelfth International Conference on Learning Representations},\n'}
+      {'  year={2024},\n'}
+      {'  url={https://openreview.net/forum?id=mM7VurbA4r}\n'}
+      {'}\n'}
+              </code>
+        
+
+      </SectionContent>
 
             <SectionContent>
               <SectionTitle>Meet the team</SectionTitle>
