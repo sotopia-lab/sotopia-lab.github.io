@@ -139,7 +139,7 @@ export default function RootLayout({
                 </Link>
               
                 <a
-                  href="https://github.com/sotopia-lab/sotopia"
+                  href="https://github.com/sotopia-lab"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
