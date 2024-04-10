@@ -130,9 +130,16 @@ export default function RootLayout({
                 >
                   <p>About Us</p>
                 </Link>
+                <Link
+                  href="https://github.com/orgs/sotopia-lab/discussions/34"
+                  rel="noopener noreferrer"
+                  className="group hidden max-w-fit items-center justify-center space-x-2 rounded-full border border-black bg-black px-3 py-1.5 text-sm text-white transition-colors hover:bg-white hover:text-black sm:flex"
+                >
+                  <p>Join Us</p>
+                </Link>
               
                 <a
-                  href="https://github.com/sotopia-lab/sotopia"
+                  href="https://github.com/sotopia-lab"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
