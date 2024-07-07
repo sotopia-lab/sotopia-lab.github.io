@@ -248,6 +248,11 @@ export default function Page() {
             </div>
           </div>
         <Detail.ContentContainer className="mx-auto max-w-2xl lg:max-w-5xl">
+          <SectionContent>
+            <SectionTitle>
+              <Link href="https://github.com/orgs/sotopia-lab/discussions/34" className="text-teal-600">Join us</Link> in building the future of social AI.
+            </SectionTitle>
+            </SectionContent>
             <SectionContent>
             <SectionTitle>Core Team</SectionTitle>
               {team_core_members_state.map((member, index) => (

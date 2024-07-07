@@ -15,6 +15,18 @@ import { ModeToggle } from "@/components/ui/model-toggle";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger, DropdownMenuPortal } from "@/components/ui/dropdown-menu";
 import {SiteFooter} from "@/components/footer";
 
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuIndicator,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+  NavigationMenuViewport,
+} from "@/components/ui/navigation-menu";
+import { NavigationMenuSotopia } from "@/components/navigation";
+
 const clash = localFont({
   src: "../styles/ClashDisplay-Semibold.otf",
   variable: "--font-clash",
@@ -82,6 +94,7 @@ export default function RootLayout({
                 <p className="dark:text-sky-400 dark:drop-shadow-[0_3px_10px_#bae6fd]">Sotopia</p>
               </Link>
               <div className="flex items-center space-x-4 sm:px-6">
+              {/* <NavigationMenuSotopia /> */}
               <DropdownMenu>
                 <DropdownMenuTrigger>
                   <button className="group hidden max-w-fit items-center justify-center space-x-2 rounded-full border border-black bg-black px-3 py-1.5 text-sm text-white transition-colors hover:bg-white hover:text-black sm:flex">Research <DownArrowIcon/></button>
@@ -100,8 +113,6 @@ export default function RootLayout({
                   </DropdownMenuContent>
                 </DropdownMenuPortal>
               </DropdownMenu>
-
-                  
                 {/* <a href="/"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -124,20 +135,19 @@ export default function RootLayout({
                   <p>Resources</p>
                 </Link>
                 <Link
+                  href="https://docs.sotopia.world/"
+                  rel="noopener noreferrer"
+                  className="group hidden max-w-fit items-center justify-center space-x-2 rounded-full border border-black bg-black px-3 py-1.5 text-sm text-white transition-colors hover:bg-white hover:text-black sm:flex"
+                >
+                  <p>Documentation</p>
+                </Link>
+                <Link
                   href="/about"
                   rel="noopener noreferrer"
                   className="group hidden max-w-fit items-center justify-center space-x-2 rounded-full border border-black bg-black px-3 py-1.5 text-sm text-white transition-colors hover:bg-white hover:text-black sm:flex"
                 >
                   <p>About Us</p>
                 </Link>
-                <Link
-                  href="https://github.com/orgs/sotopia-lab/discussions/34"
-                  rel="noopener noreferrer"
-                  className="group hidden max-w-fit items-center justify-center space-x-2 rounded-full border border-black bg-black px-3 py-1.5 text-sm text-white transition-colors hover:bg-white hover:text-black sm:flex"
-                >
-                  <p>Join Us</p>
-                </Link>
-              
                 <a
                   href="https://github.com/sotopia-lab"
                   target="_blank"
