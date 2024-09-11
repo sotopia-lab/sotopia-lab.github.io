@@ -38,7 +38,7 @@ const components: { title: string; href: string; description: string }[] = [
   },
   {
     title: "About Us",
-    href: "/about",
+    href: "/sotopia-website/about",
     description:
       "Learn more about the team behind Sotopia.",
   },
@@ -71,7 +71,7 @@ export function NavigationMenuSotopia() {
               <ListItem href="/sotopia-website/projects/sotopia-pi" title="Sotopia-π">
                 Training socially-intelligent agents in Sotopia.
               </ListItem>
-              <ListItem href="/sotopia-website/projects/agent_vs_script/" title="Agents Vs Script">
+              <ListItem href="/sotopia-website/projects/agent_vs_script" title="Agents Vs Script">
                 Realistic social simulations require information asymmetry.
               </ListItem>
             </ul>
@@ -94,7 +94,7 @@ export function NavigationMenuSotopia() {
           </NavigationMenuContent>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          <Link href="/docs" legacyBehavior passHref>
+          <Link href="https://docs.sotopia.world/" legacyBehavior passHref>
             <NavigationMenuLink className={navigationMenuTriggerStyle()}>
               Documentation
             </NavigationMenuLink>
