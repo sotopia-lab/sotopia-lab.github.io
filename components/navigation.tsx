@@ -57,7 +57,7 @@ export function NavigationMenuSotopia() {
                 <NavigationMenuLink asChild>
                   <a
                     className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-r from-teal-400 via-teal-500 to-teal-600 text-white p-6 no-underline outline-none focus:shadow-md"
-                    href="/projects/sotopia"
+                    href="/sotopia-website/projects/sotopia"
                   >
                     <div className="mb-2 mt-4 text-lg font-medium">
                       Sotopia
@@ -68,10 +68,10 @@ export function NavigationMenuSotopia() {
                   </a>
                 </NavigationMenuLink>
               </li>
-              <ListItem href="/projects/sotopia-pi" title="Sotopia-π">
+              <ListItem href="/sotopia-website/projects/sotopia-pi" title="Sotopia-π">
                 Training socially-intelligent agents in Sotopia.
               </ListItem>
-              <ListItem href="/projects/agent_vs_script/" title="Agents Vs Script">
+              <ListItem href="/sotopia-website/projects/agent_vs_script/" title="Agents Vs Script">
                 Realistic social simulations require information asymmetry.
               </ListItem>
             </ul>
