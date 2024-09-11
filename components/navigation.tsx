@@ -16,40 +16,33 @@ import {
 
 const components: { title: string; href: string; description: string }[] = [
   {
-    title: "Alert Dialog",
-    href: "/docs/primitives/alert-dialog",
+    title: "Datasets",
+    href: "https://huggingface.co/collections/cmu-lti/sotopia-65f312c1bd04a8c4a9225e5b",
     description:
-      "A modal dialog that interrupts the user with important content and expects a response.",
+      "A collection of datasets related to Sotopia hosted on Hugging Face.",
   },
   {
-    title: "Hover Card",
-    href: "/docs/primitives/hover-card",
-    description:
-      "For sighted users to preview content available behind a link.",
+    title: "Chat Now",
+    href: "https://chat.sotopia.world",
+    description: "Chat with Sotopia now!",
   },
   {
-    title: "Progress",
-    href: "/docs/primitives/progress",
-    description:
-      "Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.",
+    title: "View Episodes",
+    href: "https://sotopia.world/episodes",
+    description: "View all episodes of Sotopia.",
   },
   {
-    title: "Scroll-area",
-    href: "/docs/primitives/scroll-area",
-    description: "Visually or semantically separates content.",
+    title: "Benchmark",
+    href: "/",
+    description: "Benchmark for Sotopia.",
   },
   {
-    title: "Tabs",
-    href: "/docs/primitives/tabs",
+    title: "About Us",
+    href: "/about",
     description:
-      "A set of layered sections of content—known as tab panels—that are displayed one at a time.",
+      "Learn more about the team behind Sotopia.",
   },
-  {
-    title: "Tooltip",
-    href: "/docs/primitives/tooltip",
-    description:
-      "A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.",
-  },
+  
 ]
 
 export function NavigationMenuSotopia() {
@@ -57,41 +50,36 @@ export function NavigationMenuSotopia() {
     <NavigationMenu>
       <NavigationMenuList>
         <NavigationMenuItem>
-          <NavigationMenuTrigger>Getting started</NavigationMenuTrigger>
-          <NavigationMenuContent>
+          <NavigationMenuTrigger>Research</NavigationMenuTrigger>
+          <NavigationMenuContent className="bg-black text-white">
             <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
               <li className="row-span-3">
                 <NavigationMenuLink asChild>
                   <a
-                    className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
-                    href="/"
+                    className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-r from-teal-400 via-teal-500 to-teal-600 text-white p-6 no-underline outline-none focus:shadow-md"
+                    href="/projects/sotopia"
                   >
                     <div className="mb-2 mt-4 text-lg font-medium">
-                      shadcn/ui
+                      Sotopia
                     </div>
-                    <p className="text-sm leading-tight text-muted-foreground">
-                      Beautifully designed components that you can copy and
-                      paste into your apps. Accessible. Customizable. Open
-                      Source.
+                    <p className="text-sm leading-tight text-white">
+                      The platform for realistic simulations of social interactions.
                     </p>
                   </a>
                 </NavigationMenuLink>
               </li>
-              <ListItem href="/docs" title="Introduction">
-                Re-usable components built using Radix UI and Tailwind CSS.
+              <ListItem href="/projects/sotopia-pi" title="Sotopia-π">
+                Training socially-intelligent agents in Sotopia.
               </ListItem>
-              <ListItem href="/docs/installation" title="Installation">
-                How to install dependencies and structure your app.
-              </ListItem>
-              <ListItem href="/docs/primitives/typography" title="Typography">
-                Styles for headings, paragraphs, lists...etc
+              <ListItem href="/projects/agent_vs_script/" title="Agents Vs Script">
+                Realistic social simulations require information asymmetry.
               </ListItem>
             </ul>
           </NavigationMenuContent>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          <NavigationMenuTrigger>Components</NavigationMenuTrigger>
-          <NavigationMenuContent>
+          <NavigationMenuTrigger>Resources</NavigationMenuTrigger>
+          <NavigationMenuContent className="bg-black text-white">
             <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
               {components.map((component) => (
                 <ListItem
