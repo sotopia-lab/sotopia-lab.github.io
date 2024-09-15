@@ -1,9 +1,6 @@
 "use client"
 
 import * as React from "react"
-import Link from "next/link"
-
-import { cn } from "@/lib/utils"
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -13,7 +10,7 @@ import {
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu"
-
+import { Sotopia } from "@/components/icons";
 const components: { title: string; href: string; description: string }[] = [
   {
     title: "Datasets",
@@ -38,16 +35,158 @@ const components: { title: string; href: string; description: string }[] = [
   },
   {
     title: "About Us",
-    href: "/sotopia-website/about",
+    href: "/about",
     description:
       "Learn more about the team behind Sotopia.",
   },
-  
 ]
 
-export function NavigationMenuSotopia() {
+const project_constants = [
+  {
+    title: "Sotopia",
+    href: "/projects/sotopia",
+    description: "The platform for realistic simulations of social interactions.",
+  },
+  {
+    title: "Sotopia-π",
+    href: "/projects/sotopia-pi",
+    description: "Training socially-intelligent agents in Sotopia.",
+  },
+  {
+    title: "Agents Vs Script",
+    href: "/projects/agent_vs_script",
+    description: "Realistic social simulations require information asymmetry.",
+  },
+]
+
+import Link, { LinkProps } from "next/link"
+import { useRouter } from "next/navigation"
+import { ViewVerticalIcon } from "@radix-ui/react-icons"
+
+import { cn } from "@/lib/utils"
+import { Twitter } from "@/components/icons"
+import { Button } from "@/components/ui/button"
+import { ScrollArea } from "@/components/ui/scroll-area"
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
+import { constants } from "buffer";
+
+export function MobileNav() {
+  const [open, setOpen] = React.useState(false)
   return (
-    <NavigationMenu>
+    <Sheet open={open} onOpenChange={setOpen}>
+      <SheetTrigger asChild>
+        <Button
+          variant="ghost"
+          className="mr-2 px-0 text-base hover:bg-transparent focus-visible:bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 md:hidden"
+        >
+          <svg
+            strokeWidth="1.5"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            className="h-5 w-5"
+          >
+            <path
+              d="M3 5H11"
+              stroke="currentColor"
+              strokeWidth="1.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            ></path>
+            <path
+              d="M3 12H16"
+              stroke="currentColor"
+              strokeWidth="1.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            ></path>
+            <path
+              d="M3 19H21"
+              stroke="currentColor"
+              strokeWidth="1.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            ></path>
+          </svg>
+          <span className="sr-only">Toggle Menu</span>
+        </Button>
+      </SheetTrigger>
+      <SheetContent side="left" className="pr-0">
+        <MobileLink
+          href="/"
+          className="flex items-center"
+          onOpenChange={setOpen}
+        >
+          <Sotopia className="mr-2 h-2 w-2 pb-10 pr-10" />
+          <span className="text-2xl font-bold">Sotopia</span>
+        </MobileLink>
+        <ScrollArea className="my-4 h-[calc(100vh-8rem)] pb-10 pl-2">
+          <div className="flex flex-col space-y-3 pb-5">
+            <MobileLink href="/projects/sotopia" onOpenChange={setOpen}>
+              <span className="text-2xl font-bold">Research</span>
+            </MobileLink>
+            {project_constants.map((project) => (
+              <MobileLink
+                key={project.title}
+                href={project.href}
+                onOpenChange={setOpen}
+                className="text-lg font-bold pl-3"
+              >
+                {project.title}
+              </MobileLink>
+            ))}
+          </div>
+          <div className="flex flex-col space-y-2">
+            <span className="text-2xl font-bold">Resources</span>
+              {components.map((component) => (
+                <MobileLink
+                  key={component.title}
+                  href={component.href}
+                  onOpenChange={setOpen}
+                  className="text-lg font-bold pl-3"
+                >
+                  {component.title}
+                </MobileLink>
+              ))}
+          </div>
+        </ScrollArea>
+      </SheetContent>
+    </Sheet>
+  )
+}
+
+interface MobileLinkProps extends LinkProps {
+  onOpenChange?: (open: boolean) => void
+  children: React.ReactNode
+  className?: string
+}
+
+function MobileLink({
+  href,
+  onOpenChange,
+  className,
+  children,
+  ...props
+}: MobileLinkProps) {
+  const router = useRouter()
+  return (
+    <Link
+      href={href}
+      onClick={() => {
+        router.push(href.toString())
+        onOpenChange?.(false)
+      }}
+      className={cn(className)}
+      {...props}
+    >
+      {children}
+    </Link>
+  )
+}
+
+export function MainNav() {
+  return (
+    <NavigationMenu className="hidden md:block">
       <NavigationMenuList>
         <NavigationMenuItem>
           <NavigationMenuTrigger>Research</NavigationMenuTrigger>
@@ -68,12 +207,15 @@ export function NavigationMenuSotopia() {
                   </a>
                 </NavigationMenuLink>
               </li>
-              <ListItem href="/sotopia-website/projects/sotopia-pi" title="Sotopia-π">
-                Training socially-intelligent agents in Sotopia.
-              </ListItem>
-              <ListItem href="/sotopia-website/projects/agent_vs_script" title="Agents Vs Script">
-                Realistic social simulations require information asymmetry.
-              </ListItem>
+              {project_constants.slice(1).map((project) => (
+                <ListItem
+                  key={project.title}
+                  title={project.title}
+                  href={project.href}
+                >
+                  {project.description}
+                </ListItem>
+              ))}
             </ul>
           </NavigationMenuContent>
         </NavigationMenuItem>
@@ -102,6 +244,15 @@ export function NavigationMenuSotopia() {
         </NavigationMenuItem>
       </NavigationMenuList>
     </NavigationMenu>
+  )
+}
+
+export function NavigationMenuSotopia() {
+  return (
+    <div>
+      <MainNav />
+      <MobileNav />
+    </div>
   )
 }
 
