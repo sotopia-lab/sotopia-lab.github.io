@@ -196,7 +196,7 @@ export function MainNav() {
                 <NavigationMenuLink asChild>
                   <a
                     className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-r from-teal-400 via-teal-500 to-teal-600 text-white p-6 no-underline outline-none focus:shadow-md"
-                    href="/sotopia-website/projects/sotopia"
+                    href="/projects/sotopia"
                   >
                     <div className="mb-2 mt-4 text-lg font-medium">
                       Sotopia

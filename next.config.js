@@ -1,6 +1,5 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  basePath: '/sotopia-website',
   output: 'export',
   images: {
     unoptimized: true,
