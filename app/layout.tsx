@@ -7,24 +7,13 @@ import Image from "next/image";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { DownArrowIcon } from "@/components/Icon";
-import { Github, BuyMeACoffee} from "@/components/icons";
+import { Github, Sotopia} from "@/components/icons";
 import { Analytics } from "@vercel/analytics/react";
 import { Toaster } from "sonner";
 import { ThemeProvider } from "@/components/theme-provider"
 import { ModeToggle } from "@/components/ui/model-toggle";
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger, DropdownMenuPortal } from "@/components/ui/dropdown-menu";
 import {SiteFooter} from "@/components/footer";
 
-import {
-  NavigationMenu,
-  NavigationMenuContent,
-  NavigationMenuIndicator,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList,
-  NavigationMenuTrigger,
-  NavigationMenuViewport,
-} from "@/components/ui/navigation-menu";
 import { NavigationMenuSotopia } from "@/components/navigation";
 
 const clash = localFont({
@@ -81,16 +70,7 @@ export default function RootLayout({
           >
             <div className="w-full pl-3 sm:px-12 flex h-16 items-center justify-between">
               <Link href="/" className="flex items-center font-display text-4xl">
-                <svg className="h-10 w-10 dark:text-sky-300 dark:drop-shadow-[0_3px_10px_#bae6fd]"
-                  viewBox="0 0 300 300"
-                  fill="currentColor"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path d="M250,200c-55.23,0-100-44.77-100-100S194.77,0,250,0"/>
-                  <path d="M50,100c55.23,0,100,44.77,100,100S105.23,300,50,300"/>
-                  <path d="M50,0l100,0c0,55.23-44.77,100-100,100"/>
-                  <path d="M250,300l-100,0c0-55.23,44.77-100,100-100"/>
-                </svg>
+                <Sotopia className="dark:text-sky-400 dark:drop-shadow-[0_3px_10px_#bae6fd]" />
                 <p className="dark:text-sky-400 dark:drop-shadow-[0_3px_10px_#bae6fd]">Sotopia</p>
               </Link>
               <div className="flex items-center space-x-4 sm:px-6">

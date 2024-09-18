@@ -17,12 +17,6 @@ import bg_large from "@/public/bg_large.png";
 import bg_xl from "@/public/bg_xl.png";
 import sotopiaTown from '@/public/island_only.svg'
 import { ModeToggle } from "@/components/ui/model-toggle";
-import { ThemeProvider } from "@/components/theme-provider";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { cn } from "@/lib/utils";
-import Link from "next/link";
-import LTI from "@/components/icons/lti";
-import CMU from "@/components/icons/cmu";
 
 function SectionContent(props: React.JSX.IntrinsicAttributes & React.ClassAttributes<HTMLDivElement> & React.HTMLAttributes<HTMLDivElement>) {
   return <div className="snap-start w-full gap-8 grid grid-cols-12 py-16 px-6 sm:px-12" {...props} />
@@ -329,31 +323,6 @@ export default function Home() {
 
       </SectionContent>
 
-            <SectionContent>
-              <SectionTitle>Meet the team</SectionTitle>
-              {team_members_state.map((member, index) => (
-                <Link href={member.url} scroll={false} key={index} className="col-span-3 lg:col-span-2 text-center font-space">
-                  <div className="absoluate">
-                    <Avatar className={cn("w-full hover:shadow-lg hover:-translate-y-[1px] hover:shadow-gray-500 dark:shadow-gray-200 dark:border-transparent dark:border-2", "dark:bg-gradient-to-br", member.gradient)}>
-                      <AvatarImage src={member.avatar} alt={member.name} />
-                      <AvatarFallback>{member.initials}</AvatarFallback>
-                    </Avatar>
-                  </div>
-                  
-                  <div className="w-full mt-4">
-                  <span className="font-light">{member.name} </span>
-                  <br />
-                  <span className="italic"> {member.role} </span>
-                  </div>
-                </Link>
-              ))}
-
-            {/* <p className="text-4xl col-span-12 lg:col-span-7 lg:col-start-1 font-sans">Language Technologies Institute
-            @ Carnegie Mellon University</p> */}
-            <CMU className="col-span-12 lg:col-span-5 text-center font-space bg-black p-3" />
-            <LTI className="col-span-12 lg:col-span-6 lg:col-start-6 text-center font-space" />
-            <p className="text-xl col-span-12 justify-center">We greatly thank <a href="https://openai.com/" className="underline decoration-dotted">OpenAI</a> and <a href="https://openai.com/" className="underline decoration-dotted">Together AI</a> for their support of model credits.</p> 
-            </SectionContent>
           </Detail.ContentContainer>
         </div>
   </Detail.Container>
