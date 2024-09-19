@@ -57,6 +57,11 @@ const project_constants = [
     href: "/projects/agent_vs_script",
     description: "Realistic social simulations require information asymmetry.",
   },
+  {
+    title: "AI-Liedar",
+    href: "/projects/ai_liedar",
+    description: "To be truthful or to be helpful?",
+  },
 ]
 
 import Link, { LinkProps } from "next/link"

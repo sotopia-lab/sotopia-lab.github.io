@@ -10,11 +10,13 @@ interface ImageWithTextOverlayProps {
 
 const ImageWithTextOverlay: React.FC<ImageWithTextOverlayProps> = ({ src, alt, title }) => {
   return (
-    <div style={{ position: "relative" }}>
+    <div style={{ position: "relative", width: "100%", height: "0", paddingBottom: "100%" }}> {/* 9:16 Aspect Ratio */}
       <Image
         src={src}
         quality={100}
         alt={alt}
+        layout="fill"
+        objectFit="cover"
       />
       <div
         className="prose mt-4 text-lg text-black font-space"
