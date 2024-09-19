@@ -20,6 +20,7 @@ import sotopiaTown from '../public/island_only.svg'
 import agentvsstory from '../public/projects/agent_vs_storyteller.jpg'
 import sotopiaPi from '../public/projects/sotopia_pi.jpg'
 import sotopia from '../public/projects/sotopia.jpg'
+import ai_liedar from '../public/projects/ai_liedar/intro_conversation.png'
 import { ModeToggle } from "@/components/ui/model-toggle";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
@@ -281,6 +282,18 @@ export default function Home() {
 
         <SectionContent id='latest_research'>
           <SectionTitle>Latest Research</SectionTitle>
+            <div className="col-span-12 lg:col-span-4">
+              <Link href="/projects/ai_liedar">
+              <ImageWithTextOverlay
+              src={ai_liedar}
+              alt="a picture of green colors"
+              title={<p>AI-LieDar: Examine the Trade-off Between Utility and Truthfulness in LLM Agents</p>}
+              />
+              <p className="prose mt-4 text-lg  text-black dark:text-gray-200 font-space italic hover:underline">
+              TL;DR: AI-LieDar presents LLMs with carefully crafted scenarios to see how they handle these truth-vs-helpfulness dilemmas.
+              </p>
+              </Link>
+            </div>
             <div className="col-span-12 lg:col-span-4">
             <Link href="/projects/agent_vs_script">
               <ImageWithTextOverlay

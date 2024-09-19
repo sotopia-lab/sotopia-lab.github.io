@@ -23,19 +23,6 @@ import { Abhaya_Libre } from "next/font/google";
 import { Detail } from "@/components/ListDetail/Detail";
 import React from "react";
 
-import {
-  NavigationMenu,
-  NavigationMenuContent,
-  NavigationMenuIndicator,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList,
-  NavigationMenuTrigger,
-  NavigationMenuViewport,
-  navigationMenuTriggerStyle,
-} from "@/components/ui/navigation-menu"
-
-
 function SectionContent(props: React.JSX.IntrinsicAttributes & React.ClassAttributes<HTMLDivElement> & React.HTMLAttributes<HTMLDivElement>) {
   return <div className="w-full gap-8 grid grid-cols-12 font-inter py-10 px-6 sm:px-12" {...props} />
 }

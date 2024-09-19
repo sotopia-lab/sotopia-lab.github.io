@@ -100,7 +100,7 @@ export default function Index() {
           <SectionText>
             <Paragraph>When deploying our LLM-based agents, we want an AI assistant to be:</Paragraph>
             <OrderedList>
-              <ListItem><strong>Helpful</strong> - providing useful information and assistance to achieve the user's goals (i.e. <strong>achieving Utility</strong>)</ListItem>
+              <ListItem><strong>Helpful</strong> - providing useful information and assistance to achieve the user&apos;s goals (i.e. <strong>achieving Utility</strong>)</ListItem>
               <ListItem><strong>Truthful</strong> - offering accurate and honest responses</ListItem>
             </OrderedList> <br />
             {/* 1. <strong>Helpful</strong> - providing useful information and assistance to achieve the user's goals (i.e. <strong>achieving Utility</strong>)<br />
@@ -108,8 +108,8 @@ export default function Index() {
             However, these two qualities can sometimes conflict. <br /> */}
             Imagine chatting with an AI shopping assistant designed to help you pick the best product. This seemingly straightforward interaction can lead to different outcomes:
             <OrderedList>
-              <ListItem>A truthful AI might candidly <strong>disclose a product's shortcomings</strong>, even if that means failing to make a sale.</ListItem>
-              <ListItem>A helpful AI (from the seller's perspective) might <strong>engage in deceptive practices</strong>, such as obfuscation or even outright lying, to convince you to buy the product.</ListItem>
+              <ListItem>A truthful AI might candidly <strong>disclose a product&apos;s shortcomings</strong>, even if that means failing to make a sale.</ListItem>
+              <ListItem>A helpful AI (from the seller&apos;s perspective) might <strong>engage in deceptive practices</strong>, such as obfuscation or even outright lying, to convince you to buy the product.</ListItem>
             </OrderedList> <br />
 {/* 
             1. A truthful AI might candidly <strong>disclose a product's shortcomings</strong>, even if that means failing to make a sale.<br />
@@ -123,14 +123,14 @@ export default function Index() {
           <SectionText>
             In real-world scenarios, humans often provide <strong>ambiguous or under-specified instructions</strong>. We naturally rely on common sense and prior knowledge to fill in the gaps and navigate complex situations. However, AI agents lack this intuitive understanding.
             Similarly, humans have <strong>implicit expectations about truthfulness and social norms</strong> that we don't always explicitly state. An AI focused solely on achieving a given goal might not consider these unspoken rules, potentially leading to unintended behaviors.
-            The situation is further complicated by the question of <strong>whose instructions the AI should prioritize and under what conditions</strong>. This ambiguity can lead to scenarios where an AI's interpretation of "helpful" might not align with ethical standards or user expectations.
+            The situation is further complicated by the question of <strong>whose instructions the AI should prioritize and under what conditions</strong>. This ambiguity can lead to scenarios where an AI&apos;s interpretation of &quot;helpful&quot; might not align with ethical standards or user expectations.
           </SectionText>
         </SectionContent>
 
         <SectionContent>
           <SectionSubtitle>Enter AI-LieDar</SectionSubtitle>
           <SectionText>
-            To dig into this, we've created AI-LieDar. It's a tool that presents LLMs with carefully crafted scenarios to see <strong>how they handle these truth-vs-helpfulness dilemmas</strong>.
+            To dig into this, we&apos;ve created AI-LieDar. It's a tool that presents LLMs with carefully crafted scenarios to see <strong>how they handle these truth-vs-helpfulness dilemmas</strong>.
             Our goal? To understand how AI makes these tough calls. This could help us build AI systems that are not just smart, but also ethical and reliable.
             By exploring this balance between being useful and being truthful, we're tackling a key question in AI ethics. It's not just about making AI work well – it's about making it work right.
           </SectionText>
