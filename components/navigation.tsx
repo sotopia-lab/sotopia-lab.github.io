@@ -57,6 +57,16 @@ const project_constants = [
     href: "/projects/agent_vs_script",
     description: "Realistic social simulations require information asymmetry.",
   },
+  {
+    title: "AI-LieDar",
+    href: "https://arxiv.org/abs/2409.09013",
+    description: "Examine the trade-off between utility and truthfulness in LLM agents",
+  },
+  {
+    title: "HAICOSYSTEM",
+    href: "https://haicosystem.org",
+    description: "AI safety in interactions between users, AI, and environments",
+  },
 ]
 
 import Link, { LinkProps } from "next/link"
