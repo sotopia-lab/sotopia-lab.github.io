@@ -48,6 +48,11 @@ const project_constants = [
     description: "The platform for realistic simulations of social interactions.",
   },
   {
+    title: "Sotopia-RL",
+    href: "/projects/sotopia-rl",
+    description: "Designing RL specifically for social intelligence.",
+  },
+  {
     title: "Sotopia-π",
     href: "/projects/sotopia-pi",
     description: "Training socially-intelligent agents in Sotopia.",

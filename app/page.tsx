@@ -19,6 +19,7 @@ import bg_xl from "../public/bg_xl.png";
 import sotopiaTown from '../public/island_only.svg'
 import agentvsstory from '../public/projects/agent_vs_storyteller.jpg'
 import sotopiaPi from '../public/projects/sotopia_pi.jpg'
+import sotopiaRL from '../public/projects/sotopia_rl.png'
 import sotopia from '../public/projects/sotopia.jpg'
 import { ModeToggle } from "@/components/ui/model-toggle";
 import { ThemeProvider } from "@/components/theme-provider";
@@ -281,15 +282,15 @@ export default function Home() {
 
         <SectionContent id='latest_research'>
           <SectionTitle>Latest Research</SectionTitle>
-            <div className="col-span-12 lg:col-span-4">
-            <Link href="/projects/agent_vs_script">
+          <div className="col-span-12 lg:col-span-4">
+            <Link href="/projects/sotopia-rl">
               <ImageWithTextOverlay
-              src={agentvsstory}
+              src={sotopiaRL}
               alt="a picture of green colors"
-              title={<p>Is this the real life? Is this just fantasy? The Misleading Success of Simulating Social Interactions With LLMs</p>}
+              title={<p><span className='font-display inline'>Sotopia-RL</span>: Reward Design for Social Intelligence</p>}
               />
               <p className="prose mt-4 text-lg  text-black dark:text-gray-200 font-space italic hover:underline">
-              TL;DR: Omniscenient social simulation with LLMs is different from realistic human social interactions.
+              TL;DR: An RL-training framework designed specifically for improving social intelligence.
               </p>
               </Link>
               </div>
