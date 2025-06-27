@@ -66,14 +66,15 @@ function Title() {
       <div><Link className="underline" href="https://sites.uci.edu/kolbynottingham/">Kolby Nottingham</Link><sup>2</sup></div>
       <div><Link className="underline" href="https://keyangds.github.io/">Keyang Xuan</Link><sup>1</sup></div>
       <div><Link className="underline" href="https://www.majumderb.com/">Bodhisattwa Prasad Majumder</Link><sup>3</sup></div>
-      <div><Link className="underline" href="https://zhuhao.me">Hao Zhu</Link><sup>5</sup></div>
-      <div><Link className="underline" href="https://pliang279.github.io/">Paul Pu Liang</Link><sup>6</sup></div>
-      <div><Link className="underline" href="https://cs.stanford.edu/~jiaxuan/">Jiaxuan You</Link><sup>1</sup></div>
+      <div><Link className="underline" href="https://zhuhao.me">Hao Zhu</Link>†<sup>5</sup></div>
+      <div><Link className="underline" href="https://pliang279.github.io/">Paul Pu Liang</Link>†<sup>6</sup></div>
+      <div><Link className="underline" href="https://cs.stanford.edu/~jiaxuan/">Jiaxuan You</Link>†<sup>1</sup></div>
       
     </div>
 
     <div className="mb-2 text-sm lg:text-md">
       * Leading authors.
+      † Equal advising.
     </div>
 
     <span className="inline-block pr-1"><sup>1</sup>University of Illinois Urbana-Champaign,</span>
