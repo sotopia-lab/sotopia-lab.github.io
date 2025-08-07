@@ -282,46 +282,62 @@ export default function Home() {
 
         <SectionContent id='latest_research'>
           <SectionTitle>Latest Research</SectionTitle>
-          <div className="col-span-12 lg:col-span-4">
-            <Link href="/projects/sotopia-rl">
-              <ImageWithTextOverlay
-              src={sotopiaRL}
-              alt="a picture of green colors"
-              title={<p><span className='font-display inline'>Sotopia-RL</span>: Reward Design for Social Intelligence</p>}
-              />
-              <p className="prose mt-4 text-lg  text-black dark:text-gray-200 font-space italic hover:underline">
-              TL;DR: An RL-training framework designed specifically for improving social intelligence.
-              </p>
-              </Link>
+          <div className="col-span-12 overflow-x-auto">
+            <div className="flex space-x-6 pb-4" style={{minWidth: 'fit-content'}}>
+              <div className="flex-shrink-0" style={{width: '320px'}}>
+                <Link href="/projects/sotopia-rl">
+                  <ImageWithTextOverlay
+                  src={sotopiaRL}
+                  alt="a picture of green colors"
+                  title={<p><span className='font-display inline'>Sotopia-RL</span>: Reward Design for Social Intelligence</p>}
+                  />
+                  <p className="prose mt-4 text-lg  text-black dark:text-gray-200 font-space italic hover:underline">
+                  TL;DR: An RL-training framework designed specifically for improving social intelligence.
+                  </p>
+                </Link>
               </div>
-              <div className="col-span-12 lg:col-span-4">
-              <Link href="/projects/sotopia-pi">
+              <div className="flex-shrink-0" style={{width: '320px'}}>
+                <Link href="/projects/sotopia-pi">
+                  <ImageWithTextOverlay
+                  src={sotopiaPi}
+                  alt="a picture of green colors"
+                  title={<p><span className='font-display inline'>Sotopia-π</span>: Interactive Learning of Socially Intelligent Language Agents</p>}
+                  />
+                  <p className="prose mt-4 text-lg  text-black dark:text-gray-200 font-space italic hover:underline">
+                  
+                  Check out our newest training method aiming for more socially intelligent and aligned agents.
+                  </p>
+                </Link>
+              </div>
+              <div className="flex-shrink-0" style={{width: '320px'}}>
+                <Link href="/projects/sotopia">
                 <ImageWithTextOverlay
-                src={sotopiaPi}
-                alt="a picture of green colors"
-                title={<p><span className='font-display inline'>Sotopia-π</span>: Interactive Learning of Socially Intelligent Language Agents</p>}
-                />
-                <p className="prose mt-4 text-lg  text-black dark:text-gray-200 font-space italic hover:underline">
-                
-                Check out our newest training method aiming for more socially intelligent and aligned agents.
-                </p>
-              </Link>
+                    src={sotopia}
+                    alt="road to purple"
+                    title={<p><span className="font-display inline">Sotopia</span>: Interactive Evaluation for Social Intelligence in Language Agents</p>}
+                  />
+                  <p className="prose mt-4 text-lg  text-black dark:text-gray-200 font-space italic hover:underline">
+                  TL;DR: A interation-based framework for evaluating social intelligence in language agents.
+                  </p>
+                  {/* <p className="prose mt-4 text-sm  text-gray-500 dark:text-gray-200 font-space">
+                    TL;DR: We introduce a new benchmark for social intelligence, where AI agents are evaluated on their ability to understand and generate stories.
+                  </p> */}
+                </Link>
               </div>
-              <div className="col-span-12 lg:col-span-4">
-              <Link href="/projects/sotopia">
-              <ImageWithTextOverlay
-                  src={sotopia}
-                  alt="road to purple"
-                  title={<p><span className="font-display inline">Sotopia</span>: Interactive Evaluation for Social Intelligence in Language Agents</p>}
-                />
-                <p className="prose mt-4 text-lg  text-black dark:text-gray-200 font-space italic hover:underline">
-                TL;DR: A interation-based framework for evaluating social intelligence in language agents.
-                </p>
-                {/* <p className="prose mt-4 text-sm  text-gray-500 dark:text-gray-200 font-space">
-                  TL;DR: We introduce a new benchmark for social intelligence, where AI agents are evaluated on their ability to understand and generate stories.
-                </p> */}
-              </Link>
+              <div className="flex-shrink-0" style={{width: '320px'}}>
+                <Link href="/projects/agent_vs_script">
+                  <ImageWithTextOverlay
+                  src={agentvsstory}
+                  alt="Agent vs Storyteller project image"
+                  title={<p>Is this the real life? Is this just fantasy? The Misleading Success of Simulating Social Interactions With LLMs</p>}
+                  />
+                  <p className="prose mt-4 text-lg  text-black dark:text-gray-200 font-space italic hover:underline">
+                  TL;DR: Omniscenient social simulation with LLMs is different from realistic human social interactions.
+                  </p>
+                </Link>
               </div>
+            </div>
+          </div>
         </SectionContent>
 
         </Detail.ContentContainer>
