@@ -90,9 +90,7 @@ function Title() {
 function Abstract() {
   return (
     <p className="antialiased mb-4 text-2xl lg:text-3xl leading-relaxed">
-    How can we design rewards for RL training of social agents?
-
-Sotopia-RL tackles this by leveraging the POMDP nature of social tasks. We introduce a multi-dimensional, utterance-level reward tailored for online RL. This approach improves Qwen2.5-7B-Instruct beyond GPT-4o on Sotopia evaluation, with stronger human evaluations and no reward hacking observed.
+    How can social agents learn to generate high-quality utterances in social interactions? We propose Sotopia-RL, an RL framework that tackles partial observability and multi-dimensionality in social interactions by assigning fine-grained, utterance-level rewards. We reach the state-of-the-art performance on Sotopia with Qwen2.5-7B-Instruct as the base model.
     </p>
   );
 }
@@ -121,10 +119,10 @@ export default function Index() {
 
        
       <SectionContent>
-      <div className="col-span-12 text-center">Check out our <Link href="TODO"><span className="underline font-bold">paper</span></Link>, {' '}
+      <div className="col-span-12 text-center">Check out our <Link href="https://arxiv.org/pdf/2508.03905"><span className="underline font-bold">paper</span></Link>, {' '}
       <Link href="https://github.com/sotopia-lab/sotopia-rl"><span className="underline font-bold">code</span></Link>, {' '}
-      <Link href="https://huggingface.co/ulab-ai/sotopia-rl-qwen-2.5-7B-grpo"><span className="underline font-bold">model</span></Link>, {' '}
-      <Link href="https://huggingface.co/datasets/ulab-ai/sotopia-rl-data"><span className="underline font-bold">data</span></Link>, {' '}
+      <Link href="https://huggingface.co/ulab-ai/sotopia-rl-qwen-2.5-7B-grpo"><span className="underline font-bold">policy model</span></Link>, {' '} <Link href="https://huggingface.co/ulab-ai/sotopia-rl-qwen2.5-7B-rm"><span className="underline font-bold">reward model</span></Link>, {' '}
+      <Link href="https://huggingface.co/datasets/ulab-ai/sotopia-rl-reward-annotation"><span className="underline font-bold">data</span></Link>, {' '}
       and interactive demo!</div>
       <div className="col-span-12"><Abstract></Abstract></div>
       <hr className="col-span-12" />
@@ -132,33 +130,43 @@ export default function Index() {
 
       
       <SectionContent>
-  <SectionTitle>Why Social Tasks Are POMDPs</SectionTitle>
+  <SectionTitle>Why we need reward design for social intelligence?</SectionTitle>
   <SectionText>
-  Unlike problem-solving tasks that follow a <span class="underline">Markov Decision Process (MDP)</span> and can be decomposed into sub-problems with binary success/failure outcomes, social tasks are inherently partially observable and non-decomposable. A single utterance can drastically change the outcome depending on its order or context, making the structure non-Markovian. Moreover, success in social tasks involves multiple dimensions—not just task completion, but also the preservation of relationships and accurate knowledge sharing. To capture this complexity, we propose a <span class="underline">multi-dimensional, utterance-level reward design</span> that aligns with the nuanced nature of social interactions. This allows reinforcement learning to optimize beyond goal completion, ensuring socially intelligent behavior.
+    Social agent naturally learn skills through interactions. However, two key features of social interactions (partial observability and multi-dimensionality) make it challenging to train social agents with reinforcement learning (RL).
   </SectionText>
+  <SectionText>
+  <span className="font-display">Partial Observability</span>. In social interactions, agents operate under partial observability—they only observe the dialogue history, not hidden factors like intentions, emotions, or social norms that drive outcomes. This makes credit assignment difficult: even low-quality utterances may appear in successful conversations, and high-quality ones may go unrewarded. For RL, this creates high-variance reward signals that hinder stable policy learning compared to tasks like math or coding.
+</SectionText>
+
+<SectionText>
+<span className="font-display">Multi-Dimensionality</span>. Rapport building and knowledge seeking can indirectly contribute to the final goal achievement of social interactions. Single-dimensional reward on goal completion score oversimplifies this complexity, encouraging agents to exploit narrow signals while ignoring diverse social behaviors. For RL, this increases the risk of reward hacking or overfitting to spurious features, making it harder to generalize and develop socially intelligent strategies that align with human expectations.
+  </SectionText>
+
+<SectionText>
+    Overall, we target at designing RL framework for social agents that makes training efficient and effective, making social agents perform well under diverse social scenarios.
+    </SectionText>
 </SectionContent>
 
-<Image src={pomdp_sotopia} className="col-span-12 w-2/3 my-4 lg:w-1/2 lg:my-0 mx-auto" alt="Step 1" />
+<Image src={pomdp_sotopia} className="col-span-18 w-10/12 my-4 mx-auto" alt="Step 1" />
+
+
 
 
       <SectionContent>
         <SectionTitle>How does Sotopia-RL work?</SectionTitle>
-        <SectionText>
-        The first step in our pipeline is to assign rewards to individual utterances in a multi-turn dialogue. Instead of relying solely on final outcomes, we use a language model like GPT-4o to annotate each utterance’s contribution toward achieving the agent’s social goal. This process transforms coarse episode-level feedback into <span className="underline decoration-double">utterance-level</span> signals, enabling more precise credit assignment throughout the conversation.
-        </SectionText>
+        <SectionText> 
+            SOTOPIA-RL consists of three stages: (1) reward design, (2) reward model training, and (3) policy training.
+        </SectionText> 
+        <SectionText> 
+        <span className="font-display">Reward Design</span>. To build better offline reward labels for RL training, we expand the reward signal along two axes. First, we shift from coarse episode-level feedback to fine-grained <span className="underline decoration-double">utterance-level</span> credit, capturing the temporal granularity of social interactions. Second, we enrich the signal from a single-dimensional score to a <span className="underline decoration-double">multi-dimensional</span> evaluation that includes goal completion, relationship-building, and knowledge-sharing, as provided by SOTOPIA-EVAL. Multi-dimensional scores are normalized and aggregated into a scalar reward, producing robust and socially grounded supervision for RL.
+            </SectionText> 
 
-        <SectionText>
-        Next, we enhance these utterance-level rewards by combining multiple social evaluation dimensions. Specifically, we incorporate goal completion, relationship-building, and knowledge-sharing scores—each provided by SOTOPIA-EVAL—and normalize them to form a single scalar reward per utterance. This <span className="underline decoration-double">multi-dimensional</span> reward design improves learning stability and better captures the richness of social intelligence.
+        <SectionText> 
+        <span className="font-display">RM Training</span>. In the second stage, we train a reward model to predict the quality of an utterance given the conversation history. Supervised by offline reward labels, the model learns to approximate utterance-level feedback via mean squared error loss, enabling utterance-level online reward inference during policy training. 
+        </SectionText> 
+        <SectionText> 
+        <span className="font-display">Policy Training</span>. Finally, we fine-tune an LLM-based policy model using GRPO. Starting with behavior cloning to ensure fluency and coherence, we continue with single-turn online RL. At each turn, the reward model provides immediate feedback for the utterance, guiding the agent toward socially effective behaviors through interaction. 
         </SectionText>
-
-        <SectionText>
-        With these structured rewards, we train a <span className="underline decoration-double">reward model</span> to predict the quality of an utterance given the conversational context. Supervised using the LLM-generated reward labels, the model learns to approximate utterance-level feedback using mean squared error loss. This step offline reward labeling into online reward modeling.
-        </SectionText>
-
-        <SectionText>
-        Finally, we fine-tune an LLM-based <span className="underline decoration-double">policy model</span> using GRPO. Starting with a supervised behavior cloning phase to ensure socially coherent responses, we continue training the agent with single-turn online RL. At each turn, the trained reward model provides immediate feedback for the utterance, guiding the agent to produce more effective and socially appropriate responses over time.
-        </SectionText>
-
         <Image src={sotopia_rl_pipeline} className="my-4 col-span-12" alt="Step 1" />
     </SectionContent>
 
@@ -201,9 +209,17 @@ export default function Index() {
         <SectionTitle>
           Citation
         </SectionTitle>
-            <code className="col-span-12 block whitespace-pre overflow-x-scroll bg-slate-100 bg-clip-border p-3"> 
-            {'@misc{none,\n'}
-              </code>
+        <code className="col-span-12 block whitespace-pre overflow-x-scroll bg-slate-100 bg-clip-border p-3">
+  {'@misc{yu2025sotopiarlrewarddesignsocial,\n' +
+  '  title={Sotopia-RL: Reward Design for Social Intelligence},\n' +
+  '  author={Haofei Yu and Zhengyang Qi and Yining Zhao and Kolby Nottingham and Keyang Xuan and Bodhisattwa Prasad Majumder and Hao Zhu and Paul Pu Liang and Jiaxuan You},\n' +
+  '  year={2025},\n' +
+  '  eprint={2508.03905},\n' +
+  '  archivePrefix={arXiv},\n' +
+  '  primaryClass={cs.CL},\n' +
+  '  url={https://arxiv.org/abs/2508.03905}\n' +
+  '}'}
+</code>
         
 
       </SectionContent>
